@@ -1,0 +1,13 @@
+# https://www.home-assistant.io/integrations/generic_thermostat/
+platform: generic_thermostat
+name: Living Room Heater
+heater: switch.plug1_power
+target_sensor: sensor.living_room_sensor_temperature
+min_temp: 15
+max_temp: 25
+target_temp: 20
+cold_tolerance: 0.2
+hot_tolerance: 0.2
+min_cycle_duration:
+  seconds: 60
+initial_hvac_mode: "off"

@@ -1,0 +1,4 @@
+person.raf:
+  entity_picture: !secret picture_raf
+person.lynn:
+  entity_picture: !secret picture_lynn

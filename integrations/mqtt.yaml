@@ -1,0 +1,17 @@
+# https://www.home-assistant.io/integrations/mqtt/
+# /share/zigbee2mqtt/zigbee_devices.yaml -> location of z2m device config file
+mqtt:
+  discovery: true
+  discovery_prefix: homeassistant
+  broker: core-mosquitto
+  port: 8883
+  username: mqtt
+  password: !secret mqtt
+  tls_insecure: true
+  certificate: auto
+  birth_message:
+    topic: "hass/status"
+    payload: "online"
+  will_message:
+    topic: "hass/status"
+    payload: "offline"

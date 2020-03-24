@@ -1,0 +1,8 @@
+# https://www.home-assistant.io/integrations/joaoapps_join/
+joaoapps_join:
+  - name: rafs_pixel_3a
+    device_id: !secret join_rafs_pixel_3a
+    api_key: !secret join
+  - name: rafs_pc
+    device_id: !secret join_rafs_pc
+    api_key: !secret join

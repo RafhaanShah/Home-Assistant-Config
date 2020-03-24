@@ -1,0 +1,41 @@
+name: Home Assistant CI
+
+# yamllint disable-line rule:truthy
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+  schedule:
+    - cron: 0 4 * * *
+jobs:
+  yamllint:
+    name: "Yaml Lint"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Getting your configuration from GitHub
+        uses: actions/checkout@v1
+      - name: Running Yaml Lint
+        uses: "docker://pipelinecomponents/yamllint:latest"
+        with:
+          args: yamllint .
+  home_assistant:
+    name: "Home Assistant"
+    runs-on: ubuntu-latest
+    needs: [yamllint]
+    steps:
+      - name: Getting your configuration from GitHub
+        uses: actions/checkout@v1
+      - name: Copying dummy secrets
+        run: |
+          mv secrets_example.yaml secrets.yaml
+          mkdir -p ssl
+          touch ssl/fullchain.pem && touch ssl/privkey.pem
+      - name: Getting Home Assistant Version
+        uses: "docker://homeassistant/home-assistant:stable"
+        with:
+          args: python -m homeassistant --version
+      - name: Checking Home Assistant Configuration
+        uses: "docker://homeassistant/home-assistant:stable"
+        with:
+          args: python -m homeassistant --config ./ --script check_config --info all

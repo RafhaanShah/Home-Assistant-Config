@@ -1,0 +1,30 @@
+########## Raf's Home Assistant Configuration ##########
+
+# https://www.home-assistant.io/integrations/default_config/
+default_config:
+
+# https://www.home-assistant.io/docs/configuration/basic/
+homeassistant:
+  name: Raf's Flat
+  elevation: 10
+  latitude: !secret zone_home_lat
+  longitude: !secret zone_home_lon
+  time_zone: Europe/London
+  unit_system: metric
+  packages: !include_dir_named integrations
+  customize: !include_dir_merge_named customizations
+  whitelist_external_dirs:
+    - /tmp
+########## Organising configs ##########
+# https://www.home-assistant.io/docs/configuration/splitting_configuration/
+# https://www.home-assistant.io/docs/configuration/packages/
+#  https://www.home-assistant.io/docs/configuration/customizing-devices/
+########## Components with public URL ##########
+# https://duckdns.org
+# https://uptimerobot.com/
+# https://github.com/MarkAdamson/home-assistant-plugin-for-tasker
+# https://www.home-assistant.io/addons/duckdns/
+# https://www.home-assistant.io/components/http/#server_host
+# https://www.home-assistant.io/components/google_assistant/#first-time-setup
+# https://www.home-assistant.io/components/html5/#configuring-the-platform
+# https://www.home-assistant.io/components/ifttt/#setting-up-the-integration

@@ -1,0 +1,39 @@
+# https://www.home-assistant.io/integrations/recorder/
+recorder:
+  db_url: !secret mariadb_url
+  db_max_retries: 30
+  db_retry_wait: 10
+  purge_keep_days: 14
+  purge_interval: 1
+  include:
+    domains:
+      - person
+    entities:
+      - alarm_control_panel.blink_rafs_flat
+
+      - binary_sensor.rafs_pc
+
+      - climate.bedroom_heater
+      - climate.living_room_heater
+
+      - light.bathroom
+      - light.bedroom
+      - light.living_room
+
+      - sensor.blink_front_door_temperature
+      - sensor.hue_sensor_temperature
+      - sensor.hue_sensor_illuminance
+      - sensor.living_room_sensor_humidity
+      - sensor.living_room_sensor_temperature
+      - sensor.bedroom_sensor_humidity
+      - sensor.bedroom_sensor_temperature
+      - sensor.bedroom_motion_sensor_illuminance
+      - sensor.bathroom_motion_sensor_illuminance
+      - sensor.plug1_total_daily_energy
+      - sensor.plug2_total_daily_energy
+      - sensor.lynn_location
+      - sensor.raf_location
+
+      - switch.plug1_power
+      - switch.plug2_power
+      - switch.plug3_power

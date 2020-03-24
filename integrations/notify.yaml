@@ -1,0 +1,15 @@
+# https://www.home-assistant.io/integrations/notify/
+notify:
+  - platform: html5
+    name: web
+    vapid_pub_key: !secret vapid_pub_key
+    vapid_prv_key: !secret vapid_prv_key
+    vapid_email: !secret email
+  - platform: joaoapps_join
+    api_key: !secret join
+    device_id: !secret join_rafs_pixel_3a
+    name: join_rafs_pixel_3a
+  - platform: joaoapps_join
+    api_key: !secret join
+    device_id: !secret join_rafs_pc
+    name: join_rafs_pc

@@ -1,0 +1,17 @@
+# https://www.home-assistant.io/integrations/webostv/
+webostv:
+  host: lgwebostv.lan
+  name: LG TV
+  customize:
+    sources:
+      - Amazon Prime Video
+      - Chromecast
+      - Netflix
+      - PC
+      - PS4
+      - Plex
+      - Switch
+  turn_on_action:
+    service: wake_on_lan.send_magic_packet
+    data:
+      mac: !secret mac_lg_tv

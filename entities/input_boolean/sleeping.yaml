@@ -1,0 +1,4 @@
+sleeping:
+  name: Sleeping
+  initial: false
+  icon: mdi:sleep

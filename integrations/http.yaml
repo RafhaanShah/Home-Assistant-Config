@@ -1,0 +1,8 @@
+# https://www.home-assistant.io/integrations/http/
+http:
+  base_url: !secret server_full_url
+  server_port: !secret server_port
+  ssl_certificate: !secret ssl_certificate
+  ssl_key: !secret ssl_key
+  ip_ban_enabled: true
+  login_attempts_threshold: 1

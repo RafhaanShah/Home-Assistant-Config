@@ -1,0 +1,25 @@
+# https://www.home-assistant.io/integrations/google_assistant/
+google_assistant:
+  project_id: !secret google_project_id
+  service_account:
+    private_key: !secret google_service_account_key
+    client_email: !secret google_service_account_email
+  report_state: true
+  expose_by_default: false
+  entity_config:
+    climate.bedroom_heater:
+      name: Bedroom Heater
+      room: Bedroom
+      expose: true
+    climate.living_room_heater:
+      name: Living Rooom Heater
+      room: Living Room
+      expose: true
+    media_player.rafs_ps4:
+      name: PS4
+      room: Living Room
+      expose: true
+    light.sofa_lightstrip:
+      name: Sofa Lightstrip
+      room: Living Room
+      expose: true

@@ -1,0 +1,21 @@
+extends: default
+
+ignore: |
+  custom_components/
+  notebooks/
+  themes/
+  esphome/
+  node-red/
+  themes/
+  www/
+  ip_bans.yaml
+  known_devices.yaml
+  secrets.yaml
+
+rules:
+  document-start:
+    level: error
+    present: false
+  line-length:
+    level: error
+    max: 120

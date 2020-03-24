@@ -1,0 +1,12 @@
+# https://www.home-assistant.io/integrations/blink/
+blink:
+  username: !secret email
+  password: !secret blink
+  scan_interval: 1800
+  binary_sensors:
+    monitored_conditions:
+  sensors:
+    monitored_conditions:
+      - battery
+      - temperature
+      - wifi_strength

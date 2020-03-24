@@ -1,0 +1,5 @@
+# https://www.home-assistant.io/integrations/opnsense/
+opnsense:
+  url: https://rafs-opnsense.lan/api
+  api_secret: !secret opnsense_secret
+  api_key: !secret opnsense_key

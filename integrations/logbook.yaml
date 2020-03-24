@@ -1,0 +1,12 @@
+# https://www.home-assistant.io/integrations/logbook/
+logbook:
+  exclude:
+    entities:
+      - sensor.lynn_location
+      - sensor.raf_location
+
+      - switch.plug1_power
+      - switch.plug2_power
+      - switch.plug3_power
+    domains:
+      - device_tracker
