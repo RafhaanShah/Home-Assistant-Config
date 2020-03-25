@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Getting your configuration from GitHub
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
       - name: Running Yaml Lint
         uses: "docker://pipelinecomponents/yamllint:latest"
         with:
@@ -25,7 +25,7 @@ jobs:
     needs: [yamllint]
     steps:
       - name: Getting your configuration from GitHub
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
       - name: Copying dummy secrets
         run: |
           mv secrets_example.yaml secrets.yaml
