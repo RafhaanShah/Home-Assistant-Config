@@ -1,6 +1,11 @@
 #!/bin/sh
 set -e
 
+# Write json version file for README badge
+HA_VER=$(cat .HA_VERSION)
+echo "Setting version ${HA_VER}"
+echo "{\"version\":\"${HA_VER}\"}" > .github/version.json
+
 if ! [ -x "$(command -v prettier)" ]; then
   echo 'Warning: Prettier is not installed' >&2
 else
