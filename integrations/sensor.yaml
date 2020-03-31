@@ -1,2 +1,2 @@
 # https://www.home-assistant.io/integrations/sensor/
-climate: !include_dir_list ../entities/sensor
+sensor: !include_dir_list ../entities/sensor

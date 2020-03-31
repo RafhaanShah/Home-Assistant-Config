@@ -5,6 +5,7 @@ set -e
 HA_VER=$(cat .HA_VERSION)
 echo "Setting version ${HA_VER}"
 echo "{\"version\":\"${HA_VER}\"}" > .github/version.json
+git add .github/version.json
 
 if ! [ -x "$(command -v prettier)" ]; then
   echo 'Warning: Prettier is not installed' >&2
