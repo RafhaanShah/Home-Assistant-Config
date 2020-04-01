@@ -1,0 +1,14 @@
+description: Creates a persistent notification when there is an update available
+alias: Update Notification
+trigger:
+  platform: state
+  entity_id: binary_sensor.updater
+  from: "off"
+  to: "on"
+action:
+  service: persistent_notification.dismiss
+  data:
+    title: Update Available
+    message:
+      "Version {{ state_attr('binary_sensor.updater', 'newest_version') }}:
+      {{ state_attr('binary_sensor.updater', 'release_notes') }}"

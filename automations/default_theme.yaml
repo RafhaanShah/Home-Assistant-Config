@@ -1,5 +1,5 @@
-# Sets a theme when Home Assistant starts up
-alias: Set Theme
+description: Sets a theme when Home Assistant starts up
+alias: Default Theme
 trigger:
   platform: homeassistant
   event: start

@@ -1,5 +1,4 @@
-# Makes a service call when a webhook is received from IFTTT with an event type of 'call_service'
-id: ifttt
+description: Makes a service call when a webhook is received from IFTTT with an event type of 'call_service'
 alias: IFTTT
 trigger:
   platform: event
