@@ -15,11 +15,15 @@ google_assistant:
       name: Living Rooom Heater
       room: Living Room
       expose: true
+    light.sofa_lightstrip:
+      name: Sofa Lightstrip
+      room: Living Room
+      expose: true
     media_player.rafs_ps4:
       name: PS4
       room: Living Room
       expose: true
-    light.sofa_lightstrip:
-      name: Sofa Lightstrip
+    switch.plug1_power:
+      name: Fan
       room: Living Room
       expose: true

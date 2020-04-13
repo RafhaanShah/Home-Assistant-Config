@@ -6,7 +6,7 @@ trigger:
   from: "off"
   to: "on"
 action:
-  service: persistent_notification.dismiss
+  service: persistent_notification.create
   data:
     title: Update Available
     message:
