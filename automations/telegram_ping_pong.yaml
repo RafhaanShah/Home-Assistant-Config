@@ -1,0 +1,14 @@
+description: Replies to a ping message with pong
+alias: Telegram Ping Pong
+trigger:
+  platform: event
+  event_type: telegram_command
+  event_data:
+    command: "/ping"
+action:
+  - service: notify.telegram_raf
+    data:
+      message: "pong"
+      data:
+        keyboard:
+          - "/ping"

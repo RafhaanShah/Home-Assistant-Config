@@ -1,0 +1,4 @@
+# https://www.home-assistant.io/integrations/telegram
+- platform: telegram
+  name: telegram_raf
+  chat_id: !secret telegram_raf
