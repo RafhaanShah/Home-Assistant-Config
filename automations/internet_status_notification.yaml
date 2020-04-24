@@ -1,0 +1,11 @@
+description: Sends a notification when the internet connection turns back on
+alias: Internet Status Notification
+trigger:
+  platform: state
+  entity_id: binary_sensor.internet_connection
+  from: "off"
+  to: "on"
+action:
+  - service: notify.telegram_raf
+    data:
+      message: "Internet just turned back on"

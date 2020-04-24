@@ -1,0 +1,7 @@
+wake_rafs_pc:
+  description: Sends a magic packet to wake up Raf's PC
+  alias: Wake Raf's PC
+  sequence:
+    - data:
+        mac: !secret mac_rafs_pc
+      service: wake_on_lan.send_magic_packet

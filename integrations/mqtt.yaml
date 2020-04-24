@@ -4,11 +4,9 @@ mqtt:
   discovery: true
   discovery_prefix: homeassistant
   broker: core-mosquitto
-  port: 8883
+  port: 1883
   username: mqtt
   password: !secret mqtt
-  tls_insecure: true
-  certificate: auto
   birth_message:
     topic: "hass/status"
     payload: "online"
