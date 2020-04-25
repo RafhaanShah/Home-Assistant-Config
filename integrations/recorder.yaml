@@ -11,7 +11,7 @@ recorder:
     entities:
       - alarm_control_panel.blink_rafs_flat
 
-      - binary_sensor.rafs_pc
+      - binary_sensor.rafs_pc_power
 
       - climate.bedroom_heater
       - climate.living_room_heater

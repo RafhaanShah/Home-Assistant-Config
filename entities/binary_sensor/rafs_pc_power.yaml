@@ -1,6 +1,6 @@
 # https://www.home-assistant.io/integrations/ping/
 platform: ping
-name: rafs_pc
+name: rafs_pc_power
 host: rafs-pc.lan
 count: 5
 scan_interval: 60

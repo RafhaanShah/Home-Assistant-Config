@@ -1,3 +1,2 @@
-binary_sensor.rafs_pc:
-  friendly_name: Raf's PC
-  icon: mdi:desktop-tower-monitor
+binary_sensor.rafs_pc_power:
+  hidden: true

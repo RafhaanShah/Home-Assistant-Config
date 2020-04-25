@@ -1,0 +1,15 @@
+platform: template
+switches:
+  rafs_pc_power:
+    friendly_name: "Raf's PC"
+    value_template: "{{ is_state('binary_sensor.rafs_pc_power', 'on') }}"
+    turn_on:
+      service: wake_on_lan.send_magic_packet
+      data:
+        mac: !secret mac_rafs_pc
+    turn_off:
+      service: mqtt.publish
+      data:
+        topic: "iotlink/workgroup/rafs-pc/commands/suspend"
+        payload: ""
+    icon_template: mdi:desktop-tower-monitor

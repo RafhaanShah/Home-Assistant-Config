@@ -1,2 +1,2 @@
-# https://www.home-assistant.io/integrations/binary_sensor/
+# https://www.home-assistant.io/integrations/binary_sensor.template/
 binary_sensor: !include_dir_list ../entities/binary_sensor

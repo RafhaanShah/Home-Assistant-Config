@@ -27,3 +27,7 @@ google_assistant:
       name: Fan
       room: Living Room
       expose: true
+    switch.rafs_pc_power:
+      name: Computer
+      room: Living Room
+      expose: true

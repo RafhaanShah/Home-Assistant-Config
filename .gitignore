@@ -9,9 +9,9 @@
 !*.yaml
 
 !automations/
-!integrations/
 !customizations/
 !entities/
+!integrations/
 !scripts/
 !services/
 
