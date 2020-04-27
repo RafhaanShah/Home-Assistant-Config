@@ -12,4 +12,4 @@ action:
   - service: persistent_notification.create
     data:
       title: Internet On
-      message: "{{ now().hour }}:{{ now().minute }}"
+      message: "{{ states('sensor.time') }}"
