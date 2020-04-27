@@ -1,0 +1,7 @@
+description: Runs a speed test
+alias: Speed Test
+trigger:
+  platform: time
+  at: "02:30:00"
+action:
+  service: speedtestdotnet.speedtest

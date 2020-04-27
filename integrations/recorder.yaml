@@ -33,6 +33,8 @@ recorder:
       - sensor.plug2_total_daily_energy
       - sensor.lynn_location
       - sensor.raf_location
+      - sensor.speedtest_download
+      - sensor.speedtest_upload
 
       - switch.plug1_power
       - switch.plug2_power
