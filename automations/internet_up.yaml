@@ -1,0 +1,15 @@
+description: Sends a notification when WAN is up
+alias: Internet Up Notification
+trigger:
+  platform: state
+  entity_id: binary_sensor.internet_connection
+  from: "off"
+  to: "on"
+action:
+  - service: notify.telegram_raf
+    data:
+      message: Internet just turned back on
+  - service: persistent_notification.create
+    data:
+      title: Internet On
+      message: "{{ now().hour }}:{{ now().minute }}"

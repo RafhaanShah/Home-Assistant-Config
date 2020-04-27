@@ -4,6 +4,10 @@
 
 Configuration files for the awesome [Home Assistant](https://www.home-assistant.io/).
 
+<p align="center">
+    <img src="https://github.com/home-assistant/home-assistant-assets/blob/master/loading-screen.gif">
+</p>
+
 [Add-ons](https://www.home-assistant.io/addons/):
 
 - [Appdaemon](https://github.com/hassio-addons/addon-appdaemon)
@@ -21,8 +25,10 @@ Configuration files for the awesome [Home Assistant](https://www.home-assistant.
 
 Additional Components:
 
-- [IOT Link](https://gitlab.com/iotlink/iotlink)
+- [Home Assistant Community Store](https://hacs.xyz/)
 - [Home Assistant Plugin for Tasker](https://github.com/MarkAdamson/home-assistant-plugin-for-tasker)
+- [IOT Link](https://gitlab.com/iotlink/iotlink)
+- [Tuya Convert](https://github.com/ct-Open-Source/tuya-convert)
 
 [ha-ci-img]: https://github.com/RafhaanShah/Home-Assistant-Config/workflows/Home%20Assistant%20CI/badge.svg
 [ha-ci-link]: https://github.com/RafhaanShah/Home-Assistant-Config/actions

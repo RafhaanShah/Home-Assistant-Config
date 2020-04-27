@@ -6,9 +6,9 @@ trigger:
   event_data:
     command: "/ping"
 action:
-  - service: notify.telegram_raf
+  service: notify.telegram_raf
+  data:
+    message: "pong"
     data:
-      message: "pong"
-      data:
-        keyboard:
-          - "/ping"
+      keyboard:
+        - "/ping"

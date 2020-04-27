@@ -1,0 +1,12 @@
+description: Sends a notification when WAN is down
+alias: Internet Down Notification
+trigger:
+  platform: state
+  entity_id: binary_sensor.internet_connection
+  from: "on"
+  to: "off"
+action:
+  - service: persistent_notification.create
+    data:
+      title: Internet Down
+      message: "{{ now().hour }}:{{ now().minute }}"
