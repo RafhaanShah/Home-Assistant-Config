@@ -1,8 +1,9 @@
-*
+/*
 
 !.gitignore
 !.git-hooks/
 !.github/
+!.vscode/
 !.yamllint
 !.HA_VERSION
 !*.md
