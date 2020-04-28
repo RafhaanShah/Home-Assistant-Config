@@ -1,0 +1,12 @@
+# https://www.home-assistant.io/integrations/uk_transport/
+platform: uk_transport
+app_id: !secret uk_transport_id
+app_key: !secret uk_transport_key
+scan_interval: 600
+queries:
+  - mode: bus
+    origin: !secret uk_transport_bus_qp
+    destination: Queens Park
+  - mode: bus
+    origin: !secret uk_transport_bus_ncg
+    destination: New Cross Gate

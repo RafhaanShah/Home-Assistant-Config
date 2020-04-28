@@ -1,0 +1,8 @@
+# https://www.home-assistant.io/integrations/london_underground/
+platform: london_underground
+line:
+  - Circle
+  - District
+  - Hammersmith & City
+  - Northern
+  - Victoria
