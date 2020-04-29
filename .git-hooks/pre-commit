@@ -8,12 +8,12 @@ echo "{\"version\":\"${HA_VER}\"}" > .github/version.json
 git add .github/version.json
 
 if ! [ -x "$(command -v prettier)" ]; then
-  echo 'Warning: Prettier is not installed' >&2
+  echo "Warning: Prettier is not installed" >&2
 else
   # Get all staged files
   echo "Running Prettier..."
   FILES=$(git diff --cached --name-only --diff-filter=ACMR "*.md" "*.yml" "*.yaml" | sed 's| |\\ |g')
-  [ -z "$FILES" ] && exit 0
+  [ -z "$FILES" ] && echo "No markdown or yaml files to check..." && exit 0
 
   # Prettify all selected files
   echo "$FILES" | xargs prettier --write
@@ -23,7 +23,7 @@ else
 fi
 
 if ! [ -x "$(command -v yamllint)" ]; then
-  echo 'Warning: yamllint is not installed' >&2
+  echo "Warning: yamllint is not installed" >&2
 else
   # Run yamllint
   echo "Running yamllint..."
