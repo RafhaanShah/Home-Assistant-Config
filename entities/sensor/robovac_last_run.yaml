@@ -1,0 +1,8 @@
+platform: template
+sensors:
+  robovac_last_run:
+    value_template: "{{ (strptime(states('sensor.date'), '%Y-%m-%d').date()
+      - strptime(states('input_datetime.robovac_last_run'), '%Y-%m-%d').date()).days }}"
+    entity_id:
+      - sensor.date
+      - input_datetime.robovac_last_run

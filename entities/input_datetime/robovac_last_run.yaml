@@ -1,0 +1,4 @@
+robovac_last_run:
+  name: RoboVac Last Run
+  has_date: true
+  has_time: false

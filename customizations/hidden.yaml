@@ -1,0 +1,5 @@
+binary_sensor.rafs_pc_power:
+  hidden: true
+
+input_datetime.robovac_last_run:
+  hidden: true
