@@ -1,0 +1,9 @@
+description: Set the log level
+alias: Log Level
+trigger:
+  platform: state
+  entity_id: input_select.log_level
+action:
+  service: logger.set_default_level
+  data_template:
+    level: "{{ states('input_select.log_level') }}"

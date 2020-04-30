@@ -1,0 +1,10 @@
+description: Set the log level for Zigbee2Mqtt
+alias: Zigbee2mqtt Log Level
+trigger:
+  platform: state
+  entity_id: input_select.zigbee2mqtt_log_level
+action:
+  service: mqtt.publish
+  data:
+    payload_template: "{{ states('input_select.zigbee2mqtt_log_level') }}"
+    topic: zigbee2mqtt/bridge/config/log_level
