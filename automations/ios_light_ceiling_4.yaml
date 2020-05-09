@@ -1,0 +1,9 @@
+alias: "iOS Ceiling Light 4"
+trigger:
+  platform: event
+  event_type: ios.action_fired
+  event_data:
+    actionName: "Toggle Ceiling 4"
+action:
+  service: light.toggle
+  entity_id: light.ceiling_4
