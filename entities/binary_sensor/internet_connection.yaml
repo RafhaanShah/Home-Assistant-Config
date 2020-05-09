@@ -1,6 +1,6 @@
 # https://www.home-assistant.io/integrations/ping/
 platform: ping
 name: internet_connection
-host: 1.1.1.1
+host: 8.8.8.8
 count: 5
 scan_interval: 60
