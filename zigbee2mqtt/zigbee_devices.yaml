@@ -1,0 +1,56 @@
+## Zigbee2Mqtt Device Configuration
+# https://www.zigbee2mqtt.io/getting_started/flashing_the_cc2531.html
+# https://www.zigbee2mqtt.io/information/mqtt_topics_and_message_structure.html
+# https://www.zigbee2mqtt.io/information/configuration.html
+# CC2531 Router https://www.zigbee2mqtt.io/information/zigbee_network.html
+"0x00124b00194a075c":
+  friendly_name: cc_router_1
+## Lights
+# Gledopto GL-C-008 https://www.zigbee2mqtt.io/devices/GL-C-008.html
+"0x00124b001d43e217":
+  friendly_name: sofa_lightstrip
+## Contact Sensors
+# Xiaomi MCCGQ01LM https://www.zigbee2mqtt.io/devices/MCCGQ01LM.html
+"0x00158d000358353c":
+  friendly_name: front_door_sensor
+"0x00158d000358348c":
+  friendly_name: living_room_window_sensor
+## General Sensors
+# Xiaomi WSDCGQ11LM https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
+"0x00158d000411aad5":
+  friendly_name: bedroom_sensor
+  debounce: 1
+"0x00158d0003f04673":
+  friendly_name: living_room_sensor
+  debounce: 1
+## Motion Sensors
+# Xiaomi RTCGQ11LM https://www.zigbee2mqtt.io/devices/RTCGQ11LM.html
+"0x00158d0003f43658":
+  friendly_name: bathroom_motion_sensor
+  debounce: 0.2
+"0x00158d0003232db0":
+  friendly_name: bedroom_motion_sensor
+  debounce: 0.2
+# Philips 9290012607 https://www.zigbee2mqtt.io/devices/9290012607.html
+"0x0017880104b7c3fd":
+  friendly_name: hue_sensor
+  debounce: 0.2
+## Water Leak Sensors
+# Xiaomi SJCGQ11LM https://www.zigbee2mqtt.io/devices/SJCGQ11LM.html
+"0x00158d000460445d":
+  friendly_name: kitchen_water_sensor
+  retain: true
+"0x00158d00045fe6e6":
+  friendly_name: boiler_water_sensor
+  retain: true
+"0x00158d00042beab3":
+  friendly_name: bathroom_water_sensor
+  retain: true
+## Power Plugs
+# IKEA E1603/E1702 https://www.zigbee2mqtt.io/devices/E1603_E1702.html
+"0x086bd7fffe054129":
+  friendly_name: zplug1
+  debounce: 0.5
+"0x000b3cfffefad894":
+  friendly_name: zplug2
+  debounce: 0.5

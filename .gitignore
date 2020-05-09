@@ -17,6 +17,7 @@
 !integrations/
 !scripts/
 !services/
+!zigbee2mqtt/
 
 ip_bans.yaml
 known_devices.yaml
