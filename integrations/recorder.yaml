@@ -21,7 +21,7 @@ recorder:
 
       - sensor.blink_front_door_temperature
       - sensor.hue_sensor_temperature
-      - sensor.hue_sensor_illuminance
+      - sensor.hue_sensor_illuminance_lux
       - sensor.living_room_sensor_humidity
       - sensor.living_room_sensor_temperature
       - sensor.bedroom_sensor_humidity
