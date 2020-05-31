@@ -19,6 +19,7 @@
 !services/
 !zigbee2mqtt/
 
+.ip_authenticated.yaml
 google_calendars.yaml
 ip_bans.yaml
 known_devices.yaml
