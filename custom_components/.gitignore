@@ -1,4 +1,2 @@
-*
-
-!.gitignore
-!eufy_vacuum/
+__pycache__/
+hacs/
