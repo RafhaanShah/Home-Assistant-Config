@@ -1,0 +1,16 @@
+# https://www.home-assistant.io/integrations/proximity/
+proximity:
+  raf_home:
+    ignored_zones:
+      - raf_work
+    devices:
+      - device_tracker.raf_pixel3a_app
+    tolerance: 100
+    unit_of_measurement: km
+  lynn_home:
+    ignored_zones:
+      - lynn_work
+    devices:
+      - device_tracker.lynn_iphone_app
+    tolerance: 100
+    unit_of_measurement: km
