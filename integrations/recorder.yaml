@@ -32,6 +32,7 @@ recorder:
       - sensor.plug2_total_daily_energy
       - sensor.lynn_location
       - sensor.raf_location
+      - sensor.weather_temperature
 
       - switch.plug1_power
       - switch.plug2_power
