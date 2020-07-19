@@ -1,0 +1,3 @@
+vacuum_clean:
+  name: Vacuum Clean
+  icon: mdi:robot-vacuum
