@@ -15,8 +15,8 @@ homeassistant:
   internal_url: !secret server_full_url
   packages: !include_dir_named integrations
   customize: !include_dir_merge_named customizations
-  whitelist_external_dirs:
-    - /tmp
+  allowlist_external_dirs:
+    - /share
 ########## Organising configs ##########
 # https://www.home-assistant.io/docs/configuration/splitting_configuration/
 # https://www.home-assistant.io/docs/configuration/packages/
