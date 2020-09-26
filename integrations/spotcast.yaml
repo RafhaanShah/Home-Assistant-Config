@@ -1,0 +1,4 @@
+# https://github.com/fondberg/spotcast
+spotcast:
+  sp_dc: !secret spotcast_dc
+  sp_key: !secret spotcast_key
