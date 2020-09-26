@@ -1,3 +1,0 @@
-# https://www.home-assistant.io/integrations/ifttt/
-ifttt:
-  key: !secret ifttt
