@@ -5,7 +5,6 @@ heater: switch.plug2_power
 target_sensor: sensor.bedroom_sensor_temperature
 min_temp: 15
 max_temp: 25
-target_temp: 20
 cold_tolerance: 0.2
 hot_tolerance: 0.2
 min_cycle_duration:
