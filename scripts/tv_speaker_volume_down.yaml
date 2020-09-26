@@ -1,0 +1,9 @@
+# Script to call Broadlink device to send IR command to turn speaker volume down
+tv_speaker_volume_down:
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.broadlink_rm3
+        device: tv_speakers
+        command: vol_down
+        num_repeats: 2
