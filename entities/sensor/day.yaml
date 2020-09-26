@@ -3,11 +3,9 @@ sensors:
   dayofweek:
     value_template: "{{ ['Monday','Tuesday','Wednesday','Thursday',
       'Friday','Saturday','Sunday'][now().weekday()] }}"
-    entity_id: sensor.date
   month:
     value_template: "{{ ['January','February','March','April','May','June',
       'July','August','September','October','November','December'][now().month-1] }}"
-    entity_id: sensor.date
   dayofmonth:
     value_template: >
       {%- set num = now().day | int %}
@@ -17,4 +15,3 @@ sensors:
       {%- else %}
         {{- num }}{{ d.get(num % 10, 'th') }}
       {%- endif %}
-    entity_id: sensor.date
