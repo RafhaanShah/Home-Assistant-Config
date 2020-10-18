@@ -17,10 +17,13 @@ homeassistant:
   customize: !include_dir_merge_named customizations
   allowlist_external_dirs:
     - !secret external_dir
+  media_dirs:
+    media: !secret media_dir
 ########## Organising configs ##########
 # https://www.home-assistant.io/docs/configuration/splitting_configuration/
 # https://www.home-assistant.io/docs/configuration/packages/
 #  https://www.home-assistant.io/docs/configuration/customizing-devices/
+
 ########## Components with public URL ##########
 # https://duckdns.org
 # https://uptimerobot.com/

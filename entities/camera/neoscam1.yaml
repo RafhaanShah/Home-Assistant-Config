@@ -5,9 +5,8 @@ username: root
 password: !secret neoscam1
 authentication: basic
 still_image_url: https://neoscam1.lan/cgi-bin/currentpic.cgi
-# stream_source: !secret neoscam1url
+stream_source: !secret neoscam1url
 verify_ssl: false
-scan_interval: 10
 # platform: ffmpeg
 # name: NeosCam1
 # input: !secret neoscam1ffmpeg
