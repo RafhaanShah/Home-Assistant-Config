@@ -3,8 +3,7 @@ alias: Update Notification
 trigger:
   platform: state
   entity_id: binary_sensor.updater
-  from: "off"
-  to: "on"
+  attribute: newest_version
 action:
   service: persistent_notification.create
   data:

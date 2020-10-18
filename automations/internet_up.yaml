@@ -11,5 +11,5 @@ action:
       message: Internet just turned back on
   - service: persistent_notification.create
     data:
-      title: Internet On
+      title: Internet Up
       message: "{{ states('sensor.time') }}"
