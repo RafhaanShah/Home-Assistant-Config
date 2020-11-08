@@ -16,9 +16,11 @@
 "0x00158d000483f7fa":
   friendly_name: living_room_door_sensor
 "0x00158d000483f689":
-  friendly_name: bathrrom_door_sensor
+  friendly_name: bathroom_door_sensor
 "0x00158d000488cb45":
   friendly_name: guest_room_door_sensor
+"0x00158d000488cf1a":
+  friendly_name: bedroom_door_sensor
 
 ## Multi Sensors
 # Xiaomi WSDCGQ11LM https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
@@ -36,6 +38,10 @@
   debounce: 1
 
 ## Motion Sensors
+# Philips Hue 9290012607 https://www.zigbee2mqtt.io/devices/9290012607.html
+"0x0017880104b7c3fd":
+  friendly_name: hue_sensor
+  debounce: 0.2
 # Xiaomi RTCGQ11LM https://www.zigbee2mqtt.io/devices/RTCGQ11LM.html
 "0x00158d0003f43658":
   friendly_name: bathroom_motion_sensor
@@ -43,9 +49,8 @@
 "0x00158d0003232db0":
   friendly_name: bedroom_motion_sensor
   debounce: 0.2
-# Philips 9290012607 https://www.zigbee2mqtt.io/devices/9290012607.html
-"0x0017880104b7c3fd":
-  friendly_name: hue_sensor
+"0x00158d00052d4500":
+  friendly_name: guest_room_motion_sensor
   debounce: 0.2
 "0x00158d000572a400":
   friendly_name: front_door_motion_sensor
@@ -67,10 +72,10 @@
 # IKEA E1603/E1702 https://www.zigbee2mqtt.io/devices/E1603_E1702.html
 "0x086bd7fffe054129":
   friendly_name: plug4
-  debounce: 0.5
+  debounce: 1
 "0x000b3cfffefad894":
   friendly_name: plug5
-  debounce: 0.5
+  debounce: 1
 
 ## Other
 # CC2531 Router https://www.zigbee2mqtt.io/information/zigbee_network.html
