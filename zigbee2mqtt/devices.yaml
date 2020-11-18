@@ -36,6 +36,9 @@
 "0x00158d00053dfa02":
   friendly_name: guest_room_sensor
   debounce: 1
+"0x00158d0004ac32ca":
+  friendly_name: 'outdoor_sensor'
+  debounce: 1
 
 ## Motion Sensors
 # Philips Hue 9290012607 https://www.zigbee2mqtt.io/devices/9290012607.html
