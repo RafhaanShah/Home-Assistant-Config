@@ -71,6 +71,15 @@
   friendly_name: bathroom_water_sensor
   retain: true
 
+## Wall Switches
+# Xiaomi WXKG02LM https://www.zigbee2mqtt.io/devices/WXKG02LM.html
+'0x00158d00047e503f':
+  friendly_name: hallway_switch
+  legacy: false
+'0x00158d00049fd58f':
+  friendly_name: kitchen_switch
+  legacy: false
+
 ## Power Plugs
 # IKEA E1603/E1702 https://www.zigbee2mqtt.io/devices/E1603_E1702.html
 "0x086bd7fffe054129":
