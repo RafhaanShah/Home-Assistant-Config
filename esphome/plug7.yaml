@@ -1,12 +1,12 @@
-# https://templates.blakadder.com/slitinto_NX-SM110.html
+# https://templates.blakadder.com/gosund_UP111.html
 
 substitutions:
-  devicename: plug2
-  upper_devicename: Plug2
+  devicename: plug7
+  upper_devicename: Plug7
 
 esphome:
   name: ${devicename}
-  comment: Slitinto NX-SM110
+  comment: Gosund UP111
   platform: ESP8266
   board: esp01_1m
 
@@ -37,8 +37,8 @@ binary_sensor:
   - platform: gpio
     id: button
     pin:
-      number: GPIO13
-      inverted: True
+      number: GPIO3
+      inverted: False
     on_press:
       - switch.toggle: relay
 
@@ -46,15 +46,15 @@ switch:
   - platform: gpio
     name: "${upper_devicename} Power"
     id: relay
-    pin: GPIO15
+    pin: GPIO14
     on_turn_on:
-      - switch.toggle: ledred
+      - switch.toggle: ledblue
     on_turn_off:
-      - switch.toggle: ledred
+      - switch.toggle: ledblue
     restore_mode: ALWAYS_OFF
   - platform: gpio
-    id: ledred
-    pin: GPIO0
+    id: ledblue
+    pin: GPIO1
     inverted: True
     restore_mode: ALWAYS_OFF
 
@@ -66,35 +66,35 @@ sensor:
     sel_pin:
       number: GPIO12
       inverted: True
-    cf_pin: GPIO05
-    cf1_pin: GPIO14
+    cf_pin: GPIO04
+    cf1_pin: GPIO5
     power:
       name: "${upper_devicename} Wattage"
       unit_of_measurement: W
       id: wattage
       accuracy_decimals: 0
       filters:
-        - calibrate_linear:
-            - 715.839104 -> 100
-            - 2157.142304 -> 300
+        - calibrate_linear: # Map sensor -> true value
+            - 237.9 -> 41.1
+            - 4820 -> 843.9
     current:
       name: "${upper_devicename} Amperage"
       unit_of_measurement: A
       id: current
       accuracy_decimals: 1
       filters:
-        - calibrate_linear:
-            - 153.529577 -> 100
-            - 460.615377 -> 300
+        - calibrate_linear: # Map sensor -> true value
+            - 0.23014 -> 0.170
+            - 4.08463 -> 3.403
     voltage:
       name: "${upper_devicename} Voltage"
       unit_of_measurement: V
       id: voltage
       accuracy_decimals: 0
       filters:
-        - calibrate_linear:
-            - 628 -> 244
-            - 634 -> 246
+        - calibrate_linear: # Map sensor -> true value
+            - 609.7 -> 245.4
+            - 614.7 -> 247.0
     change_mode_every: 3
     update_interval: 3s
   - platform: total_daily_energy
