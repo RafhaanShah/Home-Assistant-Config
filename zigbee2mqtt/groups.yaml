@@ -1,0 +1,5 @@
+"1":
+  friendly_name: kitchen_lights
+  devices:
+    - 0xbc33acfffe93bef4/1
+    - 0x842e14fffe994dc9/1

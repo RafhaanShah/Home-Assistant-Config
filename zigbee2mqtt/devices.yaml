@@ -6,6 +6,11 @@
 # Gledopto GL-C-008 https://www.zigbee2mqtt.io/devices/GL-C-008.html
 "0x00124b001d43e217":
   friendly_name: sofa_lightstrip
+# Ikea Tradfri GU10 https://www.zigbee2mqtt.io/devices/LED1837R5.html
+"0xbc33acfffe93bef4":
+  friendly_name: "kitchen_light_1"
+"0x842e14fffe994dc9":
+  friendly_name: "kitchen_light_2"
 
 ## Contact Sensors
 # Xiaomi MCCGQ01LM https://www.zigbee2mqtt.io/devices/MCCGQ01LM.html
@@ -37,7 +42,7 @@
   friendly_name: guest_room_sensor
   debounce: 1
 "0x00158d0004ac32ca":
-  friendly_name: 'outdoor_sensor'
+  friendly_name: "outdoor_sensor"
   debounce: 1
 
 ## Motion Sensors
@@ -70,13 +75,16 @@
 "0x00158d00042beab3":
   friendly_name: bathroom_water_sensor
   retain: true
+"0x00158d0005d015cc":
+  friendly_name: "outdoor_water_sensor"
+  retain: true
 
 ## Wall Switches
 # Xiaomi WXKG02LM https://www.zigbee2mqtt.io/devices/WXKG02LM.html
-'0x00158d00047e503f':
+"0x00158d00047e503f":
   friendly_name: hallway_switch
   legacy: false
-'0x00158d00049fd58f':
+"0x00158d00049fd58f":
   friendly_name: kitchen_switch
   legacy: false
 

@@ -1,0 +1,10 @@
+alias: Kitchen Switch
+description: Toggles Kitchen Lights
+mode: single
+trigger:
+  - platform: state
+    entity_id: sensor.kitchen_switch_action
+    to: single_left
+action:
+  - service: light.toggle
+    entity_id: light.kitchen

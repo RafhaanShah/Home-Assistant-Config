@@ -19,9 +19,9 @@ google_assistant:
       name: Sofa Lightstrip
       room: Living Room
       expose: true
-    media_player.rafs_ps4:
-      name: PS4
-      room: Living Room
+    light.kitchen:
+      name: Kitchen Lights
+      room: Kitchen
       expose: true
     switch.plug1_power:
       name: Fan
