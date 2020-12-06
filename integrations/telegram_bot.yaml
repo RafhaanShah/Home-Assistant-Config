@@ -1,6 +1,6 @@
 # https://www.home-assistant.io/integrations/telegram_bot/
 telegram_bot:
-  - platform: polling
+  - platform: broadcast
     api_key: !secret telegram_key
     allowed_chat_ids:
       - !secret telegram_raf
