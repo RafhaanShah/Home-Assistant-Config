@@ -1,3 +1,4 @@
+# https://www.home-assistant.io/integrations/switch.template/
 platform: template
 switches:
   rafs_pc_power:

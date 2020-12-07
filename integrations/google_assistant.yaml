@@ -31,7 +31,7 @@ google_assistant:
       name: Computer
       room: Living Room
       expose: true
-    script.tv_speaker_power:
+    switch.tv_speaker_power:
       name: TV Speaker Power
       room: Living Room
       expose: true
