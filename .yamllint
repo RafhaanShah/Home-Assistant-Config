@@ -19,3 +19,6 @@ rules:
   line-length:
     level: error
     max: 120
+  comments:
+    level: error
+    min-spaces-from-content: 1
