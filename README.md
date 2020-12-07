@@ -2,26 +2,22 @@
 
 [![Home Assistant CI][ha-ci-img]][ha-ci-link] [![Home Assistant Version][ha-version-img]][ha-version-link] [![Uptime Status][ha-uptime-img]][ha-uptime-link] [![Uptime Week][ha-uptime-week-img]][ha-uptime-link]
 
-Configuration files for the awesome [Home Assistant](https://www.home-assistant.io/).
+Configuration files for the awesome [Home Assistant](https://www.home-assistant.io/)
 
 <p align="center">
-    <img src="https://github.com/home-assistant/home-assistant-assets/blob/master/loading-screen.gif">
+    <img src="https://github.com/home-assistant/home-assistant-assets/blob/master/misc/loading-screen.gif">
 </p>
 
 [Add-ons](https://www.home-assistant.io/addons/):
 
 - [Appdaemon](https://github.com/hassio-addons/addon-appdaemon)
 - [Assistant Relay](https://github.com/Apipa169/Assistant-Relay-for-Hassio)
-- [Check Config](https://github.com/home-assistant/hassio-addons/tree/master/check_config)
 - [Duck DNS](https://github.com/home-assistant/hassio-addons/tree/master/duckdns)
 - [ESPHome](https://github.com/esphome/hassio)
-- [File Editor](https://github.com/danielperna84/hass-configurator)
-- [Google Drive Backup](https://github.com/sabeechen/hassio-google-drive-backup)
 - [MariaDB](https://github.com/home-assistant/hassio-addons/tree/master/mariadb)
 - [Mosquitto](https://github.com/home-assistant/hassio-addons/tree/master/mosquitto)
 - [Node-Red](https://github.com/hassio-addons/addon-node-red)
 - [Zigbee2Mqtt](https://github.com/danielwelch/hassio-zigbee2mqtt)
-- [Zigbee2Mqtt Assistant](https://github.com/yllibed/Zigbee2MqttAssistant)
 
 Additional Components:
 
