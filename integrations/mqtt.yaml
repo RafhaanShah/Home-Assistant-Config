@@ -1,5 +1,4 @@
 # https://www.home-assistant.io/integrations/mqtt/
-# /share/zigbee2mqtt/zigbee_devices.yaml -> location of z2m device config file
 mqtt:
   discovery: true
   discovery_prefix: homeassistant
