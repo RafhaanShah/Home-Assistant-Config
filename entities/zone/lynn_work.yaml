@@ -1,5 +1,0 @@
-name: lynn_work
-latitude: !secret zone_lynn_work_lat
-longitude: !secret zone_lynn_work_lon
-radius: 100
-icon: mdi:office-building

@@ -1,5 +1,0 @@
-name: raf_work
-latitude: !secret zone_raf_work_lat
-longitude: !secret zone_raf_work_lon
-radius: 100
-icon: mdi:office-building

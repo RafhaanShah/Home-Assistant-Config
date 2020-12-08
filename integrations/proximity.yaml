@@ -1,15 +1,17 @@
 # https://www.home-assistant.io/integrations/proximity/
 proximity:
   raf_home:
+    zone: home
     ignored_zones:
-      - raf_work
+      - rafs_work
     devices:
       - device_tracker.rafs_pixel_3a
     tolerance: 100
     unit_of_measurement: km
   lynn_home:
+    zone: home
     ignored_zones:
-      - lynn_work
+      - lynns_work
     devices:
       - device_tracker.lynns_iphone
     tolerance: 100

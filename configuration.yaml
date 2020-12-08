@@ -19,8 +19,8 @@ default_config:
 homeassistant:
   name: Raf's Flat
   elevation: 10
-  latitude: !secret zone_home_lat
-  longitude: !secret zone_home_lon
+  latitude: !secret home_lat
+  longitude: !secret home_lon
   time_zone: Europe/London
   unit_system: metric
   external_url: !secret server_full_url
