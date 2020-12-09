@@ -8,6 +8,20 @@ Configuration files for the awesome [Home Assistant](https://www.home-assistant.
     <img src="https://github.com/home-assistant/home-assistant-assets/blob/master/misc/loading-screen.gif">
 </p>
 
+GUI [Integrations](https://www.home-assistant.io/integrations/):
+
+- [Blink](https://www.home-assistant.io/integrations/blink)
+- [Broadlink](https://www.home-assistant.io/integrations/broadlink)
+- [ESPHome](https://www.home-assistant.io/integrations/esphome/)
+- [Google Cast](https://www.home-assistant.io/integrations/cast)
+- [Hacs](https://hacs.xyz/docs/configuration/start)
+- [Mobile App](https://www.home-assistant.io/integrations/mobile_app/)
+- [MQTT](https://www.home-assistant.io/integrations/mqtt)
+- [Philips Hue](https://www.home-assistant.io/integrations/hue)
+- [Pi-hole](https://www.home-assistant.io/integrations/pi_hole)
+- [Spotify](https://www.home-assistant.io/integrations/spotify)
+- [UPnP](https://www.home-assistant.io/integrations/upnp)
+
 [Add-ons](https://www.home-assistant.io/addons/):
 
 - [Appdaemon](https://github.com/hassio-addons/addon-appdaemon)
@@ -21,7 +35,6 @@ Configuration files for the awesome [Home Assistant](https://www.home-assistant.
 
 Additional Components:
 
-- [Home Assistant Community Store](https://hacs.xyz/)
 - [Home Assistant Plugin for Tasker](https://github.com/MarkAdamson/home-assistant-plugin-for-tasker)
 - [IOT Link](https://gitlab.com/iotlink/iotlink)
 - [Tuya Convert](https://github.com/ct-Open-Source/tuya-convert)
