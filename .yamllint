@@ -1,16 +1,22 @@
 extends: default
 
 ignore: |
+  .storage/
+  appdaemon/
   custom_components/
+  deps/
   notebooks/
   themes/
   esphome/
   node-red/
   themes/
   www/
+  zigbee2mqtt/
+  .ip_authenticated.yaml
   ip_bans.yaml
   known_devices.yaml
   secrets.yaml
+  google_calendars.yaml
 
 rules:
   document-start:

@@ -1,2 +1,9 @@
 # https://github.com/thomasloven/hass-browser_mod
 browser_mod:
+  97d50683-e44d0eb2:
+    name: browser_rafs_pc
+    disable:
+      - light
+      - media_player
+  disable:
+    - all

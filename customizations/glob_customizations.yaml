@@ -1,0 +1,11 @@
+# https://www.home-assistant.io/docs/configuration/customizing-devices/
+"binary_sensor.*window*_sensor_contact":
+  device_class: window
+"light.*ceiling*":
+  icon: mdi:globe-light
+"light.*_lightstrip":
+  icon: mdi:led-strip-variant
+"light.kitchen*":
+  icon: mdi:ceiling-light
+"media_player.*_mini":
+  icon: mdi:speaker

@@ -26,7 +26,8 @@ homeassistant:
   external_url: !secret server_full_url
   internal_url: !secret server_full_url
   packages: !include_dir_named integrations
-  customize: !include_dir_merge_named customizations
+  customize: !include customizations/customizations.yaml
+  customize_glob: !include customizations/glob_customizations.yaml
   allowlist_external_dirs:
     - !secret external_dir
   media_dirs:
