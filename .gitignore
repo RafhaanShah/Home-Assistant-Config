@@ -15,6 +15,7 @@
 !entities/
 !esphome/
 !integrations/
+!scenes/
 !scripts/
 !services/
 !zigbee2mqtt/
