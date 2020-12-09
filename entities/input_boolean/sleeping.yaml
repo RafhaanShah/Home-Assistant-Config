@@ -1,3 +1,2 @@
-sleeping:
-  name: Sleeping
-  icon: mdi:sleep
+name: Sleeping
+icon: mdi:sleep

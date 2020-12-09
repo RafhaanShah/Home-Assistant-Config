@@ -1,5 +1,4 @@
-assistant_relay:
-  url: http://6a3d001f-assistant-relay:3000/assistant
-  method: POST
-  content_type: "application/json"
-  payload: '{"command":"{{ command }}", "user":"Raf"}'
+url: http://6a3d001f-assistant-relay:3000/assistant
+method: POST
+content_type: "application/json"
+payload: '{"command":"{{ command }}", "user":"Raf"}'

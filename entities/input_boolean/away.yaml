@@ -1,3 +1,2 @@
-away:
-  name: Away
-  icon: mdi:airplane-takeoff
+name: Away
+icon: mdi:airplane-takeoff
