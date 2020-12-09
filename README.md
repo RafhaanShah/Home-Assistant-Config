@@ -26,11 +26,17 @@ GUI [Integrations](https://www.home-assistant.io/integrations/):
 
 - [Appdaemon](https://github.com/hassio-addons/addon-appdaemon)
 - [Assistant Relay](https://github.com/Apipa169/Assistant-Relay-for-Hassio)
+- [Check Config](https://github.com/home-assistant/addons/tree/master/check_config)
 - [Duck DNS](https://github.com/home-assistant/hassio-addons/tree/master/duckdns)
 - [ESPHome](https://github.com/esphome/hassio)
+- [File Editor](https://github.com/home-assistant/addons/tree/master/configurator)
+- [Google Drive Backup](https://github.com/sabeechen/hassio-google-drive-backup)
 - [MariaDB](https://github.com/home-assistant/hassio-addons/tree/master/mariadb)
 - [Mosquitto](https://github.com/home-assistant/hassio-addons/tree/master/mosquitto)
 - [Node-Red](https://github.com/hassio-addons/addon-node-red)
+- [Portainer](https://github.com/hassio-addons/addon-portainer)
+- [SSH & Web Terminal](https://github.com/hassio-addons/addon-ssh)
+- [Samba Share](https://github.com/home-assistant/addons/tree/master/samba)
 - [Zigbee2Mqtt](https://github.com/danielwelch/hassio-zigbee2mqtt)
 
 Additional Components:
