@@ -23,16 +23,12 @@ google_assistant:
       name: Kitchen Lights
       room: Kitchen
       expose: true
-    switch.plug1_power:
+    switch.plug6_power:
       name: Fan
       room: Living Room
       expose: true
     switch.rafs_pc_power:
       name: Computer
-      room: Living Room
-      expose: true
-    switch.tv_speaker_power:
-      name: TV Speaker Power
       room: Living Room
       expose: true
     script.tv_speaker_volume_up:

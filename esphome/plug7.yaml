@@ -75,8 +75,8 @@ sensor:
       accuracy_decimals: 0
       filters:
         - calibrate_linear: # Map sensor -> true value
-            - 237.9 -> 41.1
-            - 4820 -> 843.9
+            - 238 -> 42
+            - 4820 -> 845
     current:
       name: "${upper_devicename} Amperage"
       unit_of_measurement: A
@@ -84,8 +84,8 @@ sensor:
       accuracy_decimals: 1
       filters:
         - calibrate_linear: # Map sensor -> true value
-            - 0.23014 -> 0.170
-            - 4.08463 -> 3.403
+            - 0.23014 -> 0.180
+            - 4.08463 -> 3.420
     voltage:
       name: "${upper_devicename} Voltage"
       unit_of_measurement: V
