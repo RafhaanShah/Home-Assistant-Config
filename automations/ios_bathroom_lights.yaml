@@ -1,9 +1,0 @@
-alias: "iOS Toggle Bathroom Lights"
-trigger:
-  platform: event
-  event_type: ios.action_fired
-  event_data:
-    actionName: "Toggle Bathroom Lights"
-action:
-  service: light.toggle
-  entity_id: light.bathroom

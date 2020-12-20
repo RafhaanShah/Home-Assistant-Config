@@ -1,0 +1,19 @@
+alias: MotionEye Cam1
+description: 'Sends a notification when motioneye has detected motion'
+trigger:
+  - platform: webhook
+    webhook_id: motioneye-cam1-motion
+condition: []
+action:
+  - service: camera.snapshot
+    data:
+      entity_id: camera.neoscam1
+      filename: /media/snapshots/cam1.jpg
+  - delay: 00:00:01
+  - service: notify.telegram_raf
+    data:
+      message: 'Motion Detected on Cam1'
+      data:
+        photo:
+          file: /media/snapshots/cam1.jpg
+          caption: 'Motion Detected on Cam1'

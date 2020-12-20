@@ -1,5 +1,5 @@
-alias: Kitchen Switch
 description: Toggles Kitchen Lights
+alias: Kitchen Switch
 mode: single
 trigger:
   - platform: state
