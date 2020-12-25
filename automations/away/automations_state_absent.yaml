@@ -1,0 +1,14 @@
+id: away_automations_state
+alias: 'Away: Automations State'
+description: 'When home, enable specific automations'
+trigger:
+  platform: state
+  entity_id: input_boolean.away
+  from: 'on'
+  to: 'off'
+action:
+  - service: automation.turn_on
+    data:
+      entity_id:
+        - automation.vacuum_home_schedule
+        - automation.vacuum_away_schedule
