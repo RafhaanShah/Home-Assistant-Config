@@ -5,6 +5,7 @@ recorder:
   include:
     domains:
       - alarm_control_panel
+      - automation
       - climate
       - person
       - vacuum

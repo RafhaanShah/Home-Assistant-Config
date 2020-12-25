@@ -3,8 +3,9 @@ logbook:
   include:
     domains:
       - alarm_control_panel
-      - light
+      - automation
       - climate
+      - light
       - person
       - vacuum
     entity_globs:
