@@ -1,0 +1,17 @@
+id: automation
+alias: 'Type: Automation Name'
+description: 'When something, if another thing, do the thing'
+trigger:
+  platform: state
+  entity_id: sensor.some_sensor
+  from: 'on'
+  to: 'off'
+condition:
+  - condition: state
+    entity_id: sensor.another_sensor
+    state: 'on'
+action:
+  - service: notify.persistent_notification
+    data:
+      message: 'Test Automation'
+      title: 'Automation fired'
