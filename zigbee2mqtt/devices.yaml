@@ -46,10 +46,6 @@
   debounce: 1
 
 ## Motion Sensors
-# Philips Hue 9290012607 https://www.zigbee2mqtt.io/devices/9290012607.html
-"0x0017880104b7c3fd":
-  friendly_name: hue_sensor
-  debounce: 0.2
 # Xiaomi RTCGQ11LM https://www.zigbee2mqtt.io/devices/RTCGQ11LM.html
 "0x00158d0003f43658":
   friendly_name: bathroom_motion_sensor

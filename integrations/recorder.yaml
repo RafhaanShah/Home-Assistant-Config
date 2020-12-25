@@ -15,16 +15,12 @@ recorder:
       - light.kitchen
       - light.living_room
       - light.guest_room
-      - sensor.hue_sensor_illuminance_lux
     entity_globs:
       - binary_sensor.*_leak
       - binary_sensor.*_smoke
+      - device_tracker.*_opnsense
       - sensor.*_temperature
       - sensor.*_humidity
       - sensor.*_illuminance
       - sensor.*_total_daily_energy
       - sensor.*_location
-  exclude:
-    entity_globs:
-      - binary_sensor.hue_*
-      - sensor.hue_*
