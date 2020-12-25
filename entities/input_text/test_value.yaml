@@ -1,0 +1,5 @@
+# Test input for validating automations
+name: Test Value
+min: 0
+max: 10
+pattern: '[a-zA-Z0-9_]*'
