@@ -1,0 +1,14 @@
+id: system_update_available
+alias: 'System: Update Available'
+description: 'When a new update is available, send a notification'
+trigger:
+  platform: state
+  entity_id: binary_sensor.updater
+  attribute: newest_version
+action:
+  service: persistent_notification.create
+  data:
+    title: Update Available
+    message: >-
+      Version {{ state_attr('binary_sensor.updater', 'newest_version') }}:
+      {{ state_attr('binary_sensor.updater', 'release_notes') }}

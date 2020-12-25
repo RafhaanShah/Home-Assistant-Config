@@ -1,6 +1,6 @@
-description: Toggles Kitchen Lights
-alias: Kitchen Switch
-mode: single
+id: switch_kitchen_left_single
+alias: 'Switch: Kitchen Left Single'
+description: 'When left button pressed once, toggle lights'
 trigger:
   - platform: state
     entity_id: sensor.kitchen_switch_action

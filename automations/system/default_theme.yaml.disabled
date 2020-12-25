@@ -1,9 +1,0 @@
-description: Sets a theme when Home Assistant starts up
-alias: Default Theme
-trigger:
-  platform: homeassistant
-  event: start
-action:
-  service: frontend.set_theme
-  data:
-    name: slate

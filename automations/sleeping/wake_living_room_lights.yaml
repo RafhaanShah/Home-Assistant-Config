@@ -1,0 +1,17 @@
+id: wake_living_room_lights
+alias: 'Wake: Living Room Lights'
+description: 'When awake, if the living room is dark, turn the lights on'
+trigger:
+  - platform: state
+    entity_id: input_boolean.sleeping
+    from: 'on'
+    to: 'off'
+condition:
+  - condition: numeric_state
+    entity_id: sensor.hue_motion_sensor_1_illuminance
+    below: 150
+action:
+  - service: light.turn_on
+    data:
+      entity_id: light.desk_lightstrip
+      brightness_pct: 90

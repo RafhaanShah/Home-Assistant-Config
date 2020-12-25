@@ -1,5 +1,6 @@
-description: Set the log level
-alias: Log Level
+id: log_level_system
+alias: 'Log Level: System'
+description: 'When the log level is set, changes the log level'
 trigger:
   platform: state
   entity_id: input_select.log_level

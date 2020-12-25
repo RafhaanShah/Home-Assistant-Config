@@ -1,0 +1,14 @@
+id: robovac_last_run
+alias: 'RoboVac: Last Run'
+description: 'When RoboVac has been cleaning, set the last run date'
+trigger:
+  platform: template
+  value_template: >-
+    {% if is_state_attr('vacuum.robovac', 'status', 'cleaning')%}true{% endif %}
+  for:
+    minutes: 15
+action:
+  - service: input_datetime.set_datetime
+    entity_id: input_datetime.robovac_last_run
+    data_template:
+      date: "{{ states('sensor.date') }}"

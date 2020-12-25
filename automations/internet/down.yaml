@@ -1,5 +1,6 @@
-description: Sends a notification when WAN is down
-alias: Internet Down Notification
+id: internet_down
+alias: 'Internet: Down'
+description: 'When internet is down, send a notification'
 trigger:
   platform: state
   entity_id: binary_sensor.internet_connection
