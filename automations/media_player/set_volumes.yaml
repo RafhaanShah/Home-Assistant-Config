@@ -1,0 +1,20 @@
+id: media_player_set_volumes
+alias: "Media Player: Set Volumes"
+description: "At 6:00 AM, set the default volumes for media players"
+trigger:
+  platform: time
+  at: "06:00:00"
+action:
+  - service: media_player.volume_set
+    data:
+      entity_id:
+        - media_player.bedroom_mini
+        - media_player.bathroom_mini
+        - media_player.guest_room_mini
+      volume_level: 0.3
+  - service: media_player.volume_set
+    data:
+      entity_id:
+        - media_player.speaker
+        - media_player.living_room_display
+      volume_level: 0.4
