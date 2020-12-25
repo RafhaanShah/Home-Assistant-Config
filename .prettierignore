@@ -1,3 +1,4 @@
+# https://prettier.io/docs/en/ignore.html
 /*
 
 !.gitignore
@@ -5,7 +6,6 @@
 !.github/
 !.vscode/
 !.yamllint
-!.prettierrc
 !.prettierignore
 !.HA_VERSION
 !*.md
