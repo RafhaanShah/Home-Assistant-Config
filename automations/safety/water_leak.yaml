@@ -1,14 +1,14 @@
 id: safety_water_leak
-alias: 'Safety: Water Leak'
-description: 'When water leak is detected, send a notification'
+alias: "Safety: Water Leak"
+description: "When water leak is detected, send a notification"
 trigger:
   platform: state
-  entity_id: 
+  entity_id:
     - binary_sensor.bathroom_water_sensor_water_leak
     - binary_sensor.boiler_water_sensor_water_leak
     - binary_sensor.kitchen_water_sensor_water_leak
-  from: 'off'
-  to: 'on'
+  from: "off"
+  to: "on"
 action:
   - service: notify.telegram_raf
     data:
