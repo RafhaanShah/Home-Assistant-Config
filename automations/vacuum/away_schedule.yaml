@@ -1,0 +1,22 @@
+id: vacuum_away_schedule
+alias: 'Vacuum: Away Schedule'
+description: 'At scheduled times, if not home and not run today, start cleaning'
+trigger:
+  platform: time
+  at: '13:00:00'
+condition:
+  - condition: time
+    weekday:
+      - mon
+      - wed
+      - fri
+  - condition: state
+    entity_id: group.all_people
+    state: not_home
+  - condition: numeric_state
+    entity_id: sensor.robovac_last_run
+    above: 0
+action:
+  - service: vacuum.start
+    data:
+      entity_id: vacuum.robovac
