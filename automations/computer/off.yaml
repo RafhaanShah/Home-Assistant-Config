@@ -1,0 +1,13 @@
+id: computer_off
+alias: 'Computer: Off'
+description: 'When the computer is off, turn off the Raspberry Pi'
+trigger:
+  platform: state
+  entity_id: binary_sensor.rafs_pc_power
+  from: 'on'
+  to: 'off'
+action:
+  service: mqtt.publish
+  data:
+    topic: rafs-pi
+    payload: off
