@@ -1,0 +1,19 @@
+id: test_automation
+alias: "Test: Automation"
+description: "When something, if another thing, do the thing"
+trigger:
+  platform: state
+  entity_id: input_boolean.test_value
+  from: "off"
+  to: "on"
+condition:
+  - condition: numeric_state
+    entity_id: automation.test_automation
+    above: 10 # run this automation only if it has not run in the last 10 minutes
+    value_template: "{{ (strptime(now(), '') - strptime(state.attributes.last_triggered, '')) / timedelta(minutes=1) }}"
+action:
+  - service: notify.persistent_notification
+    data:
+      # entity_id: entity.something
+      message: "Test Automation"
+      title: "Automation fired"
