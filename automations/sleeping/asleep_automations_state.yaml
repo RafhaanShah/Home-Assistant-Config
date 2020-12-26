@@ -1,0 +1,14 @@
+id: sleeping_asleep_automations_state
+alias: "Sleeping: Asleep Automations State"
+description: "When asleep, set automations state"
+trigger:
+  platform: state
+  entity_id: input_boolean.sleeping
+  from: "off"
+  to: "on"
+action:
+  - service: automation.turn_on
+    data:
+      entity_id:
+        - automation.alarm_pre_morning_heating
+        - automation.alarm_pre_morning_lights

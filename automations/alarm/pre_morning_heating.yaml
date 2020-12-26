@@ -1,0 +1,15 @@
+id: alarm_pre_morning_heating
+alias: "Alarm: Pre Morning Heating"
+description: "At pre-alarm time, if cold, turn on the living room heater"
+trigger:
+  platform: time
+  at: input_datetime.pre_morning_alarm
+condition:
+  - condition: numeric_state
+    entity_id: climate.living_room_heater
+    attribute: current_temperature
+    below: 25
+action:
+  - service: climate.turn_on
+    data:
+      entity_id: climate.living_room_heater

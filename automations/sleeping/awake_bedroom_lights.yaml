@@ -1,0 +1,14 @@
+id: sleeping_awake_bedroom_lights
+alias: "Sleeping: Awake Bedroom Lights"
+description: "When awake, turn the lights off"
+trigger:
+  platform: state
+  entity_id: input_boolean.sleeping
+  from: "on"
+  to: "off"
+action:
+  - delay:
+      minutes: 30
+  - service: light.turn_off
+    data:
+      entity_id: light.bedroom

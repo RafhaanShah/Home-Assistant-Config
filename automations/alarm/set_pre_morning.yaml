@@ -1,0 +1,12 @@
+id: alarm_set_pre_morning_alarm
+alias: "Alarm: Set Pre Morning Alarm"
+description: "When morning alarm is set, set pre morning alarm"
+trigger:
+  platform: state
+  entity_id: input_datetime.morning_alarm
+action:
+  - service: input_datetime.set_datetime
+    data:
+      entity_id: input_datetime.morning_alarm_pre
+      time: "{{ (strptime(states('input_datetime.morning_alarm'), '%H:%M:%S')
+        - timedelta(minutes=30)).time() }}"
