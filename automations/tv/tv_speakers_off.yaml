@@ -1,0 +1,16 @@
+id: tv_speakers_off
+alias: "TV: Speakers Off"
+description: "When TV turns off, if speakers are on, turn off"
+trigger:
+  platform: state
+  entity_id: media_player.lg_tv
+  from: "on"
+  to: "off"
+condition:
+  - condition: state
+    entity_id: binary_sensor.tv_speaker_power
+    state: "on"
+action:
+  - service: switch.turn_off
+    data:
+      entity_id: switch.tv_speaker_power
