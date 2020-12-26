@@ -1,0 +1,16 @@
+id: light_bathroom_off
+alias: "Light: Bathroom Off"
+description: "When bathroom lights turn off, if speaker is playing, pause"
+trigger:
+  platform: state
+  entity_id: light.bathroom
+  from: "on"
+  to: "off"
+condition:
+  - condition: state
+    entity_id: media_player.bathroom_mini
+    state: playing
+action:
+  - service: media_player.media_pause
+    data:
+      entity_id: media_player.bathroom_mini

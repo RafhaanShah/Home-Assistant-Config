@@ -4,8 +4,8 @@ description: "When the computer is on, turn on the Raspberry Pi"
 trigger:
   platform: state
   entity_id: binary_sensor.rafs_pc_power
-  from: "on"
-  to: "off"
+  from: "off"
+  to: "on"
 action:
   service: mqtt.publish
   data:
