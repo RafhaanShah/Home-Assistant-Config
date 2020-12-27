@@ -6,6 +6,10 @@ trigger:
   entity_id: input_boolean.sleeping
   from: "on"
   to: "off"
+condition:
+  - condition: state
+    entity_id: climate.bedroom_heater
+    state: heat
 action:
   - service: climate.turn_off
     data:

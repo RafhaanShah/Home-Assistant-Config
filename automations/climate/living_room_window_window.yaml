@@ -6,6 +6,10 @@ trigger:
   entity_id: binary_sensor.living_room_window_sensor_contact
   from: "off"
   to: "on"
+condition:
+  - condition: state
+    entity_id: climate.living_room_heater
+    state: heat
 action:
   - service: climate.turn_off
     data:
