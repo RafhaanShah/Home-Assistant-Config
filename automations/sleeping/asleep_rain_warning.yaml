@@ -1,0 +1,20 @@
+id: sleeping_asleep_rain_warning
+alias: "Sleeping: Asleep Rain Warning"
+description: "When asleep, if the window is open and rainy, warn"
+trigger:
+  platform: state
+  entity_id: input_boolean.sleeping
+  from: "off"
+  to: "on"
+condition:
+  - condition: state
+    entity_id: binary_sensor.living_room_window_sensor_contact
+    state: "on"
+  - condition: state
+    entity_id: weather.dark_sky
+    state: rainy
+action:
+  - service: tts.google_say
+    data:
+      entity_id: media_player.bedroom_mini
+      message: "The window is open and it may rain"
