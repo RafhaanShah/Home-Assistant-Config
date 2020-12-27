@@ -1,6 +1,6 @@
 id: alarm_pre_morning_heating
 alias: "Alarm: Pre Morning Heating"
-description: "At pre-alarm time, if cold, turn on the living room heater"
+description: "At pre-alarm time, if cold and window closed, turn on the living room heater"
 trigger:
   platform: time
   at: input_datetime.morning_alarm_pre
@@ -9,6 +9,9 @@ condition:
     entity_id: climate.living_room_heater
     attribute: current_temperature
     below: 25
+  - condition: state
+    entity_id: binary_sensor.living_room_window_sensor_contact
+    state: "off"
 action:
   - service: climate.turn_on
     data:
