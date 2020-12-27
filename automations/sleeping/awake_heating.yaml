@@ -1,0 +1,12 @@
+id: sleeping_awake_heating
+alias: "Sleeping: Awake Heating"
+description: "When awake, turn the heating off"
+trigger:
+  platform: state
+  entity_id: input_boolean.sleeping
+  from: "on"
+  to: "off"
+action:
+  - service: climate.turn_off
+    data:
+      entity_id: climate.bedroom_heater

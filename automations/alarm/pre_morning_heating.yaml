@@ -3,7 +3,7 @@ alias: "Alarm: Pre Morning Heating"
 description: "At pre-alarm time, if cold, turn on the living room heater"
 trigger:
   platform: time
-  at: input_datetime.pre_morning_alarm
+  at: input_datetime.morning_alarm_pre
 condition:
   - condition: numeric_state
     entity_id: climate.living_room_heater

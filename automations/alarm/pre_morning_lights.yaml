@@ -3,7 +3,7 @@ alias: "Alarm: Pre Morning Lights"
 description: "At pre-alarm time, turn on the lights"
 trigger:
   platform: time
-  at: input_datetime.pre_morning_alarm
+  at: input_datetime.morning_alarm_pre
 action:
   - service: light.turn_on
     data:
