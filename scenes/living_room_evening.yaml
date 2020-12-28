@@ -1,0 +1,12 @@
+id: living_room_evening
+name: Living Room Evening
+icon: mdi:sofa
+entities:
+  light.desk_lightstrip:
+    state: "on"
+    brightness: 255
+    color_temp: 354
+  light.floor_lamp:
+    state: "on"
+    brightness: 255
+    color_temp: 354
