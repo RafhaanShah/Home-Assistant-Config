@@ -1,0 +1,18 @@
+id: light_bathroom_motion_off
+alias: "Light: Bathroom Motion Off"
+description: "When bathroom has no motion for 20 minutes, if lights are on, turn off"
+trigger:
+  platform: state
+  entity_id: binary_sensor.bathroom_motion_sensor_occupancy
+  from: "on"
+  to: "off"
+  for:
+    minutes: 20
+condition:
+  - condition: state
+    entity_id: light.bathroom
+    state: "on"
+action:
+  - service: light.turn_off
+    data:
+      entity_id: light.bathroom

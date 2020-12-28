@@ -1,0 +1,16 @@
+id: light_bathroom_motion_on
+alias: "Light: Bathroom Motion On"
+description: "When bathroom has motion, if lights are off, turn on"
+trigger:
+  platform: state
+  entity_id: binary_sensor.bathroom_motion_sensor_occupancy
+  from: "off"
+  to: "on"
+condition:
+  - condition: state
+    entity_id: light.bathroom
+    state: "off"
+action:
+  - service: light.turn_on
+    data:
+      entity_id: light.bathroom
