@@ -4,8 +4,8 @@ description: "When awake, set automations state"
 trigger:
   platform: state
   entity_id: input_boolean.sleeping
-  from: "off"
-  to: "on"
+  from: "on"
+  to: "off"
 action:
   - service: automation.turn_off
     data:
