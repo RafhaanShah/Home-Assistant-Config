@@ -8,7 +8,7 @@ trigger:
   to: "off"
 action:
   - delay:
-      minutes: 30
+      hours: 1
   - service: light.turn_off
     data:
       entity_id: light.bedroom

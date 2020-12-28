@@ -1,0 +1,23 @@
+id: light_bedroom_door_sleeping
+alias: "Light: Bedroom Door Sleeping"
+description: "When bedroom door opens, if sleeping, turn on bathroom lights"
+trigger:
+  platform: state
+  entity_id: binary_sensor.bedroom_door_sensor_contact
+  from: "off"
+  to: "on"
+condition:
+  - condition: state
+    entity_id: input_boolean.sleeping
+    state: "on"
+  - condition: time
+    after: "21:00:00"
+    before: "06:00:00"
+  - condition: state
+    entity_id: light.bathroom
+    state: "off"
+action:
+  - service: light.turn_on
+    data:
+      entity_id: light.bathroom
+      brightness_pct: 1

@@ -14,3 +14,4 @@ action:
   - service: light.turn_on
     data:
       entity_id: light.bathroom
+      brightness_pct: 100

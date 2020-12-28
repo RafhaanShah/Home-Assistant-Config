@@ -1,0 +1,24 @@
+id: light_bedroom_door_morning
+alias: "Light: Bedroom Door Morning"
+description: "When bedroom door opens, if it's the morning, turn on bathroom lights"
+trigger:
+  platform: state
+  entity_id: binary_sensor.bedroom_door_sensor_contact
+  from: "off"
+  to: "on"
+condition:
+  - condition: time
+    after: "06:00:00"
+    before: "12:00:00"
+  - condition: numeric_state
+    entity_id: automation.light_bedroom_door_morning
+    above: 6 # run this automation only if it has not run in the last 6 hours
+    value_template: "{{ (strptime(now(), '') - strptime(state.attributes.last_triggered, '')) / timedelta(hours=1) }}"
+  - condition: state
+    entity_id: light.bathroom
+    state: "off"
+action:
+  - service: light.turn_on
+    data:
+      entity_id: light.bathroom
+      brightness_pct: 100
