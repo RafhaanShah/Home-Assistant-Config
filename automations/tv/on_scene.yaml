@@ -1,0 +1,16 @@
+id: tv_on_scene
+alias: "TV: On Scene"
+description: "When TV turns on, if lights on, activate tv scene"
+trigger:
+  platform: state
+  entity_id: media_player.lg_tv
+  from: "off"
+  to: "on"
+condition:
+  - condition: state
+    entity_id: light.living_room
+    state: "on"
+action:
+  - service: scene.turn_on
+    data:
+      entity_id: scene.living_room_evening_tv

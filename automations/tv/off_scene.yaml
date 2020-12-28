@@ -1,0 +1,17 @@
+id: tv_off_scene
+alias: "TV: Off Scene"
+description: "When TV turns off, if evening, activate evening scene"
+trigger:
+  platform: state
+  entity_id: media_player.lg_tv
+  from: "on"
+  to: "off"
+condition:
+  - condition: numeric_state
+    entity_id: sun.sun
+    attribute: elevation
+    below: 3.0
+action:
+  - service: scene.turn_on
+    data:
+      entity_id: scene.living_room_evening
