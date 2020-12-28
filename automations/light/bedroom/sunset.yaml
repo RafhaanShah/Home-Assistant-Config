@@ -1,0 +1,19 @@
+id: light_bedroom_sunset
+alias: "Light: Bedroom Sunset"
+description: "At sunset, if home, turn on bedroom evening scene"
+trigger:
+  platform: numeric_state
+  entity_id: sun.sun
+  attribute: elevation
+  below: 3.0
+condition:
+  - condition: state
+    entity_id: group.all_people
+    state: home
+  - condition: state
+    entity_id: light.bedside_lamp
+    state: "off"
+action:
+  - service: scene.turn_on
+    data:
+      entity_id: scene.bedroom_evening
