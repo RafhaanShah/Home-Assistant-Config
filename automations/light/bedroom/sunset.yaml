@@ -11,7 +11,7 @@ condition:
     entity_id: group.all_people
     state: home
   - condition: state
-    entity_id: light.bedside_lamp
+    entity_id: light.bedroom
     state: "off"
 action:
   - service: scene.turn_on

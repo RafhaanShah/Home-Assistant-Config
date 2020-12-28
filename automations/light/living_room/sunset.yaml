@@ -1,0 +1,30 @@
+id: light_living_room_sunset
+alias: "Light: Living Room Sunset"
+description: "At sunset, turn on living room evening scene"
+trigger:
+  platform: numeric_state
+  entity_id: sun.sun
+  attribute: elevation
+  below: 3.0
+condition:
+  - condition: state
+    entity_id: group.all_people
+    state: home
+  - condition: state
+    entity_id: light.living_room
+    state: "off"
+  - condition: not
+    conditions:
+      - condition: state
+        entity_id: media_player.lg_tv
+        attribute: source
+        state:
+          - Amazon Prime Video
+          - Netflix
+          - Disney+
+action:
+  - service: scene.turn_on
+    data:
+      entity_id: >-
+        {% if is_state('media_player.lg_tv', 'off') %}scene.living_room_evening
+        {% else %}scene.living_room_evening_tv{% endif %}
