@@ -1,0 +1,7 @@
+id: bathroom_midnight
+name: "Bathroom: Midnight"
+icon: mdi:sleep
+entities:
+  light.bathroom:
+    state: "on"
+    brightness: 3

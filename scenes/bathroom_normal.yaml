@@ -1,0 +1,7 @@
+id: bathroom_normal
+name: "Bathroom: Normal"
+icon: mdi:shower
+entities:
+  light.bathroom:
+    state: "on"
+    brightness: 255

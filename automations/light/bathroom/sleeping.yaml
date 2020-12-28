@@ -1,6 +1,6 @@
 id: light_bathroom_door_sleeping
 alias: "Light: Bathroom Door Sleeping"
-description: "When bedroom door opens, if sleeping, turn on bathroom lights"
+description: "When bedroom door opens, if sleeping, turn on bathroom midnight scene"
 trigger:
   platform: state
   entity_id: binary_sensor.bedroom_door_sensor_contact
@@ -17,7 +17,6 @@ condition:
     entity_id: light.bathroom
     state: "off"
 action:
-  - service: light.turn_on
+  - service: scene.turn_on
     data:
-      entity_id: light.bathroom
-      brightness_pct: 1
+      entity_id: scene.bathroom_midnight
