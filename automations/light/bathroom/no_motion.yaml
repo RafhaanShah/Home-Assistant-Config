@@ -1,5 +1,5 @@
 id: light_bathroom_on
-alias: "Light: Bathroom On"
+alias: "Light: Bathroom No Motion"
 description: "When bathroom lights turn on, if there is no motion for 20 minutes, turn off"
 trigger:
   platform: state

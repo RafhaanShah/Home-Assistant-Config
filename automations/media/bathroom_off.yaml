@@ -1,5 +1,5 @@
-id: light_bathroom_off
-alias: "Light: Bathroom Off"
+id: media_bathroom_off
+alias: "Media: Bathroom Off"
 description: "When bathroom lights turn off, if speaker is playing, pause"
 trigger:
   platform: state

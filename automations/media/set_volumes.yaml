@@ -1,5 +1,5 @@
-id: media_player_set_volumes
-alias: "Media Player: Set Volumes"
+id: media_set_volumes
+alias: "Media: Set Volumes"
 description: "At 6:00 AM, set the default volumes for media players"
 trigger:
   platform: time

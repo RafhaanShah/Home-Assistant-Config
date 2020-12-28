@@ -1,5 +1,5 @@
-id: light_bedroom_door_morning
-alias: "Light: Bedroom Door Morning"
+id: light_bathroom_door_morning
+alias: "Light: Bathroom Door Morning"
 description: "When bedroom door opens, if it's the morning, turn on bathroom lights"
 trigger:
   platform: state
