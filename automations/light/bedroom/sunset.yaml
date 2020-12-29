@@ -8,8 +8,8 @@ trigger:
   below: 3.0
 condition:
   - condition: state
-    entity_id: group.all_people
-    state: home
+    entity_id: input_boolean.at_home
+    state: "on"
   - condition: state
     entity_id: light.bedroom
     state: "off"

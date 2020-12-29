@@ -1,9 +1,9 @@
 id: vacuum_away_schedule
-alias: 'Vacuum: Away Schedule'
-description: 'At scheduled times, if not home and not run today, start cleaning'
+alias: "Vacuum: Away Schedule"
+description: "At scheduled times, if not home and not run today, start cleaning"
 trigger:
   platform: time
-  at: '13:00:00'
+  at: "13:00:00"
 condition:
   - condition: time
     weekday:
@@ -11,8 +11,8 @@ condition:
       - wed
       - fri
   - condition: state
-    entity_id: group.all_people
-    state: not_home
+    entity_id: input_boolean.at_home
+    state: "off"
   - condition: numeric_state
     entity_id: sensor.robovac_last_run
     above: 0
