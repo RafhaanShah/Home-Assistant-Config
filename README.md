@@ -50,6 +50,12 @@ Currently using [Home Assistant OS](https://www.home-assistant.io/hassio/install
 - [Samba Share](https://github.com/home-assistant/addons/tree/master/samba)
 - [Zigbee2Mqtt](https://github.com/danielwelch/hassio-zigbee2mqtt)
 
+## Custom Components:
+
+- [Adaptive Lighting](https://github.com/basnijholt/adaptive-lighting)
+- [Eufy RoboVac](https://github.com/mitchellrj/eufy_robovac)
+- [SpotCast](https://github.com/fondberg/spotcast)
+
 ## Additional Components:
 
 - [Home Assistant Plugin for Tasker](https://github.com/MarkAdamson/home-assistant-plugin-for-tasker)
