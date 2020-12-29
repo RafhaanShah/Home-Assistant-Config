@@ -25,3 +25,7 @@ recorder:
       - sensor.*_illuminance
       - sensor.*_total_daily_energy
       - sensor.*_location
+  exclude:
+    entity_globs:
+      - automation.media*
+      - automation.tv*
