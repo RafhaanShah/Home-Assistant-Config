@@ -3,8 +3,8 @@ test_script:
   sequence:
     - condition: state
       entity_id: input_text.test_value
-      state: 'test'
+      state: "test"
     - service: notify.persistent_notification
       data:
-        message: 'Test Script'
-        title: 'Script fired'
+        message: "Test Script"
+        title: "Script fired"

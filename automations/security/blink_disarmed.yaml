@@ -1,10 +1,10 @@
 id: security_blink_disarmed
-alias: 'Security: Blink Disarmed'
-description: 'When Blink is disarmed, arm it after 5 minutes'
+alias: "Security: Blink Disarmed"
+description: "When Blink is disarmed, arm it after 5 minutes"
 trigger:
   platform: state
   entity_id: alarm_control_panel.blink_rafs_flat
-  to: 'disarmed'
+  to: "disarmed"
   for:
     minutes: 5
 action:

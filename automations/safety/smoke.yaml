@@ -1,12 +1,12 @@
 id: safety_smoke
-alias: 'Safety: Smoke'
-description: 'When smoke is detected, send a notification'
+alias: "Safety: Smoke"
+description: "When smoke is detected, send a notification"
 trigger:
   platform: state
   entity_id: binary_sensor.smoke_sensor_smoke
-  from: 'off'
-  to: 'on'
+  from: "off"
+  to: "on"
 action:
   - service: notify.telegram_raf
     data:
-      message: 'Smoke Detected'
+      message: "Smoke Detected"

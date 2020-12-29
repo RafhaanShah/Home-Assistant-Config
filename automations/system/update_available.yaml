@@ -1,6 +1,6 @@
 id: system_update_available
-alias: 'System: Update Available'
-description: 'When a new update is available, send a notification'
+alias: "System: Update Available"
+description: "When a new update is available, send a notification"
 trigger:
   platform: state
   entity_id: binary_sensor.updater

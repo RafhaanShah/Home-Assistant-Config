@@ -1,13 +1,13 @@
 id: climate_bedroom_heater_morning
-alias: 'Climate: Bedroom Heater Morning'
-description: 'At 6:00 AM, if sleeping and cold, turn on the bedroom heater'
+alias: "Climate: Bedroom Heater Morning"
+description: "At 6:00 AM, if sleeping and cold, turn on the bedroom heater"
 trigger:
   platform: time
-  at: '06:00:00'
+  at: "06:00:00"
 condition:
   - condition: state
     entity_id: input_boolean.sleeping
-    state: 'on'
+    state: "on"
   - condition: numeric_state
     entity_id: climate.bedroom_heater
     attribute: current_temperature

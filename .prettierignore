@@ -1,19 +1,11 @@
 # https://prettier.io/docs/en/ignore.html
 /*
 
-!.gitignore
-!.git-hooks/
-!.github/
-!.vscode/
-!.yamllint
-!.prettierignore
-!.HA_VERSION
 !*.md
 !*.yaml
 
 !automations/
 !customizations/
-!custom_components/
 !entities/
 !esphome/
 !integrations/
@@ -22,8 +14,3 @@
 !services/
 !zigbee2mqtt/
 
-.ip_authenticated.yaml
-google_calendars.yaml
-ip_bans.yaml
-known_devices.yaml
-secrets.yaml

@@ -1,6 +1,6 @@
 id: cam1_motion
-alias: 'Camera: 1 Motion'
-description: 'When Cam1 detects motion, send a notification'
+alias: "Camera: 1 Motion"
+description: "When Cam1 detects motion, send a notification"
 trigger:
   platform: webhook
   webhook_id: motioneye-cam1-motion
@@ -9,11 +9,11 @@ action:
     data:
       entity_id: camera.neoscam1
       filename: /media/snapshots/cam1.jpg
-  - delay: '00:00:01'
+  - delay: "00:00:01"
   - service: notify.telegram_raf
     data:
-      message: 'Motion Detected on Cam1'
+      message: "Motion Detected on Cam1"
       data:
         photo:
           file: /media/snapshots/cam1.jpg
-          caption: 'Motion Detected on Cam1'
+          caption: "Motion Detected on Cam1"

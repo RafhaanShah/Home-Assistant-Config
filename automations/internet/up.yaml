@@ -1,6 +1,6 @@
 id: internet_up
-alias: 'Internet: Up'
-description: 'When internet is up, send a notification'
+alias: "Internet: Up"
+description: "When internet is up, send a notification"
 trigger:
   platform: state
   entity_id: binary_sensor.internet_connection

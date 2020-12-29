@@ -1,6 +1,6 @@
 id: vacuum_last_run
-alias: 'Vacuum: Last Run'
-description: 'When Vacuum has been cleaning, set the last run date'
+alias: "Vacuum: Last Run"
+description: "When Vacuum has been cleaning, set the last run date"
 trigger:
   platform: template
   value_template: >-
