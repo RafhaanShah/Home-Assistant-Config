@@ -1,0 +1,24 @@
+id: media_notification_notify
+alias: "Media: Notification Notify"
+description: "When media title changes, send notify command"
+trigger:
+  platform: state
+  attribute: media_title
+  entity_id:
+    - media_player.speaker
+    - media_player.living_room_tv
+    - media_player.bedroom_tv
+    - media_player.bedroom_mini
+    - media_player.bathroom_mini
+condition:
+  - condition: state
+    entity_id: person.raf
+    state: home
+  - condition: template
+    value_template: >-
+      {{ trigger.to_state.state != 'off' and trigger.to_state.media_title is not none }}
+action:
+  - service: joaoapps_join.rafs_pixel_3a_send_tasker
+    data:
+      command: >-
+        {{ 'homemedia=:=notify=:=' ~ trigger.to_state.object_id }}

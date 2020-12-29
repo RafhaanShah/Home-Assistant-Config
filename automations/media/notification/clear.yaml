@@ -1,0 +1,21 @@
+id: media_notification_clear
+alias: "Media: Notification Clear"
+description: "When media stops, send clear command"
+trigger:
+  platform: state
+  to: "off"
+  entity_id:
+    - media_player.speaker
+    - media_player.living_room_tv
+    - media_player.bedroom_tv
+    - media_player.bedroom_mini
+    - media_player.bathroom_mini
+condition:
+  - condition: state
+    entity_id: person.raf
+    state: home
+action:
+  - service: joaoapps_join.rafs_pixel_3a_send_tasker
+    data:
+      command: >-
+        {{ 'homemedia=:=clear=:=' ~ trigger.to_state.object_id }}

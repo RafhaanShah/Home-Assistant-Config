@@ -1,0 +1,23 @@
+id: media_notification_tv_notify
+alias: "Media: Notification TV Notify"
+description: "When TV is playing, send notify command"
+trigger:
+  platform: state
+  entity_id: media_player.lg_tv
+  attribute: source
+condition:
+  - condition: state
+    entity_id: person.raf
+    state: home
+  - condition: state
+    entity_id: media_player.lg_tv
+    attribute: source
+    state:
+      - Amazon Prime Video
+      - Disney+
+      - Netflix
+      - Plex
+action:
+  - service: joaoapps_join.rafs_pixel_3a_send_tasker
+    data:
+      command: "homemedia=:=notify=:=lg_tv"

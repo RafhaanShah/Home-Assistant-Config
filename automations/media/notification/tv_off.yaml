@@ -1,0 +1,28 @@
+id: media_notification_tv_clear
+alias: "Media: Notification TV Clear"
+description: "When TV is not playing, send clear command"
+trigger:
+  platform: state
+  entity_id: media_player.lg_tv
+  attribute: source
+condition:
+  - condition: state
+    entity_id: person.raf
+    state: home
+  - condition: template
+    value_template: >-
+      {{ trigger.from_state.source != 'off' and trigger.to_state.source is not none }}
+  - condition: not
+    conditions:
+      - condition: state
+        entity_id: media_player.lg_tv
+        attribute: source
+        state:
+          - Amazon Prime Video
+          - Disney+
+          - Netflix
+          - Plex
+action:
+  - service: joaoapps_join.rafs_pixel_3a_send_tasker
+    data:
+      command: "homemedia=:=clear=:=lg_tv"
