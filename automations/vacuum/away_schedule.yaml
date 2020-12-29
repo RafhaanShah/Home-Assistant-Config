@@ -1,4 +1,3 @@
-id: vacuum_away_schedule
 alias: "Vacuum: Away Schedule"
 description: "At scheduled times, if not home and not run today, start cleaning"
 trigger:

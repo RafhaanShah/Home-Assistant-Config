@@ -1,4 +1,3 @@
-id: safety_smoke
 alias: "Safety: Smoke"
 description: "When smoke is detected, send a notification"
 trigger:

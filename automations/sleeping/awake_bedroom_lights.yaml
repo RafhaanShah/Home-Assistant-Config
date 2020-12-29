@@ -1,4 +1,3 @@
-id: sleeping_awake_bedroom_lights
 alias: "Sleeping: Awake Bedroom Lights"
 description: "When awake, turn the lights off after 30 minutes"
 trigger:

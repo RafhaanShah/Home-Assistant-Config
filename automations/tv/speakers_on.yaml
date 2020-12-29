@@ -1,4 +1,3 @@
-id: tv_speakers_on
 alias: "TV: Speakers On"
 description: "When TV turns on, if speakers are off, turn on"
 trigger:

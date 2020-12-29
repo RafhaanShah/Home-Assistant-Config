@@ -1,4 +1,3 @@
-id: presence_home_bathroom_lights
 alias: "Presence: Home Bathroom Lights"
 description: "When home, turn bathroom lights on"
 trigger:

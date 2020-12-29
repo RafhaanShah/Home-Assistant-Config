@@ -1,4 +1,3 @@
-id: security_blink_disarmed
 alias: "Security: Blink Disarmed"
 description: "When Blink is disarmed, arm it after 5 minutes"
 trigger:

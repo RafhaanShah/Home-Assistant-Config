@@ -1,4 +1,3 @@
-id: alarm_pre_morning_heating
 alias: "Alarm: Pre Morning Heating"
 description: "At pre-alarm time, if cold and window closed, turn on the living room heater"
 trigger:

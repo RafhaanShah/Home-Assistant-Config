@@ -1,4 +1,3 @@
-id: climate_living_room_window
 alias: "Climate: Living Room Window"
 description: "When window is open, turn heater off"
 trigger:

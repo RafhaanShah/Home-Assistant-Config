@@ -1,4 +1,3 @@
-id: sleeping_awake_living_room_lights
 alias: "Sleeping: Awake Living Room Lights"
 description: "When awake, if the living room is dark, turn the lights on"
 trigger:

@@ -1,4 +1,3 @@
-id: safety_water_leak
 alias: "Safety: Water Leak"
 description: "When water leak is detected, send a notification"
 trigger:

@@ -1,4 +1,3 @@
-id: computer_on
 alias: "Computer: On"
 description: "When the computer is on, turn on the Raspberry Pi"
 trigger:

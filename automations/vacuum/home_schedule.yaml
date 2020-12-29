@@ -1,4 +1,3 @@
-id: vacuum_home_schedule
 alias: "Vacuum: Home Schedule"
 description: "At scheduled times, if home and not run today, start cleaning"
 trigger:

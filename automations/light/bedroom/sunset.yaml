@@ -1,4 +1,3 @@
-id: light_bedroom_sunset
 alias: "Light: Bedroom Sunset"
 description: "At sunset, if home, turn on bedroom evening scene"
 trigger:

@@ -1,4 +1,3 @@
-id: travel_present_automations_state
 alias: "Travel: Present Automations State"
 description: "When travelling, set automations state"
 trigger:

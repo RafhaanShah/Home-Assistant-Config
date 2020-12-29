@@ -1,4 +1,3 @@
-id: tv_on_scene
 alias: "TV: On Scene"
 description: "When TV turns on, if lights on, activate tv scene"
 trigger:

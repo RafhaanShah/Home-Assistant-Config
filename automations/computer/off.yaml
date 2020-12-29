@@ -1,4 +1,3 @@
-id: computer_off
 alias: "Computer: Off"
 description: "When the computer is off, turn off the Raspberry Pi"
 trigger:

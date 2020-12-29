@@ -1,4 +1,3 @@
-id: tv_off_scene
 alias: "TV: Off Scene"
 description: "When TV turns off, if evening, activate evening scene"
 trigger:

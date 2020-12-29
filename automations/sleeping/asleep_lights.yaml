@@ -1,4 +1,3 @@
-id: sleeping_asleep_lights
 alias: "Sleeping: Asleep Lights"
 description: "When asleep, turn the lights off"
 trigger:

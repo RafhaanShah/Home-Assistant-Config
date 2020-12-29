@@ -1,4 +1,3 @@
-id: alarm_set_pre_morning_alarm
 alias: "Alarm: Set Pre Morning Alarm"
 description: "When morning alarm is set, set pre morning alarm"
 trigger:

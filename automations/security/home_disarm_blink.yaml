@@ -1,4 +1,3 @@
-id: security_home_disarm_blink
 alias: "Security: Home Disarm Blink"
 description: "When door opens while home, disarm Blink"
 trigger:

@@ -1,4 +1,3 @@
-id: alarm_pre_morning_lights
 alias: "Alarm: Pre Morning Lights"
 description: "At pre-alarm time, turn on the lights"
 trigger:

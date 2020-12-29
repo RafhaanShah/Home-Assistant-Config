@@ -1,4 +1,3 @@
-id: light_bathroom_door_sleeping
 alias: "Light: Bathroom Door Sleeping"
 description: "When bedroom door opens, if sleeping, turn on bathroom midnight scene"
 trigger:

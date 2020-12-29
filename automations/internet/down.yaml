@@ -1,4 +1,3 @@
-id: internet_down
 alias: "Internet: Down"
 description: "When internet is down, send a notification"
 trigger:

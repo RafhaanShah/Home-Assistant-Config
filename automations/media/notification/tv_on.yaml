@@ -1,4 +1,3 @@
-id: media_notification_tv_notify
 alias: "Media: Notification TV Notify"
 description: "When TV is playing, send notify command"
 trigger:

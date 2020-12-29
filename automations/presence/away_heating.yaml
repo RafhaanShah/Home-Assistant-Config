@@ -1,4 +1,3 @@
-id: presence_away_heating
 alias: "Presence: Away Heating"
 description: "When away, turn heating off"
 trigger:

@@ -1,4 +1,3 @@
-id: light_bathroom_door_morning
 alias: "Light: Bathroom Door Morning"
 description: "When bedroom door opens, if it's the morning, turn on bathroom normal scene"
 trigger:

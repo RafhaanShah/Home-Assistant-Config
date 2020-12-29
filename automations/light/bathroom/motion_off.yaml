@@ -1,4 +1,3 @@
-id: light_bathroom_motion_off
 alias: "Light: Bathroom Motion Off"
 description: "When bathroom has no motion for 20 minutes, if lights are on, turn off"
 trigger:

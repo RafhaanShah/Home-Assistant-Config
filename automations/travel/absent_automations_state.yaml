@@ -1,4 +1,3 @@
-id: travel_absent_automations_state
 alias: "Travel: Absent Automations State"
 description: "When back home, set automations state"
 trigger:

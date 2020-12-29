@@ -1,4 +1,3 @@
-id: sleeping_asleep_rain_warning
 alias: "Sleeping: Asleep Rain Warning"
 description: "When asleep, if the window is open and rainy, warn"
 trigger:

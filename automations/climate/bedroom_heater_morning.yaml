@@ -1,4 +1,3 @@
-id: climate_bedroom_heater_morning
 alias: "Climate: Bedroom Heater Morning"
 description: "At 6:00 AM, if sleeping and cold, turn on the bedroom heater"
 trigger:

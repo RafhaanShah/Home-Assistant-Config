@@ -1,4 +1,3 @@
-id: presence_home_bedroom_heater
 alias: "Presence: Home Bedroom Heater"
 description: "When home in the evening, if cold, turn heater on"
 trigger:

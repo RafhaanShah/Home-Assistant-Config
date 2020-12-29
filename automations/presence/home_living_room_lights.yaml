@@ -1,4 +1,3 @@
-id: presence_home_living_room_lights
 alias: "Presence: Home Living Room Lights"
 description: "When home in the evening, turn living room lights on"
 trigger:

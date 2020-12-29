@@ -1,4 +1,3 @@
-id: sleeping_asleep_heating
 alias: "Sleeping: Asleep Heating"
 description: "When asleep, turn the heating off"
 trigger:

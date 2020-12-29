@@ -1,4 +1,3 @@
-id: cam1_motion
 alias: "Camera: 1 Motion"
 description: "When Cam1 detects motion, send a notification"
 trigger:

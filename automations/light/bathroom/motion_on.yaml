@@ -1,4 +1,3 @@
-id: light_bathroom_motion_on
 alias: "Light: Bathroom Motion On"
 description: "When bathroom has motion, if lights are off, turn on bathroom normal scene"
 trigger:

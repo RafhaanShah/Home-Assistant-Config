@@ -1,4 +1,3 @@
-id: internet_up
 alias: "Internet: Up"
 description: "When internet is up, send a notification"
 trigger:

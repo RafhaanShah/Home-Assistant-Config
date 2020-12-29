@@ -1,4 +1,3 @@
-id: presence_away_set_at_home
 alias: "Presence: Away Set At Home"
 description: "When away for 10 minutes, set at home"
 trigger:

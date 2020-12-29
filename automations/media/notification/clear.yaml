@@ -1,4 +1,3 @@
-id: media_notification_clear
 alias: "Media: Notification Clear"
 description: "When media stops, send clear command"
 trigger:

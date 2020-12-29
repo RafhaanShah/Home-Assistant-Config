@@ -1,4 +1,3 @@
-id: sleeping_awake_automations_state
 alias: "Sleeping: Awake Automations State"
 description: "When awake, set automations state"
 trigger:

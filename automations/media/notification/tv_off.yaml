@@ -1,4 +1,3 @@
-id: media_notification_tv_clear
 alias: "Media: Notification TV Clear"
 description: "When TV is not playing, send clear command"
 trigger:
