@@ -1,0 +1,9 @@
+# Script to call Broadlink device to send IR command to toggle speakers sound
+alias: "TV Speaker Mute"
+icon: mdi:volume-mute
+sequence:
+  - service: remote.send_command
+    data:
+      entity_id: remote.broadlink_rm3
+      device: tv_speakers
+      command: mute

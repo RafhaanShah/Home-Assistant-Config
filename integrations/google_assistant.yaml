@@ -31,11 +31,14 @@ google_assistant:
       name: Computer
       room: Living Room
       expose: true
+    switch.tv_speaker_power:
+      name: Sound System
+      room: Living Room
     script.tv_speaker_volume_up:
-      name: TV Speaker Up
+      name: Sound System Up
       room: Living Room
       expose: true
     script.tv_speaker_volume_down:
-      name: TV Speaker Down
+      name: Sound System Down
       room: Living Room
       expose: true

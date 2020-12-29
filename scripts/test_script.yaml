@@ -1,10 +1,11 @@
 # Test script used to debug automation conditions and actions
-test_script:
-  sequence:
-    - condition: state
-      entity_id: input_text.test_value
-      state: "test"
-    - service: notify.persistent_notification
-      data:
-        message: "Test Script"
-        title: "Script fired"
+alias: "Test Script"
+icon: mdi:bug
+sequence:
+  - condition: state
+    entity_id: input_boolean.test_value
+    state: "on"
+  - service: notify.persistent_notification
+    data:
+      message: "Test Script"
+      title: "Script fired"

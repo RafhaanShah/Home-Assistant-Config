@@ -1,8 +1,0 @@
-# Script to call Broadlink device to send IR command to toggle speakers power
-tv_speaker_power:
-  sequence:
-    - service: remote.send_command
-      data:
-        entity_id: remote.broadlink_rm3
-        device: tv_speakers
-        command: power
