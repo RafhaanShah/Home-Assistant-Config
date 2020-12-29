@@ -1,0 +1,22 @@
+id: presence_away_vacuum
+alias: "Presence: Away Vacuum"
+description: "When away, if RoboVac scheduled, start cleaning"
+trigger:
+  platform: state
+  entity_id: input_boolean.at_home
+  from: "on"
+  to: "off"
+condition:
+  - condition: state
+    entity_id: input_boolean.vacuum_clean
+    state: "on"
+  - condition: numeric_state
+    entity_id: sensor.robovac_last_run
+    above: 0
+action:
+  - service: vacuum.start
+    data:
+      entity_id: vacuum.robovac
+  - service: input_boolean.turn_off
+    data:
+      entity_id: input_boolean.vacuum_clean

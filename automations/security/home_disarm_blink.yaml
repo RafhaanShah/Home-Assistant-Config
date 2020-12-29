@@ -1,0 +1,16 @@
+id: security_home_disarm_blink
+alias: "Security: Home Disarm Blink"
+description: "When door opens while home, disarm Blink"
+trigger:
+  platform: state
+  entity_id: binary_sensor.front_door_sensor_contact
+  from: "off"
+  to: "on"
+condition:
+  - condition: state
+    entity_id: person.raf
+    state: "home"
+action:
+  - service: alarm_control_panel.alarm_disarm
+    data:
+      entity_id: alarm_control_panel.blink_rafs_flat

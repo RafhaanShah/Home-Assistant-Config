@@ -1,0 +1,20 @@
+id: presence_home_bedroom_heater
+alias: "Presence: Home Bedroom Heater"
+description: "When home in the evening, if cold, turn heater on"
+trigger:
+  platform: state
+  entity_id: input_boolean.at_home
+  from: "off"
+  to: "on"
+condition:
+  - condition: time
+    after: "21:30:00"
+    before: "05:30:00"
+  - condition: numeric_state
+    entity_id: climate.bedroom_heater
+    attribute: current_temperature
+    below: 25
+action:
+  - service: climate.turn_on
+    data:
+      entity_id: climate.bedroom_heater

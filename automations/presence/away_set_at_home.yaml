@@ -1,0 +1,14 @@
+id: presence_away_set_at_home
+alias: "Presence: Away Set At Home"
+description: "When away for 10 minutes, set at home"
+trigger:
+  platform: state
+  entity_id: group.all_people
+  from: home
+  to: not_home
+  for:
+    minutes: 10
+action:
+  - service: input_boolean.turn_off
+    data:
+      entity_id: input_boolean.at_home

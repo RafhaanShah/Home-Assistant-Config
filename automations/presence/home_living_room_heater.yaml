@@ -1,0 +1,17 @@
+id: presence_home_living_room_heater
+alias: "Presence: Home Living Room Heater"
+description: "When home, if cold, turn heater on"
+trigger:
+  platform: state
+  entity_id: input_boolean.at_home
+  from: "off"
+  to: "on"
+condition:
+  - condition: numeric_state
+    entity_id: climate.living_room_heater
+    attribute: current_temperature
+    below: 25
+action:
+  - service: climate.turn_on
+    data:
+      entity_id: climate.living_room_heater

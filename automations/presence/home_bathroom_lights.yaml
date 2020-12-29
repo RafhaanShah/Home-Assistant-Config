@@ -1,0 +1,12 @@
+id: presence_home_bathroom_lights
+alias: "Presence: Home Bathroom Lights"
+description: "When home, turn bathroom lights on"
+trigger:
+  platform: state
+  entity_id: input_boolean.at_home
+  from: "off"
+  to: "on"
+action:
+  - service: scene.turn_on
+    data:
+      entity_id: scene.bathroom_normal

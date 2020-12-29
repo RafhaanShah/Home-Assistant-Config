@@ -1,0 +1,16 @@
+id: presence_home_set_at_home
+alias: "Presence: Home Set At Home"
+description: "When door opens after being away, set at home"
+trigger:
+  platform: state
+  entity_id: binary_sensor.front_door_sensor_contact
+  from: "off"
+  to: "on"
+condition:
+  - condition: state
+    entity_id: input_boolean.at_home
+    state: "off"
+action:
+  - service: input_boolean.turn_on
+    data:
+      entity_id: input_boolean.at_home

@@ -1,0 +1,17 @@
+id: presence_home_living_room_lights
+alias: "Presence: Home Living Room Lights"
+description: "When home in the evening, turn living room lights on"
+trigger:
+  platform: state
+  entity_id: input_boolean.at_home
+  from: "off"
+  to: "on"
+condition:
+  - condition: numeric_state
+    entity_id: sun.sun
+    attribute: elevation
+    below: 3.0
+action:
+  - service: scene.turn_on
+    data:
+      entity_id: scene.living_room_evening

@@ -1,0 +1,17 @@
+id: presence_home_bedroom_lights
+alias: "Presence: Home Bedroom Lights"
+description: "When home in the evening, turn bedroom lights on"
+trigger:
+  platform: state
+  entity_id: input_boolean.at_home
+  from: "off"
+  to: "on"
+condition:
+  - condition: numeric_state
+    entity_id: sun.sun
+    attribute: elevation
+    below: 3.0
+action:
+  - service: scene.turn_on
+    data:
+      entity_id: scene.bedroom_evening

@@ -1,0 +1,12 @@
+id: presence_away_lights
+alias: "Presence: Away Lights"
+description: "When away, turn lights off"
+trigger:
+  platform: state
+  entity_id: input_boolean.at_home
+  from: "on"
+  to: "off"
+action:
+  - service: light.turn_off
+    data:
+      entity_id: all
