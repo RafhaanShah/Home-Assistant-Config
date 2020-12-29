@@ -4,7 +4,6 @@ trigger:
   platform: state
   entity_id: group.all_people
   from: home
-  to: not_home
   for:
     minutes: 10
 action:
