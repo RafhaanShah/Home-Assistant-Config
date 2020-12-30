@@ -10,7 +10,7 @@ condition:
     after: "06:00:00"
     before: "12:00:00"
   - condition: numeric_state
-    entity_id: automation.light_bedroom_door_morning
+    entity_id: automation.light_bathroom_door_morning
     above: 6 # run this automation only if it has not run in the last 6 hours
     value_template: "{{ (strptime(now(), '') - strptime(state.attributes.last_triggered, '')) / timedelta(hours=1) }}"
   - condition: state

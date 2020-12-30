@@ -19,4 +19,4 @@ condition:
 action:
   - service: joaoapps_join.rafs_pixel_3a_send_tasker
     data:
-      command: "homemedia=:=notify=:=lg_tv"
+      command: "homemedia=:=tv=:=lg_tv"
