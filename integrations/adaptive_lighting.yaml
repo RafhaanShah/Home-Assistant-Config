@@ -1,0 +1,13 @@
+# https://github.com/basnijholt/adaptive-lighting
+adaptive_lighting:
+  - name: "Bathroom"
+    lights:
+      - light.bathroom
+    prefer_rgb_color: false
+    initial_transition: 1
+    transition: 60
+    interval: 300
+    min_color_temp: 2820
+    max_color_temp: 5500
+    take_over_control: true
+    only_once: true
