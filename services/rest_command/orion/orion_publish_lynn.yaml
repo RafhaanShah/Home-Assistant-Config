@@ -1,0 +1,13 @@
+url: !secret orion_server
+method: POST
+content_type: "application/json"
+payload: >-
+  {
+    "_type": "location",
+    "acc": {{ state_attr('person.lynn', 'gps_accuracy') }},
+    "lat": {{ state_attr('person.lynn', 'latitude') }},
+    "lon": {{ state_attr('person.lynn', 'longitude') }},
+    "tid": "ln",
+    "tst": {{ as_timestamp(now()) | round }},
+    "topic": "owntracks/lynn/phone"
+  }

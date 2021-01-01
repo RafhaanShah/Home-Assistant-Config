@@ -27,5 +27,7 @@ recorder:
       - sensor.*_location
   exclude:
     entity_globs:
+      - automation.location*
       - automation.media*
       - automation.tv*
+      - automation.switch*

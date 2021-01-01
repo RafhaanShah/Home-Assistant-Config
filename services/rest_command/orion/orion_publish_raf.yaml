@@ -1,0 +1,13 @@
+url: !secret orion_server
+method: POST
+content_type: "application/json"
+payload: >-
+  {
+    "_type": "location",
+    "acc": {{ state_attr('person.raf', 'gps_accuracy') }},
+    "lat": {{ state_attr('person.raf', 'latitude') }},
+    "lon": {{ state_attr('person.raf', 'longitude') }},
+    "tid": "rf",
+    "tst": {{ as_timestamp(now()) | round }},
+    "topic": "owntracks/raf/phone"
+  }

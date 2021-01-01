@@ -1,0 +1,12 @@
+alias: "Location: Orion Raf"
+description: "When coordinates change, publish to Orion"
+trigger:
+  platform: state
+  entity_id: person.raf
+condition:
+  - condition: template
+    value_template: >-
+      {{ (trigger.from_state.latitude != trigger.to_state.latitude) or
+      (trigger.from_state.longitude != trigger.to_state.longitude) }}
+action:
+  - service: rest_command.orion_publish_raf
