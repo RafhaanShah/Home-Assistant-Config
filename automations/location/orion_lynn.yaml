@@ -6,7 +6,7 @@ trigger:
 condition:
   - condition: template
     value_template: >-
-      {{ (trigger.from_state.latitude != trigger.to_state.latitude) or
-      (trigger.from_state.longitude != trigger.to_state.longitude) }}
+      {{ (trigger.from_state.attributes.latitude != trigger.to_state.attributes.latitude) or
+      (trigger.from_state.attributes.longitude != trigger.to_state.attributes.longitude) }}
 action:
   - service: rest_command.orion_publish_lynn
