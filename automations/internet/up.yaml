@@ -9,7 +9,7 @@ action:
   - service: notify.telegram_raf
     data:
       message: Internet just turned back on
-  - service: persistent_notification.create
+  - service: notify.persistent_notification
     data:
       title: Internet Up
       message: "{{ states('sensor.time') }}"

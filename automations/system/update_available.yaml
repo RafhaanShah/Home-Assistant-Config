@@ -5,7 +5,7 @@ trigger:
   entity_id: binary_sensor.updater
   attribute: newest_version
 action:
-  service: persistent_notification.create
+  service: notify.persistent_notification
   data:
     title: Update Available
     message: >-

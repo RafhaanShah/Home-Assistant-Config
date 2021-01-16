@@ -9,7 +9,7 @@ condition:
   - condition: numeric_state
     entity_id: automation.test_automation
     above: 10 # run this automation only if it has not run in the last 10 seconds
-    value_template: "{{ (strptime(now(), '') - strptime(state.attributes.last_triggered, '')) / timedelta(seconds=1) }}"
+    value_template: "{{ (now() - state.attributes.last_triggered) / timedelta(seconds=1) }}"
 action:
   - service: notify.persistent_notification
     data:

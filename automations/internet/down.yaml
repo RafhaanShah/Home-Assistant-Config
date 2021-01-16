@@ -6,7 +6,7 @@ trigger:
   from: "on"
   to: "off"
 action:
-  - service: persistent_notification.create
+  - service: notify.persistent_notification
     data:
       title: Internet Down
       message: "{{ states('sensor.time') }}"
