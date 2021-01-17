@@ -1,10 +1,7 @@
-platform: template
-switches:
-  tv_speaker_power:
-    friendly_name: "TV Speaker"
-    value_template: "{{ is_state('binary_sensor.tv_speaker_power', 'on') }}"
-    turn_on:
-      service: script.tv_speaker_power
-    turn_off:
-      service: script.tv_speaker_power
-    icon_template: mdi:surround-sound
+friendly_name: "TV Speaker"
+icon_template: mdi:surround-sound
+value_template: "{{ is_state('binary_sensor.tv_speaker_power', 'on') }}"
+turn_on:
+  service: script.tv_speaker_power
+turn_off:
+  service: script.tv_speaker_power
