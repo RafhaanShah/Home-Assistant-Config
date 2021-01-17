@@ -5,9 +5,9 @@ trigger:
   entity_id: binary_sensor.updater
   attribute: newest_version
 action:
-  service: notify.persistent_notification
-  data:
-    title: Update Available
-    message: >-
-      Version {{ state_attr('binary_sensor.updater', 'newest_version') }}:
-      {{ state_attr('binary_sensor.updater', 'release_notes') }}
+  - service: notify.persistent_notification
+    data:
+      title: Update Available
+      message: >-
+        Version {{ state_attr('binary_sensor.updater', 'newest_version') }}:
+        {{ state_attr('binary_sensor.updater', 'release_notes') }}
