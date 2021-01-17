@@ -1,0 +1,8 @@
+# Publish an MQTT message to the Pi topic
+alias: "Pi On"
+icon: mdi:monitor-dashboard
+sequence:
+  - service: mqtt.publish
+    data:
+      topic: rafs-pi
+      payload: "on"

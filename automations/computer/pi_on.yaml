@@ -1,4 +1,4 @@
-alias: "Computer: On"
+alias: "Computer: Pi On"
 description: "When the computer is on, turn on the Raspberry Pi"
 trigger:
   platform: state
@@ -6,7 +6,4 @@ trigger:
   from: "off"
   to: "on"
 action:
-  service: mqtt.publish
-  data:
-    topic: rafs-pi
-    payload: "on"
+  - service: service.pi_on
