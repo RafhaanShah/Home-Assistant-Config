@@ -1,22 +1,26 @@
-alias: "Light: Bathroom Morning"
-description: "When bedroom door opens, if it's the morning, turn on bathroom normal scene"
+alias: "Light: Living Room Morning"
+description: "When bedroom door opens, if dark, turn on living room lights"
 trigger:
   platform: state
   entity_id: binary_sensor.bedroom_door_sensor_contact
   from: "off"
   to: "on"
 condition:
+  - condition: numeric_state
+    entity_id: sensor.hue_motion_sensor_1_illuminance
+    below: 150
   - condition: time
     after: "06:00:00"
     before: "12:00:00"
   - condition: numeric_state
-    entity_id: automation.light_bathroom_morning
+    entity_id: automation.light_living_room_morning
     above: 0 # run this automation only if it has not run today
     value_template: "{{ (now().date() - state.attributes.last_triggered.date()).days }}"
   - condition: state
-    entity_id: light.bathroom
+    entity_id: light.desk_lightstrip
     state: "off"
 action:
-  - service: scene.turn_on
+  - service: light.turn_on
     data:
-      entity_id: scene.bathroom_normal
+      entity_id: light.desk_lightstrip
+      brightness_pct: 90
