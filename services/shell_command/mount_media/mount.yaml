@@ -1,0 +1,2 @@
+# Mounts a network share into the media directory
+mount_media: !secret mount_media

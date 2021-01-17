@@ -1,0 +1,7 @@
+alias: "Mount Media: Mount"
+description: "When Home Assistant starts, mount network share into /media"
+trigger:
+  platform: homeassistant
+  event: start
+action:
+  - service: shell_command.mount_media

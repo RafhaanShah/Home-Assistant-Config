@@ -16,6 +16,7 @@ ignore: |
   ip_bans.yaml
   known_devices.yaml
   secrets.yaml
+  secrets_example.yaml
   google_calendars.yaml
 
 rules:

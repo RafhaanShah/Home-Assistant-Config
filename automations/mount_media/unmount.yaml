@@ -1,0 +1,7 @@
+alias: "Mount Media: Unmount"
+description: "When Home Assistant is about to shutdown, unmount network share in /media"
+trigger:
+  platform: homeassistant
+  event: shutdown
+action:
+  - service: shell_command.unmount_media
