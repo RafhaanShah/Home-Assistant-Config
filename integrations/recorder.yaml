@@ -1,7 +1,7 @@
 # https://www.home-assistant.io/integrations/recorder/
 recorder:
   db_url: !secret mariadb_url
-  purge_keep_days: 30
+  purge_keep_days: 14
   include:
     domains:
       - alarm_control_panel
@@ -10,7 +10,6 @@ recorder:
       - person
       - vacuum
     entities:
-      - binary_sensor.internet_connection
       - light.bedroom
       - light.bathroom
       - light.kitchen

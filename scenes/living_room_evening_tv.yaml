@@ -4,8 +4,8 @@ entities:
   light.desk_lightstrip:
     state: "on"
     brightness: 153
-    color_temp: 354
+    # color_temp: 354
   light.floor_lamp:
     state: "on"
     brightness: 230
-    color_temp: 354
+    # color_temp: 354

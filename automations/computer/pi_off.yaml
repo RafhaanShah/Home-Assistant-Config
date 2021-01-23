@@ -6,4 +6,4 @@ trigger:
   from: "on"
   to: "off"
 action:
-  - service: service.pi_off
+  - service: script.pi_off
