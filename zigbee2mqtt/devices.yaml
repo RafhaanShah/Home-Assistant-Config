@@ -8,9 +8,9 @@
   friendly_name: sofa_lightstrip
 # Ikea Tradfri GU10 https://www.zigbee2mqtt.io/devices/LED1837R5.html
 "0xbc33acfffe93bef4":
-  friendly_name: "kitchen_light_1"
+  friendly_name: kitchen_1
 "0x842e14fffe994dc9":
-  friendly_name: "kitchen_light_2"
+  friendly_name: kitchen_2
 
 ## Contact Sensors
 # Xiaomi MCCGQ01LM https://www.zigbee2mqtt.io/devices/MCCGQ01LM.html
@@ -42,7 +42,7 @@
   friendly_name: guest_room_sensor
   debounce: 1
 "0x00158d0004ac32ca":
-  friendly_name: "outdoor_sensor"
+  friendly_name: outdoor_sensor
   debounce: 1
 
 ## Motion Sensors
@@ -72,7 +72,7 @@
   friendly_name: bathroom_water_sensor
   retain: true
 "0x00158d0005d015cc":
-  friendly_name: "outdoor_water_sensor"
+  friendly_name: outdoor_water_sensor
   retain: true
 
 ## Wall Switches
