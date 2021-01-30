@@ -1,0 +1,16 @@
+alias: "Sleeping: Awake Media Volumes"
+description: "When awake, set normal volumes for media players"
+trigger:
+  platform: state
+  entity_id: input_boolean.sleeping
+  from: "on"
+  to: "off"
+action:
+  - service: media_player.volume_set
+    data:
+      entity_id:
+        - media_player.bathroom_mini
+        - media_player.guest_room_mini
+        - media_player.speaker
+        - media_player.living_room_display
+      volume_level: 0.3
