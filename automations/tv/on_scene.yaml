@@ -7,7 +7,7 @@ trigger:
   to: "on"
 condition:
   - condition: state
-    entity_id: light.living_room
+    entity_id: light.floor_lamp
     state: "on"
 action:
   - service: scene.turn_on

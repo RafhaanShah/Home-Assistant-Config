@@ -12,6 +12,7 @@ webostv:
       - PS5
       - Plex
       - Switch
+      - Photo & Video
   turn_on_action:
     service: wake_on_lan.send_magic_packet
     data:

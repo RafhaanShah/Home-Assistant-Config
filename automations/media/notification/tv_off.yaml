@@ -18,6 +18,7 @@ condition:
           - Disney+
           - Netflix
           - Plex
+          - Photo & Video
 action:
   - service: joaoapps_join.rafs_pixel_3a_send_tasker
     data:

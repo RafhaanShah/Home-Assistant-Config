@@ -4,5 +4,5 @@ icon: mdi:monitor-dashboard
 sequence:
   - service: mqtt.publish
     data:
-      topic: rafs-pi
+      topic: raspberry-pi
       payload: "on"
