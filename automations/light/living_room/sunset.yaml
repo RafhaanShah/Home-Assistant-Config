@@ -24,6 +24,7 @@ condition:
 action:
   - service: scene.turn_on
     data:
+      transition: 300
       entity_id: >-
         {% if is_state('media_player.lg_tv', 'off') %}scene.living_room_evening
         {% else %}scene.living_room_evening_tv{% endif %}
