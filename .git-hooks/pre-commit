@@ -1,10 +1,12 @@
 #!/bin/sh
 set -e
 
-# Add yamllint and prettier to PATH
-NVM_BIN=$HOME/.nvm/versions/node/*/bin
-NVM_BIN_PATH=$(echo $NVM_BIN)
-PATH="${HOME}/.local/bin:${NVM_BIN_PATH}:${PATH}"
+# Add dirs to path from paths.txt
+while read -r line; do
+    if [ -n "${line}" ] && [ -d "${line}" ]; then
+        PATH="${line}:${PATH}"
+    fi
+done <".git-hooks/paths.txt"
 
 # Write json version file for README badge
 HA_VER=$(cat .HA_VERSION)
