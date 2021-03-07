@@ -8,9 +8,6 @@ condition:
     entity_id: climate.living_room_heater
     attribute: current_temperature
     below: 25
-  - condition: state
-    entity_id: binary_sensor.living_room_window_sensor_contact
-    state: "off"
 action:
   - service: climate.turn_on
     data:

@@ -1,0 +1,16 @@
+alias: "Climate: Living Room Window Open"
+description: "When heater turns on, if window open, turn heater off"
+trigger:
+  platform: state
+  entity_id: climate.living_room_heater
+  to: heat
+  for:
+    minutes: 5
+condition:
+  - condition: state
+    entity_id: binary_sensor.living_room_window_sensor_contact
+    state: "on"
+action:
+  - service: climate.turn_off
+    data:
+      entity_id: climate.living_room_heater

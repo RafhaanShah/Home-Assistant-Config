@@ -1,4 +1,4 @@
-alias: "Climate: Living Room Window"
+alias: "Climate: Living Room Open Window"
 description: "When window is open, turn heater off"
 trigger:
   platform: state
