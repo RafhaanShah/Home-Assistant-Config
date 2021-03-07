@@ -1,5 +1,0 @@
-# https://www.home-assistant.io/integrations/pi_hole/
-pi_hole:
-  - host: !secret pihole_url
-    ssl: true
-    api_key: !secret pihole_key
