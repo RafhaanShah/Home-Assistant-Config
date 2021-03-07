@@ -1,0 +1,15 @@
+alias: "Presence: Home WiFi"
+description: "When home, turn phone wifi on"
+trigger:
+  platform: state
+  entity_id: input_boolean.at_home
+  from: "off"
+  to: "on"
+condition:
+  - condition: numeric_state
+    entity_id: proximity.raf_home
+    below: 1
+action:
+  - service: joaoapps_join.rafs_pixel_3a_send_tasker
+    data:
+      command: "wifi-on"
