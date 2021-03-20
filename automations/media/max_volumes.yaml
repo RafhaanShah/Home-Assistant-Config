@@ -12,6 +12,8 @@ trigger:
     - media_player.living_room_display
     - media_player.living_room_tv
 condition:
+  - condition: template
+    value_template: "{{ trigger.to_state.state != 'off' }}"
   - condition: state
     entity_id: input_boolean.sleeping
     state: "on"

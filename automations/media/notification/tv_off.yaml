@@ -8,17 +8,22 @@ condition:
   - condition: state
     entity_id: person.raf
     state: home
-  - condition: not
+  - condition: or
     conditions:
       - condition: state
         entity_id: media_player.lg_tv
-        attribute: source
-        state:
-          - Amazon Prime Video
-          - Disney+
-          - Netflix
-          - Plex
-          - Photo & Video
+        state: "off"
+      - condition: not
+        conditions:
+          - condition: state
+            entity_id: media_player.lg_tv
+            attribute: source
+            state:
+              - Amazon Prime Video
+              - Disney+
+              - Netflix
+              - Plex
+              - Photo & Video
 action:
   - service: joaoapps_join.rafs_pixel_3a_send_tasker
     data:
