@@ -29,7 +29,6 @@ Currently using [Home Assistant OS](https://www.home-assistant.io/hassio/install
 - [Mobile App](https://www.home-assistant.io/integrations/mobile_app/)
 - [MQTT](https://www.home-assistant.io/integrations/mqtt)
 - [Philips Hue](https://www.home-assistant.io/integrations/hue)
-- [Pi-hole](https://www.home-assistant.io/integrations/pi_hole)
 - [Spotify](https://www.home-assistant.io/integrations/spotify)
 - [UPnP](https://www.home-assistant.io/integrations/upnp)
 
