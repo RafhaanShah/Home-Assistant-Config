@@ -1,0 +1,6 @@
+# https://healthchecks.io
+platform: rest
+name: Healthchecks.io
+resource: !secret healthchecks_url
+value_template: "{{ value == 'OK' }}"
+scan_interval: 300
