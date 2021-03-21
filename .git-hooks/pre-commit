@@ -14,6 +14,14 @@ echo "Setting HA version ${HA_VER}"
 echo "{\"version\":\"${HA_VER}\"}" > .github/version.json
 git add .github/version.json
 
+# Write custom components list to ignore in CI
+> ".github/custom_components.txt"
+for cc in $(ls custom_components); do
+    if [ -f "integrations/${cc}.yaml" ]; then
+        echo "${cc}.yaml" >> ".github/custom_components.txt"
+    fi
+done
+
 if ! [ -x "$(command -v prettier)" ]; then
   echo 'Error: Prettier is not installed' && exit 1
 else
