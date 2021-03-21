@@ -13,7 +13,6 @@
 
 !automations/
 !customizations/
-!custom_components/
 !entities/
 !esphome/
 !integrations/
@@ -21,6 +20,8 @@
 !scripts/
 !services/
 !zigbee2mqtt/
+
+custom_components/
 
 .ip_authenticated.yaml
 google_calendars.yaml
