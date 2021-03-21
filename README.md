@@ -1,6 +1,6 @@
 # Home Assistant Configuration
 
-[![Home Assistant CI][ha-ci-img]][ha-ci-link] [![Home Assistant Version][ha-version-img]][ha-version-link] [![Uptime Status][ha-uptime-img]][ha-uptime-link] [![Uptime Week][ha-uptime-week-img]][ha-uptime-link] [![Healthchecks.io][ha-healthcheck-img]][ha-healthcheck-link]
+[![Home Assistant CI][ha-ci-img]][ha-ci-link] [![Home Assistant Version][ha-version-img]][ha-version-link] [![Uptime Status][ha-uptime-img]][ha-uptime-link] [![Uptime Week][ha-uptime-week-img]][ha-uptime-link]
 
 Configuration files for the awesome [Home Assistant](https://www.home-assistant.io/)
 
@@ -25,7 +25,6 @@ Currently using [Home Assistant OS](https://www.home-assistant.io/hassio/install
 - [Broadlink](https://www.home-assistant.io/integrations/broadlink)
 - [ESPHome](https://www.home-assistant.io/integrations/esphome/)
 - [Google Cast](https://www.home-assistant.io/integrations/cast)
-- [Hacs](https://hacs.xyz/docs/configuration/start)
 - [Mobile App](https://www.home-assistant.io/integrations/mobile_app/)
 - [MQTT](https://www.home-assistant.io/integrations/mqtt)
 - [Philips Hue](https://www.home-assistant.io/integrations/hue)
@@ -51,7 +50,9 @@ Currently using [Home Assistant OS](https://www.home-assistant.io/hassio/install
 ## Custom Components:
 
 - [Adaptive Lighting](https://github.com/basnijholt/adaptive-lighting)
+- [Browser Mod](https://github.com/thomasloven/hass-browser_mod)
 - [Eufy RoboVac](https://github.com/mitchellrj/eufy_robovac)
+- [Hacs](https://hacs.xyz/docs/configuration/start)
 - [SpotCast](https://github.com/fondberg/spotcast)
 
 ## Additional Components:
@@ -67,5 +68,3 @@ Currently using [Home Assistant OS](https://www.home-assistant.io/hassio/install
 [ha-uptime-img]: https://img.shields.io/uptimerobot/status/m784519564-8bf02c30fb978966db93be1b?label=Uptime%20Robot&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAMAAAAolt3jAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABqlBMVEUAAAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAApjAAoiwAoiwApjAAqjAAoiwA5lRFQoi5Roi45lhIoiwAqjAAqjAAsjQNoq0uOpYN5gXV4gHWNpINqrE4sjgQqjAAqjAAoiwBoq0x/hnwtKy0dHR0dHR0sKix9g3prrFAoiwAqjAA5lRGOpYMtKy0eHh0gIB8fHx4rKiuNo4Q7lhQpjAAoiwBQoi14gHQeHR0gIB8dHRx1fHJTozEoiwAoiwBRoi54gHQdHR0dHRx1fHFUozIoiwApjAA5lhKNpIMsKiwfHx4qKCqNooQ8lxUpiwAqjAAoiwBqrE99g3orKSsdHRwdHRwqKCp6f3htrVIpjAAqjAAsjgRrrE+No4R2fXN1fHKNooNtrVItjgUqjAAoiwA7lhRUozJUpDI8lxUpjAEpjAAoiwAoiwD///9qnxT3AAAAKXRSTlMAAAAAAAEymN/7mDEBBGHe///eYfJhMt3dMpeX3t76l/Le///eMZj7MS7EabIAAAABYktHRI0bDOLVAAAAB3RJTUUH5AMZDTYYuRgLgQAAANFJREFUCNdjYGBkZWPn4OTk4OLmYWJgYObl4xfQ1NLWERTi42VmYBEW0dXTNzA0MjYREWVhEBM3NTO3sLSytrG1k5BkkLJ3cHRydnF1c/fw9JJmkNH09vH18/cPCAwKDpFlkAsNC4/wj4z0j4qOiZVjkIuLT0gEcZOSU1LlGGTS0jMyA/z9s7JzcvNkGaTyCwqLiktKy8orKqvkgRaZVNfU1tU3NDY1Ay0COsOupbWtvaOzWQHoDKAjFZW6unvylFVAjmRg4lFV4+BU51DTAHoBAGl9Lcyvi7VJAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIwLTAzLTI1VDEzOjU0OjI0LTA0OjAwtod7LgAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMC0wMy0yNVQxMzo1NDoyNC0wNDowMMfaw5IAAAAASUVORK5CYII=
 [ha-uptime-week-img]: https://img.shields.io/uptimerobot/ratio/7/m784519564-8bf02c30fb978966db93be1b?label=Last%20Week&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAMAAAAolt3jAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABqlBMVEUAAAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAAqjAApjAAoiwAoiwApjAAqjAAoiwA5lRFQoi5Roi45lhIoiwAqjAAqjAAsjQNoq0uOpYN5gXV4gHWNpINqrE4sjgQqjAAqjAAoiwBoq0x/hnwtKy0dHR0dHR0sKix9g3prrFAoiwAqjAA5lRGOpYMtKy0eHh0gIB8fHx4rKiuNo4Q7lhQpjAAoiwBQoi14gHQeHR0gIB8dHRx1fHJTozEoiwAoiwBRoi54gHQdHR0dHRx1fHFUozIoiwApjAA5lhKNpIMsKiwfHx4qKCqNooQ8lxUpiwAqjAAoiwBqrE99g3orKSsdHRwdHRwqKCp6f3htrVIpjAAqjAAsjgRrrE+No4R2fXN1fHKNooNtrVItjgUqjAAoiwA7lhRUozJUpDI8lxUpjAEpjAAoiwAoiwD///9qnxT3AAAAKXRSTlMAAAAAAAEymN/7mDEBBGHe///eYfJhMt3dMpeX3t76l/Le///eMZj7MS7EabIAAAABYktHRI0bDOLVAAAAB3RJTUUH5AMZDTYYuRgLgQAAANFJREFUCNdjYGBkZWPn4OTk4OLmYWJgYObl4xfQ1NLWERTi42VmYBEW0dXTNzA0MjYREWVhEBM3NTO3sLSytrG1k5BkkLJ3cHRydnF1c/fw9JJmkNH09vH18/cPCAwKDpFlkAsNC4/wj4z0j4qOiZVjkIuLT0gEcZOSU1LlGGTS0jMyA/z9s7JzcvNkGaTyCwqLiktKy8orKqvkgRaZVNfU1tU3NDY1Ay0COsOupbWtvaOzWQHoDKAjFZW6unvylFVAjmRg4lFV4+BU51DTAHoBAGl9Lcyvi7VJAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIwLTAzLTI1VDEzOjU0OjI0LTA0OjAwtod7LgAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMC0wMy0yNVQxMzo1NDoyNC0wNDowMMfaw5IAAAAASUVORK5CYII=
 [ha-uptime-link]: https://stats.uptimerobot.com/y6MVntNroq
-[ha-healthcheck-img]: https://healthchecks.io/badge/792216a1-83ae-487a-a0a7-f03599/IXFCPCpk-2.shields
-[ha-healthcheck-url]: https://healthchecks.io/
