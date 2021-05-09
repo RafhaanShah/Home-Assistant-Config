@@ -14,16 +14,18 @@ condition:
     state: "off"
   - condition: not
     conditions:
-      - condition: state
-        entity_id: media_player.lg_tv
-        state: "on"
-      - condition: state
-        entity_id: media_player.lg_tv
-        attribute: source
-        state:
-          - Amazon Prime Video
-          - Netflix
-          - Disney+
+      - condition: and
+        conditions:
+          - condition: state
+            entity_id: media_player.lg_tv
+            state: "on"
+          - condition: state
+            entity_id: media_player.lg_tv
+            attribute: source
+            state:
+              - Amazon Prime Video
+              - Netflix
+              - Disney+
 action:
   - service: scene.turn_on
     data:

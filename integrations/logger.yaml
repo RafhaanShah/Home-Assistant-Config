@@ -1,3 +1,9 @@
 # https://www.home-assistant.io/integrations/logger/
+# yamllint disable rule:line-length
 logger:
   default: warn
+  filters:
+    homeassistant.helpers.template:
+      - "Template variable warning: 'dict object' has no attribute '(action|battery_low|linkquality|tamper|)' when rendering"
+    homeassistant.components.homeassistant.triggers.numeric_state:
+      - "Error initializing 'Media: Max Volumes' trigger: In 'numeric_state' condition: attribute 'volume_level'"
