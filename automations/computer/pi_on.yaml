@@ -5,5 +5,7 @@ trigger:
   entity_id: binary_sensor.rafs_pc_power
   from: "off"
   to: "on"
+  for:
+    minutes: 3
 action:
   - service: script.pi_on
