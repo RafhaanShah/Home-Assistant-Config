@@ -1,0 +1,15 @@
+# https://www.home-assistant.io/integrations/template/
+platform: template
+sensors:
+  weather_temperature:
+    value_template: "{{ state_attr('weather.dark_sky', 'temperature') }}"
+    unit_of_measurement: "°C"
+    device_class: temperature
+  weather_humidity:
+    value_template: "{{ state_attr('weather.dark_sky', 'humidity') }}"
+    unit_of_measurement: "%"
+    device_class: humidity
+  weather_pressure:
+    value_template: "{{ state_attr('weather.dark_sky', 'pressure') }}"
+    unit_of_measurement: "hPa"
+    device_class: pressure

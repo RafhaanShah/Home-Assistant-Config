@@ -31,3 +31,5 @@ recorder:
       - automation.media*
       - automation.tv*
       - automation.switch*
+      - sensor.*_motion_sensor_temperature
+      - sensor.*_illuminance_lux

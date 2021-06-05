@@ -1,6 +1,0 @@
-# https://www.home-assistant.io/integrations/template/
-platform: template
-sensors:
-  weather_temperature:
-    value_template: "{{ state_attr('weather.dark_sky', 'temperature') }}"
-    unit_of_measurement: "°C"
