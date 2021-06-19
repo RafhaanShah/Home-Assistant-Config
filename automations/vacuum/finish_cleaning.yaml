@@ -1,15 +1,14 @@
-alias: "Vacuum: Last Run"
-description: "When Vacuum has been cleaning, set the last run date"
+id: vacuum_finish_cleaning
+alias: "Vacuum: Finish Cleaning"
+description: "When Vacuum has been cleaning for long enough, dock it"
 trigger:
   platform: numeric_state
   entity_id: sensor.robovac_runtime_today
-  above: 0.5
+  above: 1.00
 condition:
   - "{{ trigger.from_state.state not in ['unknown', 'unavailable', 'none'] }}"
   - "{{ trigger.to_state.state not in ['unknown', 'unavailable', 'none'] }}"
   - "{{ trigger.from_state.state != trigger.to_state.state }}"
 action:
-  - service: input_datetime.set_datetime
-    entity_id: input_datetime.robovac_last_run
-    data_template:
-      date: "{{ states('sensor.date') }}"
+  - service: vacuum.return_to_base
+    entity_id: vacuum.robovac

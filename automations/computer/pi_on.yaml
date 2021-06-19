@@ -6,6 +6,6 @@ trigger:
   from: "off"
   to: "on"
   for:
-    minutes: 3
+    minutes: 2
 action:
   - service: script.pi_on

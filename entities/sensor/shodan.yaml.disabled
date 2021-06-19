@@ -1,4 +1,4 @@
-# https://www.home-assistant.io/integrations/rest/
+# https://www.home-assistant.io/integrations/sensor.rest
 # https://developer.shodan.io/api
 platform: rest
 name: Shodan Monitor

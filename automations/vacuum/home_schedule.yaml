@@ -1,5 +1,5 @@
 alias: "Vacuum: Home Schedule"
-description: "At scheduled times, if home and not run today, start cleaning"
+description: "At scheduled times, if not run today, start cleaning"
 trigger:
   platform: time
   at: "17:15:00"
@@ -10,9 +10,6 @@ condition:
       - tue
       - thu
       - fri
-  - condition: state
-    entity_id: input_boolean.at_home
-    state: "on"
   - condition: numeric_state
     entity_id: sensor.robovac_last_run
     above: 0

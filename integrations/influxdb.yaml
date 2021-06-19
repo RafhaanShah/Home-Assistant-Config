@@ -22,7 +22,7 @@ influxdb:
     entity_globs:
       - sensor.*_battery_*
       - sensor.*_illuminance_lux
-      - sensor.*_motion_sensor_*
+      - sensor.*_motion_sensor_temperature
   ignore_attributes:
     - device_class
     - domain

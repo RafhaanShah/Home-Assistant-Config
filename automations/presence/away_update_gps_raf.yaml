@@ -1,0 +1,12 @@
+alias: "Presence: Away Update Raf GPS"
+description: "When disconnected from WiFi, request GPS update"
+trigger:
+  platform: template
+  value_template: !secret rafs_pixel_3a_wifi
+  for:
+    minutes: 10
+action:
+  # https://companion.home-assistant.io/docs/notifications/notification-commands/#request-location-updates
+  - service: notify.mobile_app_raf_s_pixel_3a
+    data:
+      message: "request_location_update"

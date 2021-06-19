@@ -1,11 +1,11 @@
 alias: "Presence: Away Set At Home"
-description: "When away for 10 minutes, set at home"
+description: "When away for 5 minutes, set at home"
 trigger:
   platform: state
   entity_id: group.all_people
   from: home
   for:
-    minutes: 10
+    minutes: 5
 action:
   - service: input_boolean.turn_off
     data:

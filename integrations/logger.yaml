@@ -3,7 +3,12 @@
 logger:
   default: warn
   filters:
+    homeassistant.helpers.entity:
+      - "Update of binary_sensor.rafs_pc_power is taking over 10 seconds"
     homeassistant.helpers.template:
-      - "Template variable warning: 'dict object' has no attribute '(action|battery_low|linkquality|tamper|)' when rendering"
+      - "when rendering"
     homeassistant.components.homeassistant.triggers.numeric_state:
       - "Error initializing 'Media: Max Volumes' trigger: In 'numeric_state' condition: attribute 'volume_level'"
+      - "Error in 'Media: Max Volumes' trigger: In 'numeric_state' condition: attribute 'volume_level'"
+    pychromecast.socket_client:
+      - "Heartbeat timeout"

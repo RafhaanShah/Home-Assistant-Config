@@ -3,4 +3,4 @@ platform: ping
 name: rafs_pc_power
 host: rafs-pc.lan
 count: 5
-scan_interval: 60
+scan_interval: 30

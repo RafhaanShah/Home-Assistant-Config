@@ -1,0 +1,13 @@
+# https://www.home-assistant.io/integrations/history_stats
+platform: history_stats
+name: robovac_runtime_today
+entity_id: vacuum.robovac
+state: "on"
+type: time
+start: "{{ now().replace(hour=0, minute=0, second=0) }}"
+end: "{{ now() }}"
+# # add this to automations so they don't run on every restart
+# condition:
+#   - "{{ trigger.from_state.state not in ['unknown', 'unavailable', 'none'] }}"
+#   - "{{ trigger.to_state.state not in ['unknown', 'unavailable', 'none'] }}"
+#   - "{{ trigger.from_state.state != trigger.to_state.state }}"
