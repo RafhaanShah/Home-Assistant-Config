@@ -21,7 +21,9 @@ for cc in $(ls custom_components); do
         echo "${cc}.yaml" >> ".github/custom_components.txt"
     fi
 done
+git add .github/custom_components.txt
 
+# Run Prettier formatter
 if ! [ -x "$(command -v prettier)" ]; then
   echo 'Error: Prettier is not installed' && exit 1
 else
@@ -37,6 +39,7 @@ else
   fi
 fi
 
+# Run Yamllint checker
 if ! [ -x "$(command -v yamllint)" ]; then
   echo 'Error: yamllint is not installed' && exit 1
 else
