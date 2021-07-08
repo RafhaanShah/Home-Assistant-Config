@@ -1,11 +1,18 @@
 alias: "Light: Living Room Sunset"
 description: "At sunset, turn on living room evening scene"
 trigger:
-  platform: numeric_state
-  entity_id: sun.sun
-  attribute: elevation
-  below: 4.0
+  - platform: numeric_state
+    entity_id: sun.sun
+    attribute: elevation
+    below: 4.0
+  - platform: numeric_state
+    entity_id: sensor.hue_motion_sensor_1_illuminance
+    below: 400
+    for:
+      minutes: 10
 condition:
+  - condition: time
+    after: "14:30:00"
   - condition: state
     entity_id: input_boolean.at_home
     state: "on"

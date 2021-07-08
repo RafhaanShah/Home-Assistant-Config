@@ -1,8 +1,9 @@
 alias: "Presence: Away Update Raf GPS"
 description: "When disconnected from WiFi, request GPS update"
 trigger:
-  platform: template
-  value_template: !secret rafs_pixel_3a_wifi
+  platform: state
+  entity_id: sensor.rafs_pixel_3a_wifi_connection
+  from: !secret wifi_ssid
   for:
     minutes: 10
 action:

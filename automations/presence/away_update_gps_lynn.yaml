@@ -1,8 +1,9 @@
 alias: "Presence: Away Update Lynn GPS"
 description: "When disconnected from WiFi, request GPS update"
 trigger:
-  platform: template
-  value_template: !secret lynns_iphone_wifi
+  platform: state
+  entity_id: sensor.lynns_iphone_ssid
+  from: !secret wifi_ssid
   for:
     minutes: 10
 action:

@@ -1,0 +1,54 @@
+alias: "Presence: Away Vacuum Notification"
+description: "When away, if vacuum has not run recently, send a notification"
+trigger:
+  platform: state
+  entity_id: input_boolean.at_home
+  from: "on"
+  to: "off"
+condition:
+  - condition: numeric_state
+    entity_id: automation.presence_away_vacuum_notification
+    above: 0
+    value_template: "{{ (now().date() - state.attributes.last_triggered.date()).days }}"
+  - condition: state
+    entity_id: input_boolean.vacuum_clean
+    state: "off"
+  - condition: numeric_state
+    entity_id: sensor.robovac_last_run
+    above: 0
+action:
+  - variables:
+      action_run: "{{ 'VACUUM_RUN_' ~ context.id }}"
+      action_run_short: "{{ 'VACUUM_RUN_SHORT_' ~ context.id }}"
+  - service: notify.mobile_app_raf_s_pixel_3a
+    data:
+      title: Start RoboVac Cleaning Session?
+      message: "Last run {{ states('sensor.robovac_last_run') }} day(s) ago"
+      data:
+        actions:
+          - action: "{{ action_run_short }}"
+            title: "Quick"
+          - action: "{{ action_run }}"
+            title: "Full"
+  - wait_for_trigger:
+      - platform: event
+        event_type: mobile_app_notification_action
+        event_data:
+          action: "{{ action_run }}"
+      - platform: event
+        event_type: mobile_app_notification_action
+        event_data:
+          action: "{{ action_run_short }}"
+    timeout:
+      minutes: 30
+    continue_on_timeout: false
+  - service: vacuum.start
+    data:
+      entity_id: vacuum.robovac
+  - choose:
+      - conditions: "{{ wait.trigger.event.data.action == action_run_short }}"
+        sequence:
+          - delay:
+              minutes: 30
+          - service: vacuum.return_to_base
+            entity_id: vacuum.robovac

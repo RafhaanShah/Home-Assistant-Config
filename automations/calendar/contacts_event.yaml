@@ -1,0 +1,12 @@
+alias: "Calendar: Contacts Event"
+description: "When there is an event related to a contact, send a notification"
+trigger:
+  platform: state
+  entity_id: calendar.raf_contacts
+  from: "off"
+  to: "on"
+action:
+  - service: notify.mobile_app_raf_s_pixel_3a
+    data:
+      title: "{{ trigger.to_state.attributes.message }}"
+      message: "{{ trigger.to_state.attributes.description }}"

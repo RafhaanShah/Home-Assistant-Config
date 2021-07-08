@@ -11,7 +11,7 @@ condition:
     before: "12:00:00"
   - condition: numeric_state
     entity_id: automation.light_bathroom_morning
-    above: 0 # run this automation only if it has not run today
+    above: 0
     value_template: "{{ (now().date() - state.attributes.last_triggered.date()).days }}"
   - condition: state
     entity_id: light.bathroom
