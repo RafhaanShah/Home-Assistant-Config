@@ -3,7 +3,7 @@ description: "When Vacuum has been cleaning, set the last run date"
 trigger:
   platform: numeric_state
   entity_id: sensor.robovac_runtime_today
-  above: 0.5
+  above: 0.4
 condition:
   - "{{ trigger.from_state.state not in ['unknown', 'unavailable', 'none'] }}"
   - "{{ trigger.to_state.state not in ['unknown', 'unavailable', 'none'] }}"

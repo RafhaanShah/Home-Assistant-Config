@@ -1,0 +1,22 @@
+id: vacuum_return_to_dock
+alias: "Vacuum: Return to Dock"
+description: "When Guest Room door opens, if not docked, return"
+trigger:
+  platform: state
+  entity_id: binary_sensor.guest_room_door_sensor_contact
+  to: "on"
+  for:
+    minutes: 5
+condition:
+  - condition: not
+    conditions:
+      - condition: state
+        entity_id: vacuum.robovac
+        attribute: status
+        state: docked
+  - condition: state
+    entity_id: vacuum.robovac
+    state: "off"
+action:
+  - service: vacuum.return_to_base
+    entity_id: vacuum.robovac

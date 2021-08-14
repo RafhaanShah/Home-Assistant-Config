@@ -1,0 +1,6 @@
+# https://www.home-assistant.io/integrations/ping/
+platform: ping
+name: lynns_pc_power
+host: lynns-acer.lan
+count: 5
+scan_interval: 30

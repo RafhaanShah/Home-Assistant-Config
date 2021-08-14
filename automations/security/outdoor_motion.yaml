@@ -1,0 +1,20 @@
+alias: "Security: Outdoor Motion"
+description: "When motion outside, if away, send notification"
+trigger:
+  platform: state
+  entity_id: binary_sensor.front_door_motion_sensor_occupancy
+  to: "on"
+condition:
+  - condition: state
+    entity_id: input_boolean.at_home
+    state: "off"
+  - condition: numeric_state
+    entity_id: proximity.raf_home
+    above: 2
+  - condition: numeric_state
+    entity_id: proximity.lynn_home
+    above: 2
+action:
+  - service: notify.telegram_raf
+    data:
+      message: "Motion detected outside"

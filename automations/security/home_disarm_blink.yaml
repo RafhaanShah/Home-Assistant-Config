@@ -1,5 +1,6 @@
 alias: "Security: Home Disarm Blink"
-description: "When door opens while home, disarm Blink"
+description: "When door opens while home, disarm Blink for 5 minutes"
+mode: restart
 trigger:
   platform: state
   entity_id: binary_sensor.front_door_sensor_contact
@@ -11,5 +12,10 @@ condition:
     state: "home"
 action:
   - service: alarm_control_panel.alarm_disarm
+    data:
+      entity_id: alarm_control_panel.blink_rafs_flat
+  - delay:
+      minutes: 5
+  - service: alarm_control_panel.alarm_arm_away
     data:
       entity_id: alarm_control_panel.blink_rafs_flat

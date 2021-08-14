@@ -1,5 +1,12 @@
 {
     "files.associations": {
         "*.yaml": "home-assistant"
-    }
+    },
+    "files.watcherExclude": {
+        "**/node-red/**": true,
+        "**/esphome/**": true,
+        "**/custom_components/**": true,
+        "**/.storage/**": true,
+        "**/www/**": true,
+    },
 }

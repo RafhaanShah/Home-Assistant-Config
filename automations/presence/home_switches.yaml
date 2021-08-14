@@ -1,0 +1,11 @@
+alias: "Presence: Home Switches"
+description: "When home, turn switches on"
+trigger:
+  platform: state
+  entity_id: input_boolean.at_home
+  from: "off"
+  to: "on"
+action:
+  - service: switch.turn_on
+    data:
+      entity_id: switch.plug3

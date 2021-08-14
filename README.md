@@ -33,7 +33,6 @@ Currently using [Home Assistant OS](https://www.home-assistant.io/hassio/install
 
 ## [Add-ons](https://www.home-assistant.io/addons/):
 
-- [Assistant Relay](https://github.com/Apipa169/Assistant-Relay-for-Hassio)
 - [Check Config](https://github.com/home-assistant/addons/tree/master/check_config)
 - [Duck DNS](https://github.com/home-assistant/hassio-addons/tree/master/duckdns)
 - [ESPHome](https://github.com/esphome/hassio)

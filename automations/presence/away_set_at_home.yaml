@@ -1,5 +1,5 @@
-alias: "Presence: Away Set At Home"
-description: "When away for 5 minutes, set at home"
+alias: "Presence: Away Set Away"
+description: "When away for 5 minutes, set away"
 trigger:
   platform: state
   entity_id: group.all_people

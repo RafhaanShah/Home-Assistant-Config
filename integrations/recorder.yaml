@@ -10,7 +10,6 @@ recorder:
       - person
       - vacuum
     entities:
-      - binary_sensor.rafs_pc_power
       - light.bedroom
       - light.bathroom
       - light.kitchen
@@ -19,6 +18,7 @@ recorder:
       - sensor.rafs_pixel_3a_wifi_connection
       - sensor.lynns_iphone_ssid
     entity_globs:
+      - binary_sensor.*_pc_power
       - binary_sensor.*_leak
       - binary_sensor.*_smoke
       - device_tracker.*_wifi

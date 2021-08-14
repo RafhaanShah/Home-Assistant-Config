@@ -1,12 +1,30 @@
 alias: "Security: Blink Disarmed"
-description: "When Blink is disarmed, arm it after 5 minutes"
+description: "When Blink is disarmed for 15 minutes, send a notification"
 trigger:
   platform: state
   entity_id: alarm_control_panel.blink_rafs_flat
   to: "disarmed"
   for:
-    minutes: 5
+    minutes: 15
 action:
+  - variables:
+      action_arm: "{{ 'BLINK_ARM_' ~ context.id }}"
+  - service: notify.mobile_app_raf_s_pixel_3a
+    data:
+      title: Arm Blink?
+      message: "System has been disarmed for 15+ minutes"
+      data:
+        actions:
+          - action: "{{ action_arm }}"
+            title: "Arm"
+  - wait_for_trigger:
+      - platform: event
+        event_type: mobile_app_notification_action
+        event_data:
+          action: "{{ action_arm }}"
+    timeout:
+      minutes: 30
+    continue_on_timeout: false
   - service: alarm_control_panel.alarm_arm_away
     data:
       entity_id: alarm_control_panel.blink_rafs_flat

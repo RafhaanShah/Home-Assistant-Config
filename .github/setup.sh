@@ -11,9 +11,20 @@ mkdir ssl
 touch ssl/fullchain.pem 
 touch ssl/privkey.pem
 
-# Remove custom_components config files
+# Remove custom_components integration config files
 while read -r line; do
     if [ -f "integrations/${line}" ]; then
         rm "integrations/${line}"
     fi
 done <".github/custom_components.txt"
+
+# Remove other custom_components outside integrations
+CUSTOM_COMPONENTS=(
+    "entities/sensor/weather_illuminance.yaml"
+)
+
+for CC in "${CUSTOM_COMPONENTS[@]}"; do
+    if [ -f "${CC}" ]; then
+        rm "${CC}"
+    fi
+done
