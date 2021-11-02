@@ -1,0 +1,34 @@
+alias: "System: Internet Down"
+description: "When internet is down, do a power cycle on the router"
+trigger:
+  - platform: state
+    entity_id: binary_sensor.cloudflare
+    from: "on"
+    to: "off"
+    for:
+      minutes: 15
+  - platform: state
+    entity_id: binary_sensor.cloudflare
+    from: "on"
+    to: "off"
+    for:
+      minutes: 30
+  - platform: state
+    entity_id: binary_sensor.cloudflare
+    from: "on"
+    to: "off"
+    for:
+      minutes: 60
+condition:
+  - condition: state
+    entity_id: input_boolean.at_home
+    state: "off"
+action:
+  - service: switch.turn_off
+    data:
+      entity_id: switch.plug4
+  - delay:
+      minutes: 1
+  - service: switch.turn_on
+    data:
+      entity_id: switch.plug4

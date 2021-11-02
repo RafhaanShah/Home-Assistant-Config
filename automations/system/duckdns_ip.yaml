@@ -3,7 +3,7 @@ description: "When DuckDNS IP address changes, send a notification"
 trigger:
   platform: state
   entity_id: sensor.duckdns_ip
-conditions: "{{ trigger.to_state.state != Unknown }}"
+condition: "{{ trigger.to_state.state != 'Unknown' }}"
 action:
   - service: notify.telegram_raf
     data:

@@ -1,0 +1,29 @@
+alias: "System: Router Off"
+description: "When router is off for too long, turn it on"
+trigger:
+  - platform: state
+    entity_id: switch.plug4
+    from: "on"
+    to: "off"
+    for:
+      minutes: 10
+  - platform: state
+    entity_id: switch.plug4
+    from: "on"
+    to: "off"
+    for:
+      minutes: 20
+  - platform: state
+    entity_id: switch.plug4
+    from: "on"
+    to: "off"
+    for:
+      minutes: 40
+condition:
+  - condition: state
+    entity_id: input_boolean.at_home
+    state: "off"
+action:
+  - service: switch.turn_on
+    data:
+      entity_id: switch.plug4
