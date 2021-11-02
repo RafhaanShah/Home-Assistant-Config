@@ -4,6 +4,7 @@ description: "When Guest Room door opens, if not docked, return"
 trigger:
   platform: state
   entity_id: binary_sensor.guest_room_door_sensor_contact
+  from: "off"
   to: "on"
   for:
     minutes: 5
