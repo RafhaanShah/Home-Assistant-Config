@@ -1,12 +1,12 @@
-alias: "Travel: Absent Automations State"
-description: "When back home, set automations state"
+alias: "Travel: Travelling Automations State"
+description: "When travelling, set automations state"
 trigger:
   platform: state
   entity_id: input_boolean.away
-  from: "on"
-  to: "off"
+  from: "off"
+  to: "on"
 action:
-  - service: automation.turn_on
+  - service: automation.turn_off
     data:
       entity_id:
         - automation.vacuum_home_schedule
