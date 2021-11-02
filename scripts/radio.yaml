@@ -1,0 +1,13 @@
+# Play Radio on Speaker
+alias: "Radio"
+icon: mdi:radio
+sequence:
+  - service: media_player.volume_set
+    data:
+      entity_id: media_player.speaker
+      volume_level: 0.4
+  - service: media_player.play_media
+    data:
+      entity_id: media_player.speaker
+      media_content_id: "/local/audio/capital_fm.mp3"
+      media_content_type: "audio/mp3"
