@@ -3,6 +3,7 @@ description: "When Front Door is open for too long, send a notification"
 trigger:
   platform: state
   entity_id: binary_sensor.front_door_sensor_contact
+  from: "off"
   to: "on"
   for:
     minutes: 15

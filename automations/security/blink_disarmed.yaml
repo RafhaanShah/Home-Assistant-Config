@@ -3,7 +3,7 @@ description: "When Blink is disarmed for 15 minutes, send a notification"
 trigger:
   platform: state
   entity_id: alarm_control_panel.blink_rafs_flat
-  to: "disarmed"
+  to: disarmed
   for:
     minutes: 15
 action:

@@ -3,6 +3,7 @@ description: "When front door opens, if away, send notification"
 trigger:
   platform: state
   entity_id: binary_sensor.front_door_sensor_contact
+  from: "off"
   to: "on"
 condition:
   - condition: state
@@ -10,10 +11,10 @@ condition:
     state: "off"
   - condition: numeric_state
     entity_id: proximity.raf_home
-    above: 2
+    above: 1
   - condition: numeric_state
     entity_id: proximity.lynn_home
-    above: 2
+    above: 1
 action:
   - service: notify.telegram_raf
     data:
