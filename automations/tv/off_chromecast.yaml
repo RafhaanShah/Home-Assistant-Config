@@ -1,0 +1,16 @@
+alias: "TV: Off Chromecast"
+description: "When TV turns off, if Chromecast is on, turn it off"
+trigger:
+  platform: state
+  entity_id: media_player.lg_tv
+  from: "on"
+  to: "off"
+condition:
+  - condition: not
+    conditions:
+      - condition: state
+        entity_id: media_player.living_room_tv
+        state: "off"
+action:
+  - service: media_player.turn_off
+    entity_id: media_player.living_room_tv

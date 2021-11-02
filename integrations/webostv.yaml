@@ -5,6 +5,7 @@ webostv:
   customize:
     sources:
       - Amazon Prime Video
+      - BBC iPlayer
       - Chromecast
       - Disney+
       - Netflix
@@ -12,6 +13,9 @@ webostv:
       - PS5
       - Plex
       - Switch
+      - Spotify - Music and Podcasts
+      - Twitch
+      - YouTube
       - Photo & Video
   turn_on_action:
     service: wake_on_lan.send_magic_packet
