@@ -1,0 +1,10 @@
+alias: "System: Public IP"
+description: "When public IP address changes, send a notification"
+trigger:
+  platform: state
+  entity_id: sensor.public_ip
+conditions: "{{ trigger.to_state.state != Unknown }}"
+action:
+  - service: notify.telegram_raf
+    data:
+      message: "Public IP changed: {{ trigger.to_state.state }}"
