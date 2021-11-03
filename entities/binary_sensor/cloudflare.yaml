@@ -2,5 +2,5 @@
 platform: ping
 name: cloudflare
 host: 1.1.1.1
-count: 5
+count: 10
 scan_interval: 60

@@ -26,9 +26,9 @@ condition:
 action:
   - service: switch.turn_off
     data:
-      entity_id: switch.plug4
+      entity_id: switch.plug4_power
   - delay:
       minutes: 1
   - service: switch.turn_on
     data:
-      entity_id: switch.plug4
+      entity_id: switch.plug4_power
