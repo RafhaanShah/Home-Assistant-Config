@@ -1,0 +1,13 @@
+alias: "Computer: Charger Off"
+description: "When the laptop is off, turn off the charger"
+trigger:
+  platform: state
+  entity_id: binary_sensor.lynns_pc_power
+  from: "on"
+  to: "off"
+  for:
+    minutes: 2
+action:
+  - service: switch.turn_off
+    data:
+      entity_id: switch.plug5_power
