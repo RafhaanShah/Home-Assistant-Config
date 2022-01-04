@@ -84,6 +84,11 @@
   friendly_name: kitchen_switch
   legacy: false
 
+# IKEA E1743 https://www.zigbee2mqtt.io/devices/E1743.html
+"0xec1bbdfffea0d6b0":
+  friendly_name: bedroom_switch
+  legacy: false
+
 ## Power Plugs
 # IKEA E1603/E1702 https://www.zigbee2mqtt.io/devices/E1603_E1702_E1708.html
 "0x086bd7fffe054129":
