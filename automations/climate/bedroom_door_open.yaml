@@ -1,0 +1,16 @@
+alias: "Climate: Bedroom Door Open"
+description: "When heater turns on, if door open, send a notification"
+trigger:
+  platform: state
+  entity_id: climate.bedroom_heater
+  to: heat
+  for:
+    minutes: 1
+condition:
+  - condition: state
+    entity_id: binary_sensor.bedroom_door_sensor_contact
+    state: "on"
+action:
+  - service: notify.telegram_raf
+    data:
+      message: "Bedroom Heater is on with the door open"

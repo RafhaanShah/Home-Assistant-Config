@@ -1,13 +1,10 @@
 alias: "Alarm: Pre Morning Heating"
-description: "At pre-alarm time, if cold and window closed, turn on the living room heater"
+description: "At pre-alarm time, if cold, turn on the living room heater"
 trigger:
   platform: time
   at: input_datetime.morning_alarm_pre
-condition:
-  - condition: numeric_state
-    entity_id: climate.living_room_heater
-    attribute: current_temperature
-    below: 25
+condition: "{{ (state_attr('climate.living_room_heater', 'current_temperature'))
+  < (state_attr('climate.living_room_heater', 'temperature')) }}"
 action:
   - service: climate.turn_on
     data:

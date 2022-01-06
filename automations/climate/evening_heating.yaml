@@ -7,10 +7,8 @@ condition:
   - condition: state
     entity_id: input_boolean.at_home
     state: "on"
-  - condition: numeric_state
-    entity_id: climate.bedroom_heater
-    attribute: current_temperature
-    below: 25
+  - "{{ (state_attr('climate.bedroom_heater', 'current_temperature'))
+    < (state_attr('climate.bedroom_heater', 'temperature')) }}"
 action:
   - service: climate.turn_on
     data:
