@@ -9,12 +9,6 @@ condition:
   - condition: state
     entity_id: input_boolean.at_home
     state: "off"
-  - condition: numeric_state
-    entity_id: proximity.raf_home
-    above: 1
-  - condition: numeric_state
-    entity_id: proximity.lynn_home
-    above: 1
 action:
   - service: notify.telegram_raf
     data:

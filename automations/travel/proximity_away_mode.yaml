@@ -1,0 +1,17 @@
+alias: "Travel: Proximity Away Mode"
+description: "When close to home, turn off away mode"
+trigger:
+  - platform: numeric_state
+    entity_id: proximity.raf_home
+    below: 2
+  - platform: numeric_state
+    entity_id: proximity.lynn_home
+    below: 2
+condition:
+  - condition: state
+    entity_id: input_boolean.away
+    state: "on"
+action:
+  - service: input_boolean.turn_off
+    data:
+      entity_id: input_boolean.away

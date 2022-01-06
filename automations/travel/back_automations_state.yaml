@@ -11,3 +11,4 @@ action:
       entity_id:
         - automation.vacuum_home_schedule
         - automation.vacuum_away_schedule
+        - automation.presence_home_set_at_home

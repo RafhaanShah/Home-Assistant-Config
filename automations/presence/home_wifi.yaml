@@ -1,5 +1,5 @@
-alias: "Presence: Home WiFi"
-description: "When home, turn phone wifi on"
+alias: "Presence: Phone Home Check"
+description: "When home, check phone GPS"
 trigger:
   platform: state
   entity_id: input_boolean.at_home
@@ -8,8 +8,8 @@ trigger:
 condition:
   - condition: numeric_state
     entity_id: proximity.raf_home
-    below: 1
+    below: 2.5
 action:
   - service: joaoapps_join.rafs_pixel_3a_send_tasker
     data:
-      command: "wifi-on"
+      command: "check-home"
