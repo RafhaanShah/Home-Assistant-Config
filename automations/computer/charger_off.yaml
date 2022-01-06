@@ -1,13 +1,17 @@
 alias: "Computer: Charger Off"
-description: "When the laptop is off, turn off the charger"
+description: "At night, turn off the charger"
 trigger:
-  platform: state
-  entity_id: binary_sensor.lynns_pc_power
-  from: "on"
-  to: "off"
-  for:
-    minutes: 2
+  platform: time
+  at: "12:00:00"
 action:
+  - wait_for_trigger:
+      - platform: state
+        entity_id: binary_sensor.lynns_pc_power
+        to: "off"
+        for: 10
+    timeout:
+      hours: 3
+    continue_on_timeout: false
   - service: switch.turn_off
     data:
       entity_id: switch.plug5_power
