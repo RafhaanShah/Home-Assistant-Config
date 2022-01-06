@@ -1,0 +1,18 @@
+alias: "Reminder: Home Connect WiFi"
+description: "When home, if disconnected from WiFi, send a notification"
+trigger:
+  platform: state
+  entity_id: person.lynn
+  to: home
+  for:
+    minutes: 30
+condition:
+  - condition: state
+    entity_id: device_tracker.lynns_iphone_wifi
+    state: not_home
+    for:
+      minutes: 30
+action:
+  - service: notify.mobile_app_lynn_s_iphone
+    data:
+      message: "Connect to WiFi you dummy"
