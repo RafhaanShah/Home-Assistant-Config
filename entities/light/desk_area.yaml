@@ -1,0 +1,5 @@
+platform: group
+name: Desk Area
+entities:
+  - light.desk_lightstrip
+  - light.floor_lamp
