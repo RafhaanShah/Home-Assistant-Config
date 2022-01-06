@@ -12,12 +12,12 @@ webostv:
       - Netflix
       - PC
       - PS5
+      - Photo & Video
       - Plex
-      - Switch
       - Spotify - Music and Podcasts
+      - Switch
       - Twitch
       - YouTube
-      - Photo & Video
   turn_on_action:
     service: wake_on_lan.send_magic_packet
     data:

@@ -17,11 +17,12 @@ condition:
     state:
       - Amazon Prime Video
       - Apple TV+
+      - BBC iPlayer
       - Disney+
       - Netflix
-      - Plex
       - Photo & Video
-      - Spotify Music and Podcasts
+      - Plex
+      - Spotify - Music and Podcasts
       - Twitch
       - YouTube
 action:
