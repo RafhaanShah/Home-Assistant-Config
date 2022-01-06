@@ -1,4 +1,4 @@
-alias: "Presence: Phone Home Check"
+alias: "Presence: Phone Location Check"
 description: "When home, check phone GPS"
 trigger:
   platform: state
