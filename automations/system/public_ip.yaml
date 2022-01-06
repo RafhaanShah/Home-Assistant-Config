@@ -3,7 +3,13 @@ description: "When public IP address changes, send a notification"
 trigger:
   platform: state
   entity_id: sensor.public_ip
-condition: "{{ trigger.to_state.state != 'Unknown' }}"
+condition:
+  - "{{ trigger.to_state.state != 'Unknown' }}"
+  - condition: state
+    entity_id: binary_sensor.cloudflare
+    state: "on"
+    for:
+      minutes: 10
 action:
   - service: notify.telegram_raf
     data:
