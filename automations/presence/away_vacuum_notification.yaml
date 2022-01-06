@@ -16,6 +16,10 @@ condition:
   - condition: numeric_state
     entity_id: sensor.robovac_last_run
     above: 0
+  - condition: time
+    weekday:
+      - sat
+      - sun
 action:
   - variables:
       action_run: "{{ 'VACUUM_RUN_' ~ context.id }}"

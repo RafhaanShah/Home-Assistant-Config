@@ -10,14 +10,16 @@ condition:
   - "{{ trigger.to_state.state not in ['unknown', 'unavailable', 'none'] }}"
   - "{{ trigger.from_state.state != trigger.to_state.state }}"
 action:
-  - choose:
-      - conditions:
-          - condition: state
-            entity_id: binary_sensor.guest_room_door_sensor_contact
-            state: "off"
-        sequence:
-          - service: vacuum.pause
-            entity_id: vacuum.robovac
-    default:
-      - service: vacuum.return_to_base
-        entity_id: vacuum.robovac
+  - service: vacuum.return_to_base
+    entity_id: vacuum.robovac
+  # - choose:
+  #     - conditions:
+  #         - condition: state
+  #           entity_id: binary_sensor.guest_room_door_sensor_contact
+  #           state: "off"
+  #       sequence:
+  #         - service: vacuum.pause
+  #           entity_id: vacuum.robovac
+  #   default:
+  #     - service: vacuum.return_to_base
+  #       entity_id: vacuum.robovac
