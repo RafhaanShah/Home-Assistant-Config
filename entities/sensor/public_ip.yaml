@@ -1,6 +1,8 @@
 # https://www.ipify.org/
 platform: rest
 name: public_ip
-resource: https://api.ipify.org/?format=json
-value_template: "{{ value_json.ip }}"
+# https://ipecho.net/plain
+# https://api.ipify.org/
+# https://ifconfig.me/ip
+resource: http://ifconfig.me/ip
 scan_interval: 1500
