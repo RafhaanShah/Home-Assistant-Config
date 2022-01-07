@@ -7,8 +7,9 @@ condition:
   - condition: time
     weekday:
       - mon
-      - tue
-      - thu
+      # - tue
+      - wed
+      # - thu
       - fri
   - condition: numeric_state
     entity_id: sensor.robovac_last_run
