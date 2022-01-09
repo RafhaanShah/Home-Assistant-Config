@@ -4,7 +4,7 @@ trigger:
   platform: state
   entity_id: sensor.public_ip
 condition:
-  - "{{ trigger.to_state.state not in ['unknown', 'unavailable'] }}"
+  - "{{ trigger.to_state.state not in ['unknown', 'unavailable', ''] }}"
   - condition: state
     entity_id: binary_sensor.cloudflare
     state: "on"
