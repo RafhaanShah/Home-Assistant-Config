@@ -8,6 +8,7 @@ condition:
     entity_id: person.raf
     attribute: gps_accuracy
     above: 0
+    below: 101
   - condition: template
     value_template: >-
       {{ (trigger.from_state.attributes.latitude != trigger.to_state.attributes.latitude) or
