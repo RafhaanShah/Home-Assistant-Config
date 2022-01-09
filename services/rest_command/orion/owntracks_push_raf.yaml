@@ -1,4 +1,4 @@
-url: !secret orion_server
+url: !secret owntracks_raf
 method: POST
 content_type: "application/json"
 payload: >-

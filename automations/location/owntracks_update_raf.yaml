@@ -1,12 +1,12 @@
-alias: "Location: Orion Lynn"
-description: "When coordinates change, publish to Orion"
+alias: "Location: Owntracks Update Raf"
+description: "When location changes, push to Owntracks"
 trigger:
   platform: state
-  entity_id: person.lynn
+  entity_id: person.raf
 condition:
   - condition: template
     value_template: >-
       {{ (trigger.from_state.attributes.latitude != trigger.to_state.attributes.latitude) or
       (trigger.from_state.attributes.longitude != trigger.to_state.attributes.longitude) }}
 action:
-  - service: rest_command.orion_publish_lynn
+  - service: rest_command.owntracks_push_raf
