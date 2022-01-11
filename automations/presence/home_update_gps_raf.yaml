@@ -13,4 +13,4 @@ action:
   - service: script.update_location_raf
   - service: joaoapps_join.rafs_pixel_3a_send_tasker
     data:
-      command: "check-home"
+      command: "wifi-on"
