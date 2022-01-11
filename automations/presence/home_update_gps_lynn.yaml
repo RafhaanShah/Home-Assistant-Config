@@ -1,0 +1,13 @@
+alias: "Presence: Home Update GPS Lynn"
+description: "When home, check phone GPS"
+trigger:
+  platform: state
+  entity_id: input_boolean.at_home
+  from: "off"
+  to: "on"
+condition:
+  - condition: numeric_state
+    entity_id: proximity.lynn_home
+    below: 2.5
+action:
+  - service: script.update_location_lynn

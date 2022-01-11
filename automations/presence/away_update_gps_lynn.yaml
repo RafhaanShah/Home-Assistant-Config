@@ -1,4 +1,4 @@
-alias: "Presence: Away Update Lynn GPS"
+alias: "Presence: Away Update GPS Lynn"
 description: "When disconnected from WiFi, request GPS update"
 trigger:
   platform: state
@@ -7,7 +7,4 @@ trigger:
   for:
     minutes: 10
 action:
-  # https://companion.home-assistant.io/docs/notifications/notification-commands/#request-location-updates
-  - service: notify.mobile_app_lynn_s_iphone
-    data:
-      message: "request_location_update"
+  - service: script.update_location_lynn

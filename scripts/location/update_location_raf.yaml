@@ -1,0 +1,8 @@
+# Request a location update
+# https://companion.home-assistant.io/docs/notifications/notification-commands/#request-location-updates
+alias: "Update Location Raf"
+icon: mdi:map-marker-outline
+sequence:
+  - service: notify.mobile_app_raf_s_pixel_3a
+    data:
+      message: "request_location_update"

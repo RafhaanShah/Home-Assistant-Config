@@ -1,4 +1,4 @@
-alias: "Presence: Phone Location Check"
+alias: "Presence: Home Update GPS Raf"
 description: "When home, check phone GPS"
 trigger:
   platform: state
@@ -10,6 +10,7 @@ condition:
     entity_id: proximity.raf_home
     below: 2.5
 action:
+  - service: script.update_location_raf
   - service: joaoapps_join.rafs_pixel_3a_send_tasker
     data:
       command: "check-home"
