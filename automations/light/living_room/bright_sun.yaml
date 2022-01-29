@@ -1,0 +1,26 @@
+alias: "Light: Living Room Bright Sun"
+description: "If it's bright enough outside, turn off the living room lights"
+trigger:
+  - platform: numeric_state
+    entity_id: sensor.hue_motion_sensor_1_illuminance
+    above: 600
+    for:
+      minutes: 10
+condition:
+  - condition: time
+    after: "05:00:00"
+    before: "14:30:00"
+  - condition: state
+    entity_id: input_boolean.at_home
+    state: "on"
+  - condition: numeric_state
+    entity_id: automation.light_living_room_bright_sun
+    above: 0 # run this automation only if it has not run today
+    value_template: "{{ (now().date() - state.attributes.last_triggered.date()).days }}"
+  - condition: state
+    entity_id: light.desk_area
+    state: "on"
+action:
+  - service: light.turn_off
+    data:
+      entity_id: light.desk_area
