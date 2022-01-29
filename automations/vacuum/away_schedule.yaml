@@ -2,12 +2,14 @@ alias: "Vacuum: Away Schedule"
 description: "At scheduled times, if not home and not run today, start cleaning"
 trigger:
   platform: time
-  at: "13:00:00"
+  at: "15:00:00"
 condition:
   - condition: time
     weekday:
       - mon
+      # - tue
       - wed
+      # - thu
       - fri
   - condition: state
     entity_id: input_boolean.at_home
