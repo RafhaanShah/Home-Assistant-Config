@@ -5,7 +5,7 @@ trigger:
   entity_id: climate.bedroom_heater
   to: heat
   for:
-    minutes: 1
+    minutes: 5
 condition:
   - condition: state
     entity_id: binary_sensor.bedroom_door_sensor_contact
