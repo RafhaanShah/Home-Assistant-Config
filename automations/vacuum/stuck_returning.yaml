@@ -1,0 +1,16 @@
+id: vacuum_stuck_returning
+alias: "Vacuum: Stuck Returning"
+description: "When Vacuum has been returning for long enough, stop it"
+trigger:
+  platform: state
+  entity_id: vacuum.robovac
+  attribute: status
+  to: "returning"
+  for:
+    minutes: 20
+action:
+  - service: vacuum.pause
+    entity_id: vacuum.robovac
+  - service: notify.telegram_raf
+    data:
+      message: "Vacuum got stuck returning to base"
