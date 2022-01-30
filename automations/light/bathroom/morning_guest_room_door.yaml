@@ -1,0 +1,28 @@
+alias: "Light: Bathroom Morning Guest Room Door"
+description: "When guest room door opens in the morning, turn on bathroom normal scene"
+trigger:
+  platform: state
+  entity_id: binary_sensor.guest_room_door_sensor_contact
+  from: "off"
+  to: "on"
+condition:
+  - condition: time
+    after: "06:00:00"
+    before: "12:00:00"
+  - condition: numeric_state
+    entity_id: automation.light_bathroom_morning_guest_room_door
+    above: 0
+    value_template: "{{ (now().date() - state.attributes.last_triggered.date()).days }}"
+  - condition: numeric_state
+    entity_id: automation.light_bathroom_morning_bedroom_door
+    above: 0
+    value_template: "{{ (now().date() - state.attributes.last_triggered.date()).days }}"
+action:
+  - service: switch.turn_off
+    data:
+      entity_id: switch.adaptive_lighting_sleep_mode_bathroom
+  - delay:
+      seconds: 1
+  - service: scene.turn_on
+    data:
+      entity_id: scene.bathroom_normal

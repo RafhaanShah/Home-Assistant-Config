@@ -1,5 +1,5 @@
-alias: "Sleeping: Awake Bedroom Lights"
-description: "When awake, turn the lights off after 30 minutes"
+alias: "Sleeping: Awake Lights"
+description: "When awake, set the lights to the correct state"
 trigger:
   platform: state
   entity_id: input_boolean.sleeping
