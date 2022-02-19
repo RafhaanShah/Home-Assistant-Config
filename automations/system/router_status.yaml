@@ -1,0 +1,16 @@
+alias: "System: Router Status"
+description: "When router status changes, send a notification"
+trigger:
+  - platform: state
+    entity_id: binary_sensor.router
+    for:
+      minutes: 5
+  - platform: state
+    entity_id: binary_sensor.freebsd_router_wan_status
+    for:
+      minutes: 5
+action:
+  - service: notify.persistent_notification
+    data:
+      title: "Router Status"
+      message: "{{ trigger.to_state.name }} {{ trigger.to_state.state }}"

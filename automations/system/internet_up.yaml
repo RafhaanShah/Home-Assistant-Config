@@ -1,0 +1,25 @@
+alias: "System: Internet Down"
+description: "When internet is up, send a notification"
+trigger:
+  - platform: state
+    entity_id: binary_sensor.cloudflare
+    from: "on"
+    to: "off"
+    for:
+      minutes: 5
+action:
+  - service: notify.persistent_notification
+    data:
+      title: "Internet down"
+      message: "{{ states('sensor.time') }}"
+  - wait_for_trigger:
+      - platform: state
+        entity_id: binary_sensor.cloudflare
+        to: "on"
+    timeout:
+      hours: 1
+    continue_on_timeout: false
+  - service: notify.persistent_notification
+    data:
+      title: "Internet up"
+      message: "{{ states('sensor.time') }}"

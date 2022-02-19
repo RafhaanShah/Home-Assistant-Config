@@ -15,14 +15,3 @@ action:
   - service: light.turn_off
     data:
       entity_id: all
-  - service: switch.turn_on
-    data:
-      entity_id: switch.adaptive_lighting_sleep_mode_bathroom
-  - delay:
-      seconds: 1
-  - condition: state
-    entity_id: binary_sensor.guest_room_door_sensor_contact
-    state: "off"
-  - service: light.turn_on
-    data:
-      entity_id: light.ceiling_4

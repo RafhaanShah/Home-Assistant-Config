@@ -19,6 +19,78 @@ trigger:
     to: "off"
     for:
       minutes: 60
+  - platform: state
+    entity_id: binary_sensor.cloudflare
+    from: "on"
+    to: "off"
+    for:
+      minutes: 90
+  - platform: state
+    entity_id: binary_sensor.cloudflare
+    from: "on"
+    to: "off"
+    for:
+      hours: 3
+  - platform: state
+    entity_id: binary_sensor.cloudflare
+    from: "on"
+    to: "off"
+    for:
+      hours: 4
+  - platform: state
+    entity_id: binary_sensor.cloudflare
+    from: "on"
+    to: "off"
+    for:
+      hours: 5
+  - platform: state
+    entity_id: binary_sensor.cloudflare
+    from: "on"
+    to: "off"
+    for:
+      hours: 6
+  - platform: state
+    entity_id: binary_sensor.cloudflare
+    from: "on"
+    to: "off"
+    for:
+      hours: 12
+  - platform: state
+    entity_id: binary_sensor.cloudflare
+    from: "on"
+    to: "off"
+    for:
+      hours: 18
+  - platform: state
+    entity_id: binary_sensor.cloudflare
+    from: "on"
+    to: "off"
+    for:
+      hours: 24
+  - platform: state
+    entity_id: binary_sensor.cloudflare
+    from: "on"
+    to: "off"
+    for:
+      hours: 36
+  - platform: state
+    entity_id: binary_sensor.cloudflare
+    from: "on"
+    to: "off"
+    for:
+      hours: 48
+  - platform: state
+    entity_id: binary_sensor.cloudflare
+    from: "on"
+    to: "off"
+    for:
+      hours: 60
+  - platform: state
+    entity_id: binary_sensor.cloudflare
+    from: "on"
+    to: "off"
+    for:
+      hours: 72
 condition:
   - condition: state
     entity_id: input_boolean.at_home
@@ -32,3 +104,7 @@ action:
   - service: switch.turn_on
     data:
       entity_id: switch.plug4_power
+  - service: notify.persistent_notification
+    data:
+      title: "Internet down"
+      message: "Router power cycled"

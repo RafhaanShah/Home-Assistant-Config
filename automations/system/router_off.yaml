@@ -16,6 +16,36 @@ trigger:
     to: "off"
     for:
       minutes: 40
+  - platform: state
+    entity_id: switch.plug4_power
+    to: "off"
+    for:
+      minutes: 60
+  - platform: state
+    entity_id: switch.plug4_power
+    to: "off"
+    for:
+      hours: 2
+  - platform: state
+    entity_id: switch.plug4_power
+    to: "off"
+    for:
+      hours: 4
+  - platform: state
+    entity_id: switch.plug4_power
+    to: "off"
+    for:
+      hours: 6
+  - platform: state
+    entity_id: switch.plug4_power
+    to: "off"
+    for:
+      hours: 12
+  - platform: state
+    entity_id: switch.plug4_power
+    to: "off"
+    for:
+      hours: 24
 condition:
   - condition: state
     entity_id: input_boolean.at_home
