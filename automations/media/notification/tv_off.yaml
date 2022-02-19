@@ -20,10 +20,21 @@ condition:
             attribute: source
             state:
               - Amazon Prime Video
+              - Apple TV+
+              - BBC iPlayer
+              - Chromecast
               - Disney+
               - Netflix
-              - Plex
+              - ITV Hub
+              - NOW
+              - PC
+              - PS5
               - Photo & Video
+              - Plex
+              - Spotify - Music and Podcasts
+              - Switch
+              - Twitch
+              - YouTube
 action:
   - service: joaoapps_join.rafs_pixel_3a_send_tasker
     data:
