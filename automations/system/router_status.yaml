@@ -3,10 +3,12 @@ description: "When router status changes, send a notification"
 trigger:
   - platform: state
     entity_id: binary_sensor.router
+    to: ~
     for:
       minutes: 5
   - platform: state
     entity_id: binary_sensor.freebsd_router_wan_status
+    to: ~
     for:
       minutes: 5
 action:
