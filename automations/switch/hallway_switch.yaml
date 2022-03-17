@@ -1,0 +1,12 @@
+alias: "Switch: Hallway"
+description: "When button pressed once, toggle lights"
+trigger:
+  - platform: state
+    entity_id: sensor.hallway_switch_action
+    to: single_left
+  - platform: state
+    entity_id: sensor.hallway_switch_action
+    to: single_right
+action:
+  - service: light.toggle
+    entity_id: light.hallway

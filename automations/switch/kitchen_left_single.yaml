@@ -1,9 +1,0 @@
-alias: "Switch: Kitchen Left Single"
-description: "When left button pressed once, toggle lights"
-trigger:
-  platform: state
-  entity_id: sensor.kitchen_switch_action
-  to: single_left
-action:
-  - service: light.toggle
-    entity_id: light.kitchen

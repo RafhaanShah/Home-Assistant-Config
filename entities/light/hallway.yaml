@@ -1,0 +1,6 @@
+platform: group
+name: Hallway
+entities:
+  - light.hallway_1
+  - light.hallway_2
+  - light.hallway_3

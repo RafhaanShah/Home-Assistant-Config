@@ -76,7 +76,7 @@
   retain: true
 
 ## Wall Switches
-# Xiaomi WXKG02LM https://www.zigbee2mqtt.io/devices/WXKG02LM.html
+# Xiaomi WXKG02LM https://www.zigbee2mqtt.io/devices/WXKG02LM_rev2.html
 "0x00158d00047e503f":
   friendly_name: hallway_switch
   legacy: false
