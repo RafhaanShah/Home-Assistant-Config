@@ -1,5 +1,5 @@
 alias: "Security: Home Disarm Blink"
-description: "When door opens while home, disarm Blink for some time"
+description: "When door opens while home, disarm Blink for some time, and re-arm"
 mode: restart
 trigger:
   platform: state
@@ -20,6 +20,19 @@ action:
         to: "off"
         for:
           minutes: 5
-  - service: alarm_control_panel.alarm_arm_away
-    data:
-      entity_id: alarm_control_panel.blink_rafs_flat
+    timeout:
+      minutes: 15
+    continue_on_timeout: true
+  - repeat:
+      while:
+        - condition: state
+          entity_id: alarm_control_panel.blink_rafs_flat
+          state: disarmed
+        - condition: template
+          value_template: "{{ repeat.index <= 10 }}"
+      sequence:
+        - service: alarm_control_panel.alarm_arm_away
+          data:
+            entity_id: alarm_control_panel.blink_rafs_flat
+        - delay:
+            minutes: 1

@@ -1,18 +1,24 @@
 alias: "Security: Blink Disarmed"
-description: "When Blink is disarmed for 15 minutes, send a notification"
+description: "When Blink is disarmed for too long, send a notification"
+mode: restart
 trigger:
-  platform: state
-  entity_id: alarm_control_panel.blink_rafs_flat
-  to: disarmed
-  for:
-    minutes: 15
+  - platform: state
+    entity_id: alarm_control_panel.blink_rafs_flat
+    to: disarmed
+    for:
+      minutes: 15
+  - platform: state
+    entity_id: alarm_control_panel.blink_rafs_flat
+    to: disarmed
+    for:
+      minutes: 30
 action:
   - variables:
       action_arm: "{{ 'BLINK_ARM_' ~ context.id }}"
   - service: notify.mobile_app_raf_s_pixel_3a
     data:
       title: Arm Blink?
-      message: "System has been disarmed for 15+ minutes"
+      message: "System has been disarmed for {{ trigger.for.seconds / 60 }} minutes"
       data:
         actions:
           - action: "{{ action_arm }}"
