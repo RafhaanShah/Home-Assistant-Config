@@ -1,3 +1,4 @@
+# https://www.home-assistant.io/integrations/webostv/
 alias: "TV: LG TV On"
 description: "When TV on command received, send WOL packet"
 trigger:

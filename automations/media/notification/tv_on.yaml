@@ -18,17 +18,13 @@ condition:
       - Amazon Prime Video
       - Apple TV+
       - BBC iPlayer
-      - Chromecast
       - Disney+
       - Netflix
       - ITV Hub
       - NOW
-      - PC
-      - PS5
       - Photo & Video
       - Plex
       - Spotify - Music and Podcasts
-      - Switch
       - Twitch
       - YouTube
 action:
