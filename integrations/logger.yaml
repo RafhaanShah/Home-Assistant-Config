@@ -10,5 +10,9 @@ logger:
     homeassistant.components.homeassistant.triggers.numeric_state:
       - "Error initializing 'Media: Max Volumes' trigger: In 'numeric_state' condition: attribute 'volume_level'"
       - "Error in 'Media: Max Volumes' trigger: In 'numeric_state' condition: attribute 'volume_level'"
+      - "Error initializing 'Travel: Proximity Away Mode'"
     pychromecast.socket_client:
       - "Heartbeat timeout"
+      - "Error communicating with socket"
+    urllib3.connectionpool:
+      - "connection broken"
