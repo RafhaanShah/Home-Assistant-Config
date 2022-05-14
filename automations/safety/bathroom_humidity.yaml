@@ -1,0 +1,33 @@
+alias: "Safety: Bathroom Humidity"
+description: "When humidity is too high, send a notification"
+trigger:
+  platform: numeric_state
+  entity_id:
+    - sensor.bathroom_sensor_humidity
+  above: 80
+  for:
+    minutes: 10
+action:
+  - service: notify.telegram_raf
+    data:
+      message: "High Humidity: {{ trigger.to_state.name }}"
+  - service: media_player.media_pause
+    data:
+      entity_id: media_player.bathroom_mini
+  - service: media_player.volume_set
+    data:
+      entity_id:
+        - media_player.bathroom_mini
+      volume_level: 0.6
+  - service: tts.google_say
+    data:
+      entity_id: media_player.bathroom_mini
+      message: "It is very humid, please open the door."
+  - service: media_player.media_stop
+    data:
+      entity_id: media_player.bathroom_mini
+  - service: media_player.volume_set
+    data:
+      entity_id:
+        - media_player.bathroom_mini
+      volume_level: 0.4

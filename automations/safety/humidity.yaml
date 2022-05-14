@@ -3,11 +3,12 @@ description: "When humidity is too high, send a notification"
 trigger:
   platform: numeric_state
   entity_id:
-    # - sensor.bathroom_sensor_humidity
     - sensor.bedroom_sensor_humidity
     - sensor.guest_room_sensor_humidity
     - sensor.living_room_sensor_humidity
   above: 69
+  for:
+    minutes: 10
 action:
   - service: notify.telegram_raf
     data:
