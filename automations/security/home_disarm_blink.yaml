@@ -29,10 +29,10 @@ action:
           entity_id: alarm_control_panel.blink_rafs_flat
           state: disarmed
         - condition: template
-          value_template: "{{ repeat.index <= 10 }}"
+          value_template: "{{ repeat.index <= 11 }}"
       sequence:
         - service: alarm_control_panel.alarm_arm_away
           data:
             entity_id: alarm_control_panel.blink_rafs_flat
         - delay:
-            minutes: 1
+            minutes: 2

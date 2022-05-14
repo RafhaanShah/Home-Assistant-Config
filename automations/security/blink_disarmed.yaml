@@ -6,19 +6,24 @@ trigger:
     entity_id: alarm_control_panel.blink_rafs_flat
     to: disarmed
     for:
-      minutes: 15
+      minutes: 20
   - platform: state
     entity_id: alarm_control_panel.blink_rafs_flat
     to: disarmed
     for:
-      minutes: 30
+      minutes: 40
+  - platform: state
+    entity_id: alarm_control_panel.blink_rafs_flat
+    to: disarmed
+    for:
+      minutes: 60
 action:
   - variables:
       action_arm: "{{ 'BLINK_ARM_' ~ context.id }}"
   - service: notify.mobile_app_raf_s_pixel_3a
     data:
       title: Arm Blink?
-      message: "System has been disarmed for {{ trigger.for.seconds / 60 }} minutes"
+      message: "System has been disarmed for {{ (trigger.for.seconds / 60) | int }} minutes"
       data:
         actions:
           - action: "{{ action_arm }}"
