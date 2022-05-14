@@ -11,8 +11,13 @@ trigger:
     to: ~
     for:
       minutes: 5
+  - platform: state
+    entity_id: binary_sensor.cloudflare
+    to: ~
+    for:
+      minutes: 5
 action:
   - service: notify.persistent_notification
     data:
-      title: "Router Status"
+      title: "Router/Internet Status"
       message: "{{ trigger.to_state.name }} {{ trigger.to_state.state }}"

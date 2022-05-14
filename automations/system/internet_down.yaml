@@ -106,5 +106,5 @@ action:
       entity_id: switch.plug4_power
   - service: notify.persistent_notification
     data:
-      title: "Internet down"
-      message: "Router power cycled"
+      title: "Router Power"
+      message: "Router power cycled, duration: {{ (trigger.for.seconds / 60) | int }} minutes"

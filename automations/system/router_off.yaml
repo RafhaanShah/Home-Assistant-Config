@@ -54,3 +54,7 @@ action:
   - service: switch.turn_on
     data:
       entity_id: switch.plug4_power
+  - service: notify.persistent_notification
+    data:
+      title: "Router Power"
+      message: "Turning router on because it was off for {{ (trigger.for.seconds / 60) | int }} minutes"
