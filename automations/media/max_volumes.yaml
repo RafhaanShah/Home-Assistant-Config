@@ -5,7 +5,7 @@ trigger:
   attribute: volume_level
   above: 0.16
   entity_id:
-    - media_player.bedroom_mini
+    - media_player.bedroom_display
     - media_player.bathroom_mini
     - media_player.guest_room_mini
     - media_player.speaker
