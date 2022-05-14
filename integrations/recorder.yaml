@@ -10,8 +10,6 @@ recorder:
       - person
       - vacuum
     entities:
-      - binary_sensor.cloudflare
-      - binary_sensor.router
       - light.bedroom
       - light.bathroom
       - light.kitchen

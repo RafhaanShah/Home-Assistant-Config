@@ -16,3 +16,5 @@ logger:
       - "Error communicating with socket"
     urllib3.connectionpool:
       - "connection broken"
+    blinkpy.auth:
+      - "possibly down or throttled"
