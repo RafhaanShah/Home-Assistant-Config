@@ -1,16 +1,23 @@
 alias: "Media: Max Volumes"
 description: "When media volume changes too high, if sleeping, set it lower"
 trigger:
-  platform: numeric_state
-  attribute: volume_level
-  above: 0.16
-  entity_id:
-    - media_player.bedroom_display
-    - media_player.bathroom_mini
-    - media_player.guest_room_mini
-    - media_player.speaker
-    - media_player.living_room_display
-    - media_player.living_room_tv
+  - platform: numeric_state
+    attribute: volume_level
+    above: 0.16
+    entity_id:
+      - media_player.bathroom_mini
+      - media_player.guest_room_mini
+      - media_player.speaker
+      - media_player.living_room_display
+    variables:
+      volume: 0.15
+  - platform: numeric_state
+    attribute: volume_level
+    above: 0.41
+    entity_id:
+      - media_player.bedroom_display
+    variables:
+      volume: 0.3
 condition:
   - condition: template
     value_template: "{{ trigger.to_state.state != 'off' }}"
@@ -21,4 +28,4 @@ action:
   - service: media_player.volume_set
     data:
       entity_id: "{{ trigger.entity_id }}"
-      volume_level: 0.15
+      volume_level: "{{ volume }}"

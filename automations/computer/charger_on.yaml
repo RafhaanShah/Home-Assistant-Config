@@ -1,4 +1,4 @@
-alias: "Computer: Charger Off"
+alias: "Computer: Charger On"
 description: "In the morning or when the laptop is on, turn on the charger"
 trigger:
   - platform: time
