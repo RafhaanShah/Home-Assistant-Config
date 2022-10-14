@@ -14,7 +14,7 @@ condition:
     entity_id: person.raf
     state: home
 action:
-  - service: joaoapps_join.rafs_pixel_3a_send_tasker
+  - service: joaoapps_join.rafs_phone_send_tasker
     data:
       command: >-
         {{ 'homemedia=:=clear=:=' ~ trigger.to_state.object_id }}

@@ -20,7 +20,7 @@ trigger:
 action:
   - variables:
       action_arm: "{{ 'BLINK_ARM_' ~ context.id }}"
-  - service: notify.mobile_app_raf_s_pixel_3a
+  - service: notify.mobile_app_rafs_phone
     data:
       title: Arm Blink?
       message: "System has been disarmed for {{ (trigger.for.seconds / 60) | int }} minutes"

@@ -3,9 +3,9 @@
 alias: "Update Location Raf"
 icon: mdi:map-marker-outline
 sequence:
-  - service: joaoapps_join.rafs_pixel_3a_send_tasker
+  - service: joaoapps_join.rafs_phone_send_tasker
     data:
       command: "update-location"
-  # - service: notify.mobile_app_raf_s_pixel_3a
+  # - service: notify.mobile_app_rafs_phone
   #   data:
   #     message: "request_location_update"

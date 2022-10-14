@@ -17,7 +17,7 @@ condition:
     value_template: >-
       {{ trigger.to_state.state != 'off' and trigger.to_state.media_title is not none }}
 action:
-  - service: joaoapps_join.rafs_pixel_3a_send_tasker
+  - service: joaoapps_join.rafs_phone_send_tasker
     data:
       command: >-
         {{ 'homemedia=:=notify=:=' ~ trigger.to_state.object_id }}

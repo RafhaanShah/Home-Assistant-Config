@@ -6,7 +6,7 @@ trigger:
   from: "off"
   to: "on"
 action:
-  - service: notify.mobile_app_raf_s_pixel_3a
+  - service: notify.mobile_app_rafs_phone
     data:
       title: "{{ trigger.to_state.attributes.message }}"
       message: "{{ trigger.to_state.attributes.description }}"

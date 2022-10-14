@@ -24,7 +24,7 @@ action:
   - variables:
       action_run: "{{ 'VACUUM_RUN_' ~ context.id }}"
       action_run_short: "{{ 'VACUUM_RUN_SHORT_' ~ context.id }}"
-  - service: notify.mobile_app_raf_s_pixel_3a
+  - service: notify.mobile_app_rafs_phone
     data:
       title: Start RoboVac Cleaning Session?
       message: "Last run {{ states('sensor.robovac_last_run') }} day(s) ago"

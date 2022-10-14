@@ -13,6 +13,6 @@ condition:
     for:
       minutes: 30
 action:
-  - service: notify.mobile_app_lynn_s_iphone
+  - service: notify.mobile_app_lynns_iphone
     data:
       message: "Connect to WiFi you dummy"

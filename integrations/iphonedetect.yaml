@@ -6,4 +6,4 @@ device_tracker:
     new_device_defaults:
       track_new_devices: false
     hosts:
-      lynns_iphone_wifi: 192.168.1.41
+      lynns_iphone_wifi: !secret ip_lynns_iphone

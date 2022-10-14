@@ -15,7 +15,7 @@ recorder:
       - light.kitchen
       - light.living_room
       - light.guest_room
-      - sensor.rafs_pixel_3a_wifi_connection
+      - sensor.rafs_phone_wifi_connection
       - sensor.lynns_iphone_ssid
     entity_globs:
       - binary_sensor.*_pc_power
