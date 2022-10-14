@@ -1,0 +1,25 @@
+# Used by device trackers like arpscan and iphonedetect
+
+rafs_phone_wifi:
+  hide_if_away: false
+  name: Rafs Phone WiFi
+  mac: AA:AA:AA:AA:AA:AA
+  icon:
+  picture:
+  track: true
+
+lynns_iphone_wifi:
+  hide_if_away: false
+  name: Lynns Phone WiFi
+  mac: BB:BB:BB:BB:BB:BB
+  icon:
+  picture:
+  track: true
+
+some_other_device:
+  hide_if_away: false
+  name: some_other_device
+  mac: CC:CC:CC:CC:CC:CC
+  icon:
+  picture:
+  track: false
