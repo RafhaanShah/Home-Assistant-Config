@@ -1,0 +1,36 @@
+alias: "Zone: Station Groceries Reminder"
+description: "When someone is near the station grocery store, send a reminder"
+trigger:
+  - platform: numeric_state
+    entity_id: zone.station_groceries
+    above: 0
+condition:
+  - condition: time
+    after: "12:00:00"
+    before: "21:00:00"
+    weekday:
+      - sat
+      - sun
+  - condition: or
+    conditions:
+      - condition: state
+        entity_id: proximity.raf_home
+        attribute: dir_of_travel
+        state:
+          - "towards"
+          - "stationary"
+      - condition: state
+        entity_id: proximity.lynn_home
+        attribute: dir_of_travel
+        state:
+          - "towards"
+          - "stationary"
+action:
+  - service: notify.mobile_app_rafs_phone
+    data:
+      title: "Do you need any groceries?"
+      message: "Someone is near the station"
+  - service: notify.mobile_app_lynns_iphone
+    data:
+      title: "Do you need any groceries?"
+      message: "Someone is near the station"

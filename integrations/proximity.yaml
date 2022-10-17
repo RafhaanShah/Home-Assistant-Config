@@ -6,7 +6,7 @@ proximity:
       - rafs_work
     devices:
       - person.raf
-    tolerance: 100
+    tolerance: 50
     unit_of_measurement: km
   lynn_home:
     zone: home
@@ -14,5 +14,5 @@ proximity:
       - lynns_work
     devices:
       - person.lynn
-    tolerance: 100
+    tolerance: 50
     unit_of_measurement: km
