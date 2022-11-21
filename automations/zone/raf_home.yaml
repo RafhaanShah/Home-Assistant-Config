@@ -1,0 +1,16 @@
+alias: "Zone: Raf Home"
+description: "Send a notification when at home"
+trigger:
+  platform: state
+  entity_id: person.raf
+  to: "home"
+condition:
+  - not:
+      - condition: state
+        entity_id: person.lynn
+        state: "home"
+action:
+  - service: notify.mobile_app_lynns_iphone
+    data:
+      title: "Location Update"
+      message: "Raf has arrived at home"

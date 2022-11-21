@@ -1,0 +1,34 @@
+alias: "Zone: Station Reminder"
+description: "When someone is at the station, send them a reminder"
+trigger:
+  - platform: numeric_state
+    entity_id: zone.station
+    above: 0
+    variables:
+      notification_title: "Reminder"
+      notification_message:
+        "{{ state_attr(state_attr(trigger.entity_id, 'persons')[0],
+        'friendly_name') }} is at {{ state_attr(trigger.entity_id, 'friendly_name') }}"
+condition:
+  - or:
+      - not:
+          - condition: state
+            entity_id: person.raf
+            state: home
+            for:
+              minutes: 30
+      - not:
+          - condition: state
+            entity_id: person.lynn
+            state: home
+            for:
+              minutes: 30
+action:
+  - service: notify.mobile_app_rafs_phone
+    data:
+      title: "{{ notification_title }}"
+      message: "{{ notification_message }}"
+  - service: notify.mobile_app_lynns_iphone
+    data:
+      title: "{{ notification_title }}"
+      message: "{{ notification_message }}"

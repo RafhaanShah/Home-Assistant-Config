@@ -1,0 +1,22 @@
+alias: "Zone: Lynn Work"
+description: "Send a notification when at work"
+trigger:
+  - platform: state
+    entity_id: person.lynn
+    to: "lynns_work"
+    variables:
+      message_verb: "arrived at"
+  - platform: state
+    entity_id: person.lynn
+    from: "lynns_work"
+    variables:
+      message_verb: "left"
+condition:
+  - condition: state
+    entity_id: binary_sensor.workday_sensor
+    state: "on"
+action:
+  - service: notify.mobile_app_rafs_phone
+    data:
+      title: "Location Update"
+      message: "Lynn has {{ message_verb }} the office"

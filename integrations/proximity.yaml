@@ -5,14 +5,14 @@ proximity:
     ignored_zones:
       - rafs_work
     devices:
-      - person.raf
-    tolerance: 50
+      - device_tracker.rafs_phone
+    tolerance: 100
     unit_of_measurement: km
   lynn_home:
     zone: home
     ignored_zones:
       - lynns_work
     devices:
-      - person.lynn
-    tolerance: 50
+      - device_tracker.lynns_iphone
+    tolerance: 100
     unit_of_measurement: km
