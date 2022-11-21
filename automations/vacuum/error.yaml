@@ -1,0 +1,14 @@
+id: vacuum_error
+alias: "Vacuum: Error"
+description: "When Vacuum has an error state, send a notification"
+trigger:
+  platform: state
+  entity_id: vacuum.robovac
+  attribute: status
+  to: "error"
+  for:
+    minutes: 5
+action:
+  - service: notify.telegram_raf
+    data:
+      message: "Vacuum has an error"

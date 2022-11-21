@@ -1,0 +1,18 @@
+alias: "Light: Living Room Night"
+description: "When lights are off at night, turn off the heating"
+trigger:
+  platform: state
+  entity_id: light.living_room
+  from: "on"
+  to: "off"
+condition:
+  - condition: time
+    after: "21:00:00"
+    before: "03:00:00"
+  - condition: state
+    entity_id: media_player.lg_tv
+    state: "off"
+action:
+  - service: climate.turn_off
+    data:
+      entity_id: climate.living_room_heater

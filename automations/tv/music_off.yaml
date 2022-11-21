@@ -1,0 +1,16 @@
+alias: "TV: Music Off"
+description: "When TV turns on, if music is playing, turn it off"
+trigger:
+  platform: state
+  entity_id: media_player.lg_tv
+  from: "off"
+  to: "on"
+condition:
+  - not:
+      - condition: state
+        entity_id: media_player.speaker
+        state: "off"
+action:
+  - service: media_player.media_pause
+    data:
+      entity_id: media_player.speaker
