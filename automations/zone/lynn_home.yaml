@@ -9,6 +9,9 @@ condition:
       - condition: state
         entity_id: person.raf
         state: "home"
+  - condition: numeric_state
+    entity_id: sensor.raf_lynn_distance
+    above: 1
 action:
   - service: notify.mobile_app_rafs_phone
     data:
