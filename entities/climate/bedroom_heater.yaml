@@ -3,10 +3,10 @@ platform: generic_thermostat
 name: Bedroom Heater
 heater: switch.plug2_power
 target_sensor: sensor.bedroom_sensor_temperature
-min_temp: 15
+min_temp: 10
 max_temp: 25
-cold_tolerance: 0.2
-hot_tolerance: 0.2
+cold_tolerance: 0.3
+hot_tolerance: 0.3
 min_cycle_duration:
   seconds: 60
 initial_hvac_mode: "off"

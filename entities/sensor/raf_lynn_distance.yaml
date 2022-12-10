@@ -2,4 +2,4 @@
 platform: template
 sensors:
   raf_lynn_distance:
-    value_template: "{{ distance('person.raf', 'person.lynn') }}"
+    value_template: "{{ distance('person.raf', 'device_tracker.lynns_iphone') }}"

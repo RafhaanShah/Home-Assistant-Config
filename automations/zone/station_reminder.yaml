@@ -1,28 +1,26 @@
-alias: "Zone: Station Reminder"
-description: "When someone is at the station, send them a reminder"
+alias: "Zone: Station"
+description: "Send a notification when at station"
 trigger:
   - platform: numeric_state
     entity_id: zone.station
     above: 0
     variables:
-      notification_title: "Reminder"
+      notification_title: "Location Update"
       notification_message:
         "{{ state_attr(state_attr(trigger.entity_id, 'persons')[0],
-        'friendly_name') }} is at {{ state_attr(trigger.entity_id, 'friendly_name') }}"
+        'friendly_name') }} is at the station"
 condition:
   - or:
-      - not:
-          - condition: state
-            entity_id: person.raf
-            state: home
-            for:
-              minutes: 30
-      - not:
-          - condition: state
-            entity_id: person.lynn
-            state: home
-            for:
-              minutes: 30
+      - condition: state
+        entity_id: device_tracker.rafs_phone_wifi
+        state: not_home
+        for:
+          minutes: 30
+      - condition: state
+        entity_id: device_tracker.lynns_iphone_wifi
+        state: not_home
+        for:
+          minutes: 30
 action:
   - service: notify.mobile_app_rafs_phone
     data:
