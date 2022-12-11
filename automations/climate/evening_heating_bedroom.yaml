@@ -1,8 +1,8 @@
-alias: "Climate: Evening Heating"
-description: "At 9:30 PM, if home and cold, turn on the bedroom heater"
+alias: "Climate: Evening Heating Bedroom"
+description: "At 11:30 PM, if home and cold, turn on the bedroom heater"
 trigger:
   platform: time
-  at: "21:30:00"
+  at: "23:30:00"
 condition:
   - condition: state
     entity_id: input_boolean.at_home
@@ -13,6 +13,3 @@ action:
   - service: climate.turn_on
     data:
       entity_id: climate.bedroom_heater
-  - service: climate.turn_off
-    data:
-      entity_id: climate.living_room_heater

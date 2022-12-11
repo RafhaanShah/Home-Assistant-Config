@@ -1,8 +1,8 @@
 alias: "Climate: Bedroom Heater Morning"
-description: "At 6:00 AM, if sleeping and cold, turn on the bedroom heater"
+description: "At 7:30 AM, if sleeping and cold, turn on the bedroom heater"
 trigger:
   platform: time
-  at: "06:30:00"
+  at: "07:30:00"
 condition:
   - condition: state
     entity_id: input_boolean.sleeping

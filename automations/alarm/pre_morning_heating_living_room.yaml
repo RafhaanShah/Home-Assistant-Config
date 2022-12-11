@@ -1,4 +1,4 @@
-alias: "Alarm: Pre Morning Heating"
+alias: "Alarm: Pre Morning Heating Living Room"
 description: "At pre-alarm time, if cold, turn on the living room heater"
 trigger:
   platform: time

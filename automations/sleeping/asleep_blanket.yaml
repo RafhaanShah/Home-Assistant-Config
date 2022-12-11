@@ -1,0 +1,15 @@
+alias: "Sleeping: Asleep Blanket"
+description: "When asleep, turn the blanket off"
+trigger:
+  platform: state
+  entity_id: input_boolean.sleeping
+  from: "off"
+  to: "on"
+condition:
+  - condition: state
+    entity_id: switch.plug5_power
+    state: "on"
+action:
+  - service: switch.turn_off
+    data:
+      entity_id: switch.plug5_power

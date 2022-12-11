@@ -23,6 +23,8 @@ homeassistant:
   longitude: !secret home_lon
   time_zone: Europe/London
   unit_system: metric
+  currency: GBP
+  country: GB
   external_url: !secret server_full_url
   internal_url: !secret server_full_url
   packages: !include_dir_named integrations

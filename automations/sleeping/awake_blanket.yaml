@@ -1,0 +1,15 @@
+alias: "Sleeping: Awake Heating"
+description: "When awake, turn the heating off"
+trigger:
+  platform: state
+  entity_id: input_boolean.sleeping
+  from: "on"
+  to: "off"
+condition:
+  - condition: state
+    entity_id: switch.plug5_power
+    state: "on"
+action:
+  - service: switch.turn_off
+    data:
+      entity_id: switch.plug5_power

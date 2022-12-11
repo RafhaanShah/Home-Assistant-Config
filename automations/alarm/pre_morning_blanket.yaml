@@ -1,0 +1,13 @@
+alias: "Alarm: Pre Morning Blanket"
+description: "At pre-alarm time, turn on the blanket"
+trigger:
+  platform: time
+  at: input_datetime.morning_alarm_pre
+condition:
+  - condition: state
+    entity_id: switch.plug5_power
+    state: "off"
+action:
+  - service: switch.turn_on
+    data:
+      entity_id: switch.plug5_power

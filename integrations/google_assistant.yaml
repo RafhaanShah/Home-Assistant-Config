@@ -34,6 +34,9 @@ google_assistant:
     switch.tv_speaker_power:
       name: Sound System
       room: Living Room
+    switch.plug5_power:
+      name: Electric Blanket
+      room: Bedroom
     script.tv_speaker_volume_up:
       name: Sound System Up
       room: Living Room

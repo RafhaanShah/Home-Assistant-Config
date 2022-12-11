@@ -1,0 +1,13 @@
+alias: "Climate: Electric Blanket on Time"
+description: "When blanket is on for too long, turn it off"
+trigger:
+  platform: state
+  entity_id: switch.plug5_power
+  from: "off"
+  to: "on"
+  for:
+    minutes: 20
+action:
+  - service: switch.turn_off
+    data:
+      entity_id: switch.plug5_power
