@@ -1,0 +1,13 @@
+alias: "Presence: Guest Mode Automations State"
+description: "When guest mode is toggled, toggle specified automations"
+trigger:
+  platform: state
+  entity_id: input_boolean.guest_mode
+  to:
+    - "on"
+    - "off"
+action:
+  - service: "automation.turn_{{ trigger.to_state.attributes }}"
+    data:
+      entity_id:
+        - automation.sleeping_asleep_lights
