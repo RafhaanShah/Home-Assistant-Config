@@ -31,6 +31,14 @@ google_assistant:
       name: Computer
       room: Living Room
       expose: true
+      aliases:
+        - "Raf's Computer"
+    switch.lynns_pc_power:
+      name: Laptop
+      room: Living Room
+      expose: true
+      aliases:
+        - "Lynn's Laptop"
     switch.tv_speaker_power:
       name: Sound System
       room: Living Room
@@ -41,7 +49,13 @@ google_assistant:
       name: Sound System Up
       room: Living Room
       expose: true
+      aliases:
+        - "TV Speaker Up"
+        - "TV Speaker Higher"
     script.tv_speaker_volume_down:
       name: Sound System Down
       room: Living Room
       expose: true
+      aliases:
+        - "TV Speaker Down"
+        - "TV Speaker Lower"
