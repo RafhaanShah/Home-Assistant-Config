@@ -5,9 +5,15 @@ trigger:
   at: input_datetime.morning_alarm_pre
 condition:
   - condition: state
+    entity_id: input_boolean.electric_blanket_morning
+    state: "on"
+  - condition: state
     entity_id: switch.plug5_power
     state: "off"
 action:
   - service: switch.turn_on
     data:
       entity_id: switch.plug5_power
+  - service: input_boolean.turn_off
+    data:
+      entity_id: input_boolean.electric_blanket_morning

@@ -1,0 +1,17 @@
+alias: "Climate: Electric Blanket on Morning"
+description: "When blanket is on, toggle the morning entity"
+trigger:
+  platform: state
+  entity_id: switch.plug5_power
+  from: "off"
+  to: "on"
+  for:
+    minutes: 10
+condition:
+  - condition: time
+    after: "21:00:00"
+    before: "03:00:00"
+action:
+  - service: input_boolean.turn_on
+    data:
+      entity_id: input_boolean.electric_blanket_morning

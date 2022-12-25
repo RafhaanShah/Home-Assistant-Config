@@ -6,10 +6,17 @@ trigger:
   from: "on"
   to: "off"
 condition:
-  - condition: state
-    entity_id: switch.plug5_power
-    state: "on"
+  - or:
+      - condition: state
+        entity_id: switch.plug5_power
+        state: "on"
+      - condition: state
+        entity_id: input_boolean.electric_blanket_morning
+        state: "on"
 action:
   - service: switch.turn_off
     data:
       entity_id: switch.plug5_power
+  - service: input_boolean.turn_off
+    data:
+      entity_id: input_boolean.electric_blanket_morning
