@@ -4,21 +4,7 @@ trigger:
   platform: event
   event_type: feedreader
   event_data:
-    feed_url:
-      - !secret rss_techfeed_url
-      - !secret rss_uber_eng_url
-      - !secret rss_meta_eng_url
-      - !secret rss_airbnb_eng_url
-      - !secret rss_github_eng_url
-      - !secret rss_grab_eng_url
-      - !secret rss_instacart_eng_url
-      - !secret rss_linkedin_eng_url
-      - !secret rss_lyft_eng_url
-      - !secret rss_netflix_eng_url
-      - !secret rss_pinterest_eng_url
-      - !secret rss_spotify_eng_url
-      - !secret rss_android_eng_url
-      - !secret rss_google_eng_url
+    feed_url: !secret rss_techfeed_url
 action:
   - service: joaoapps_join.rafs_phone_send_tasker
     data:

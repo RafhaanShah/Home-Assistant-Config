@@ -6,8 +6,11 @@ trigger:
   to:
     - "on"
     - "off"
+  from:
+    - "on"
+    - "off"
 action:
-  - service: "automation.turn_{{ trigger.to_state.attributes }}"
+  - service: "automation.turn_{{ trigger.from_state.state }}"
     data:
       entity_id:
         - automation.sleeping_asleep_lights
