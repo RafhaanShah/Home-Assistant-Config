@@ -6,7 +6,7 @@ trigger:
   from: "on"
   to: "off"
   for:
-    minutes: 20
+    minutes: 15
 condition:
   - condition: state
     entity_id: light.bathroom

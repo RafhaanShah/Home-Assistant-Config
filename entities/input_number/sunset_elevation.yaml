@@ -1,0 +1,5 @@
+# https://www.home-assistant.io/integrations/input_number/
+name: Sunset Elevation
+min: -45
+max: 45
+step: 0.1

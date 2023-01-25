@@ -5,7 +5,7 @@ trigger:
   at: input_datetime.morning_alarm_pre
 condition:
   - condition: state
-    entity_id: climate.bedroom_room_heater
+    entity_id: climate.bedroom_heater
     state: heat
 action:
   - service: climate.turn_off

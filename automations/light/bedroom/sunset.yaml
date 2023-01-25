@@ -4,7 +4,7 @@ trigger:
   platform: numeric_state
   entity_id: sun.sun
   attribute: elevation
-  below: 4.0
+  below: "{{ states('input_number.sunset_elevation')|float }}"
 condition:
   - condition: state
     entity_id: input_boolean.at_home

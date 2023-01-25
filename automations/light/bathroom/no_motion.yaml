@@ -6,13 +6,13 @@ trigger:
   from: "off"
   to: "on"
   for:
-    minutes: 20
+    minutes: 15
 condition:
   - condition: state
     entity_id: binary_sensor.bathroom_motion_sensor_occupancy
     state: "off"
     for:
-      minutes: 15
+      minutes: 10
 action:
   - service: light.turn_off
     data:

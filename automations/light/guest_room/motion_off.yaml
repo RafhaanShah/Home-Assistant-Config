@@ -1,19 +1,16 @@
 alias: "Light: Guest Room Motion Off"
-description: "When guest room has no motion for 15 minutes before 3pm, if lights are on, turn off"
+description: "When guest room has no motion, if lights are on, turn off"
 trigger:
   platform: state
   entity_id: binary_sensor.guest_room_motion_sensor_occupancy
   from: "on"
   to: "off"
   for:
-    minutes: 15
+    minutes: 10
 condition:
   - condition: state
     entity_id: light.guest_room
     state: "on"
-  - condition: time
-    after: "06:00:00"
-    before: "15:00:00"
 action:
   - service: light.turn_off
     data:
