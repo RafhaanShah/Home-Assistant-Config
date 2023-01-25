@@ -1,10 +1,8 @@
 alias: "Light: Bedroom Sunset"
 description: "At sunset, if home, turn on bedroom evening scene"
 trigger:
-  platform: numeric_state
-  entity_id: sun.sun
-  attribute: elevation
-  below: "{{ states('input_number.sunset_elevation')|float }}"
+  platform: template
+  value_template: "{{ state_attr('sun.sun', 'elevation') <= states('input_number.sunset_elevation')|float }}"
 condition:
   - condition: state
     entity_id: input_boolean.at_home

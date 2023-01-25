@@ -6,10 +6,7 @@ trigger:
   from: "off"
   to: "on"
 condition:
-  - condition: numeric_state
-    entity_id: sun.sun
-    attribute: elevation
-    below: "{{ states('input_number.sunset_elevation')|float }}"
+  - "{{ state_attr('sun.sun', 'elevation') <= states('input_number.sunset_elevation')|float }}"
 action:
   - service: scene.turn_on
     data:

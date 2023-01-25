@@ -1,10 +1,8 @@
 alias: "Light: Living Room Sunset"
 description: "At sunset, turn on living room evening scene"
 trigger:
-  - platform: numeric_state
-    entity_id: sun.sun
-    attribute: elevation
-    below: "{{ states('input_number.sunset_elevation')|float }}"
+  - platform: template
+    value_template: "{{ state_attr('sun.sun', 'elevation') <= states('input_number.sunset_elevation')|float }}"
   - platform: numeric_state
     entity_id: sensor.hue_motion_sensor_1_illuminance
     below: 400
