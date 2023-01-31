@@ -1,0 +1,16 @@
+alias: "Climate: Boiler Cycle Finished"
+description: "When the boiler cycle finishes, turn it off"
+trigger:
+  platform: numeric_state
+  entity_id: sensor.shelly1_power
+  below: 100
+  for:
+    seconds: 15
+condition:
+  - condition: state
+    entity_id: switch.shelly1
+    state: "on"
+action:
+  - service: switch.turn_off
+    data:
+      entity_id: switch.shelly1

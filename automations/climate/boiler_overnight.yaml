@@ -1,0 +1,22 @@
+alias: "Climate: Boiler Overnight"
+description: "When scheduled, turn on the boiler overnight"
+trigger:
+  platform: time
+  at: "05:00:00"
+condition:
+  - condition: state
+    entity_id: input_boolean.sleeping
+    state: "on"
+  - condition: time
+    weekday:
+      # - mon
+      - tue
+      # - wed
+      - thu
+      # - fri
+      - sat
+      - sun
+action:
+  - service: switch.turn_on
+    data:
+      entity_id: switch.shelly1
