@@ -1,0 +1,37 @@
+alias: "Light: Hallway Motion On"
+description: "When someone is in the hallway, and it is dark, turn on the lights"
+mode: restart
+trigger:
+  - platform: state
+    entity_id: binary_sensor.bathroom_door_sensor_contact
+    from: "off"
+    to: "on"
+  - platform: state
+    entity_id: binary_sensor.bedroom_door_sensor_contact
+    from: "off"
+    to: "on"
+  - platform: state
+    entity_id: binary_sensor.front_door_sensor_contact
+    from: "off"
+    to: "on"
+  - platform: state
+    entity_id: binary_sensor.guest_room_door_sensor_contact
+    from: "off"
+    to: "on"
+  - platform: state
+    entity_id: binary_sensor.living_room_door_sensor_contact
+    from: "off"
+    to: "on"
+condition:
+  - "{{ state_attr('sun.sun', 'elevation') <= states('input_number.sunset_elevation')|float }}"
+  - "{{ (state_attr('light.hallway_2', 'brightness') | int(0)) <= 3 }}"
+action:
+  - service: light.turn_on
+    data:
+      entity_id: light.hallway_2
+      brightness: 3
+  - delay:
+      seconds: 30
+  - service: light.turn_off
+    data:
+      entity_id: light.hallway_2

@@ -9,4 +9,6 @@ trigger:
     to: single_right
 action:
   - service: light.toggle
-    entity_id: light.hallway
+    data:
+      entity_id: light.hallway
+      brightness_pct: 100
