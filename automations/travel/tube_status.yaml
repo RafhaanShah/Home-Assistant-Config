@@ -1,0 +1,15 @@
+alias: "Travel: Tube Status"
+description: "When the tube status changes, send a notification"
+trigger:
+  platform: state
+  entity_id: sensor.elizabeth_line
+  from: "Good Service"
+action:
+  - service: notify.mobile_app_rafs_phone
+    data:
+      title: "Tube Status"
+      message: "{{ trigger.to_state.name }}: {{ trigger.to_state.state }}"
+  - service: notify.mobile_app_lynns_iphone
+    data:
+      title: "Tube Status"
+      message: "{{ trigger.to_state.name }}: {{ trigger.to_state.state }}"

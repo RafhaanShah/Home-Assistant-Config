@@ -1,0 +1,5 @@
+# https://www.home-assistant.io/integrations/london_underground/
+# OK = 'Good Service'
+platform: london_underground
+line:
+  - Elizabeth line
