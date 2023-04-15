@@ -5,4 +5,4 @@ sensors:
     friendly_name: "TV Speaker Power"
     device_class: power
     value_template: >-
-      {{ states('sensor.plug7_wattage')|float > 2 }}
+      {{ states('sensor.plug7_wattage') | float(0) > 2 }}
