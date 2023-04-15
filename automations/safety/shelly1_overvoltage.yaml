@@ -1,0 +1,11 @@
+alias: "Safety: Shelly1 Overvoltage"
+description: "When something is wrong with the Shelly, reboot it"
+trigger:
+  - platform: state
+    entity_id: binary_sensor.shelly1_overvoltage
+    from: "off"
+    to: "on"
+action:
+  - service: button.press
+    data:
+      entity_id: button.shelly1_reboot

@@ -15,7 +15,7 @@ trigger:
     to: "on"
   - platform: numeric_state
     entity_id: sensor.shelly1_device_temperature
-    above: 94
+    above: 90
     for:
       minutes: 1
 action:
