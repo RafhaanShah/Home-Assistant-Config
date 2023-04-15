@@ -2,14 +2,14 @@
 platform: template
 sensors:
   weather_temperature:
-    value_template: "{{ state_attr('weather.dark_sky', 'temperature') }}"
+    value_template: "{{ state_attr('weather.pirateweather', 'temperature') }}"
     unit_of_measurement: "°C"
     device_class: temperature
   weather_humidity:
-    value_template: "{{ state_attr('weather.dark_sky', 'humidity') }}"
+    value_template: "{{ state_attr('weather.pirateweather', 'humidity') }}"
     unit_of_measurement: "%"
     device_class: humidity
   weather_pressure:
-    value_template: "{{ state_attr('weather.dark_sky', 'pressure') }}"
+    value_template: "{{ state_attr('weather.pirateweather', 'pressure') }}"
     unit_of_measurement: "hPa"
     device_class: pressure

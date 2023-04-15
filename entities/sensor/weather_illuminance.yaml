@@ -1,4 +1,4 @@
 # https://github.com/pnbruckner/ha-illuminance
 platform: illuminance
 name: Weather Illuminance
-entity_id: weather.dark_sky
+entity_id: weather.pirateweather
