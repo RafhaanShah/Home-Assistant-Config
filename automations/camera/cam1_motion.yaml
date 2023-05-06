@@ -3,6 +3,7 @@ description: "When Cam1 detects motion, send a notification"
 trigger:
   platform: webhook
   webhook_id: motioneye-cam1-motion
+  local_only: true
 action:
   - service: camera.snapshot
     data:
