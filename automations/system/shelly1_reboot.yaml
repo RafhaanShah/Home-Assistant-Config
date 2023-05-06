@@ -1,0 +1,13 @@
+alias: "System: Shelly1 Reboot"
+description: "When scheduled, reboot shelly1"
+trigger:
+  platform: time
+  at: "03:00:00"
+condition:
+  - condition: time
+    weekday:
+      - sat
+action:
+  - service: button.press
+    data:
+      entity_id: button.shelly1_reboot
