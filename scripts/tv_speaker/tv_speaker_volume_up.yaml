@@ -7,4 +7,4 @@ sequence:
       entity_id: remote.broadlink_rm3
       device: tv_speakers
       command: vol_up
-      num_repeats: 2
+      num_repeats: 1

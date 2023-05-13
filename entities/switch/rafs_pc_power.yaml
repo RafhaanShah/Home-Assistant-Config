@@ -6,7 +6,6 @@ turn_on:
   data:
     mac: !secret mac_rafs_pc
 turn_off:
-  service: mqtt.publish
-  data:
-    topic: "iotlink/workgroup/rafs-pc/commands/suspend"
-    payload: ""
+  service: button.press
+  target:
+    entity_id: button.rafs_pc_sleep
