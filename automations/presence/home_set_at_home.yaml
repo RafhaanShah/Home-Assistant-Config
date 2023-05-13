@@ -13,10 +13,10 @@ condition:
     conditions:
       - condition: numeric_state
         entity_id: proximity.raf_home
-        below: 2.5
+        below: 2.0
       - condition: numeric_state
         entity_id: proximity.lynn_home
-        below: 2.5
+        below: 2.0
 action:
   - service: input_boolean.turn_on
     data:
