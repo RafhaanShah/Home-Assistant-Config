@@ -2,7 +2,7 @@
 joaoapps_join:
   - name: rafs_phone
     device_id: !secret join_rafs_phone
-    api_key: !secret join
+    api_key: !secret joaoapps_join
   - name: rafs_pc
     device_id: !secret join_rafs_pc
-    api_key: !secret join
+    api_key: !secret joaoapps_join

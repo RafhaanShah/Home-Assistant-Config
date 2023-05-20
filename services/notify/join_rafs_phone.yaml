@@ -1,5 +1,5 @@
 # https://www.home-assistant.io/integrations/joaoapps_join/
 platform: joaoapps_join
 name: join_rafs_phone
-api_key: !secret join
+api_key: !secret joaoapps_join
 device_id: !secret join_rafs_phone
