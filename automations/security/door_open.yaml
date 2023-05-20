@@ -12,4 +12,4 @@ condition:
 action:
   - service: notify.telegram_raf
     data:
-      message: "Front door has been opened"
+      message: "Alert: Front door has been opened"

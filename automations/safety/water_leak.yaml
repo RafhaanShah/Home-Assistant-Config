@@ -12,4 +12,4 @@ action:
   - service: notify.telegram_raf
     data:
       message: >-
-        "Water Leak: {{ trigger.to_state.name }}"
+        "Alert: Water Leak: {{ trigger.to_state.name }}"

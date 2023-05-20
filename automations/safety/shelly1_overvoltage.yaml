@@ -9,3 +9,6 @@ action:
   - service: button.press
     data:
       entity_id: button.shelly1_reboot
+  - service: notify.telegram_raf
+    data:
+      message: "Rebooted Shelly1 due to {{ trigger.to_state.name }}"

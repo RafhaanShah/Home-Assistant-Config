@@ -8,4 +8,4 @@ trigger:
 action:
   - service: notify.telegram_raf
     data:
-      message: "Smoke Detected"
+      message: "Alert: Smoke Detected"

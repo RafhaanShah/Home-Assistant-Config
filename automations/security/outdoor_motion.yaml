@@ -12,4 +12,4 @@ condition:
 action:
   - service: notify.telegram_raf
     data:
-      message: "Motion detected outside"
+      message: "Alert: Motion detected outside"

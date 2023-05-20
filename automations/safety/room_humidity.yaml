@@ -1,4 +1,4 @@
-alias: "Safety: Humidity"
+alias: "Safety: Room Humidity"
 description: "When humidity is too high, send a notification"
 trigger:
   platform: numeric_state
