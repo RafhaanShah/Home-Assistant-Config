@@ -14,3 +14,6 @@ action:
   - service: switch.turn_off
     data:
       entity_id: switch.shelly1
+  - service: notify.telegram_raf
+    data:
+      message: "Boiler off, current energy: {{ states('sensor.shelly1_energy') }}"

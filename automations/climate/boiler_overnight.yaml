@@ -7,16 +7,26 @@ condition:
   - condition: state
     entity_id: input_boolean.sleeping
     state: "on"
-  - condition: time
-    weekday:
-      # - mon
-      - tue
-      # - wed
-      - thu
-      # - fri
-      - sat
-      - sun
+  - or:
+      - condition: time
+        weekday:
+          # - mon
+          - tue
+          # - wed
+          - thu
+          # - fri
+          - sat
+          - sun
+      - condition: state
+        entity_id: input_boolean.boiler_heat
+        state: "on"
 action:
   - service: switch.turn_on
     data:
       entity_id: switch.shelly1
+  - service: input_boolean.turn_off
+    data:
+      entity_id: input_boolean.boiler_heat
+  - service: notify.telegram_raf
+    data:
+      message: "Boiler on, current energy: {{ states('sensor.shelly1_energy') }}"
