@@ -1,4 +1,4 @@
-alias: "Keyboard Remote: Chromecast forward"
+alias: "Keyboard Remote: Chromecast Forward"
 description: "When forward button pressed, if on Chromecast, forward"
 trigger:
   platform: event
