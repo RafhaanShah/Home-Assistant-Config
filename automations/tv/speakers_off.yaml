@@ -5,6 +5,8 @@ trigger:
   entity_id: media_player.lg_tv
   from: "on"
   to: "off"
+  for:
+    seconds: 2
 condition:
   - condition: state
     entity_id: binary_sensor.tv_speaker_power

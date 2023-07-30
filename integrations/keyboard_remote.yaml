@@ -1,0 +1,5 @@
+# https://www.home-assistant.io/integrations/keyboard_remote/
+# https://thehelpfulidiot.com/controlling-home-assistant-with-an-old-remote
+keyboard_remote:
+  - device_name: "flirc.tv flirc Keyboard"
+    type: "key_down"

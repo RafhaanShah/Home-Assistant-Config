@@ -1,0 +1,9 @@
+# https://github.com/bendavid/aiopylgtv/blob/master/aiopylgtv/endpoints.py
+alias: "TV Screen On"
+description: Send webOS TV command to turn the screen off
+icon: mdi:television
+sequence:
+  - service: webostv.command
+    data:
+      command: com.webos.service.tvpower/power/turnOnScreen
+      entity_id: media_player.lg_tv

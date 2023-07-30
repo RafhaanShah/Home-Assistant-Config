@@ -1,0 +1,40 @@
+# https://community.home-assistant.io/t/skip-forward-rewind-x-seconds-on-media-player-chromecast/59095/3
+alias: "Media Seek"
+description: Seek a media player by a given offset
+icon: mdi:fast-forward-15
+mode: queued
+fields:
+  seek_amount:
+    name: Seek Amount
+    description: Seek amount in seconds, negative for rewind.
+    example: "15"
+    selector:
+      number:
+        min: -10000
+        max: 10000
+        unit_of_measurement: seconds
+  media_player:
+    name: Media Player
+    description: Entity ID for the Media Player.
+    example: "media_player.living_room_tv"
+    selector:
+      entity:
+        filter:
+          domain: "media_player"
+sequence:
+  # make sure media_position attribute exists
+  - condition:
+      - "{{ (state_attr(media_player, 'media_position')) != none }}"
+  # play/pausing updates the media_position
+  - service: media_player.media_play_pause
+    data:
+      entity_id: "{{ media_player }}"
+  # wait for the attribute to update
+  - delay:
+      milliseconds: 500
+  - service: media_player.media_seek
+    data:
+      entity_id: "{{ media_player }}"
+      seek_position: >-
+        {{ state_attr(media_player,
+        "media_position")|int + seek_amount }}

@@ -1,0 +1,23 @@
+alias: "Keyboard Remote: Chromecast Rewind"
+description: "When rewind button pressed, if on Chromecast, rewind"
+trigger:
+  platform: event
+  event_type: keyboard_remote_command_received
+  event_data:
+    device_name: flirc.tv flirc Keyboard
+    key_code: 168
+condition:
+  - condition: state
+    entity_id: media_player.lg_tv
+    attribute: source
+    state: Chromecast
+  - condition: not
+    conditions:
+      - condition: state
+        entity_id: media_player.living_room_tv
+        state: "off"
+action:
+  - service: script.media_seek
+    data:
+      seek_amount: -15
+      media_player: "media_player.living_room_tv"

@@ -1,0 +1,15 @@
+alias: "TV: Paused Chromecast"
+description: "When Chromecast is paused for too long, turn off the TV Screen"
+trigger:
+  - platform: state
+    entity_id: media_player.lg_tv
+    to: "paused"
+    for:
+      seconds: 30
+condition:
+  - condition: state
+    entity_id: media_player.lg_tv
+    attribute: source
+    state: Chromecast
+action:
+  - service: script.tv_screen_off

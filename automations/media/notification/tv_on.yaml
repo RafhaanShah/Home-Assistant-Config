@@ -5,7 +5,7 @@ trigger:
   entity_id: media_player.lg_tv
   attribute: source
   for:
-    minutes: 1
+    seconds: 10
 condition:
   - condition: state
     entity_id: person.raf
@@ -13,22 +13,6 @@ condition:
   - condition: state
     entity_id: media_player.lg_tv
     state: "on"
-  - condition: state
-    entity_id: media_player.lg_tv
-    attribute: source
-    state:
-      - Amazon Prime Video
-      - Apple TV+
-      - BBC iPlayer
-      - Disney+
-      - Netflix
-      - ITV Hub
-      - NOW
-      - Photo & Video
-      - Plex
-      - Spotify - Music and Podcasts
-      - Twitch
-      - YouTube
 action:
   - service: joaoapps_join.rafs_phone_send_tasker
     data:

@@ -5,10 +5,11 @@ trigger:
   attribute: media_title
   entity_id:
     - media_player.speaker
-    - media_player.living_room_tv
     - media_player.bedroom_tv
     - media_player.bedroom_display
     - media_player.bathroom_mini
+    - media_player.home_group
+    - media_player.living_room_display
 condition:
   - condition: state
     entity_id: person.raf

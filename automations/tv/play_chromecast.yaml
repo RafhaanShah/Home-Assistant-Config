@@ -1,0 +1,17 @@
+alias: "TV: Play Chromecast"
+description: "When Chromecast is playing, turn on the TV Screen"
+trigger:
+  - platform: state
+    entity_id: media_player.living_room_tv
+    from: "paused"
+    to: "playing"
+condition:
+  - condition: state
+    entity_id: media_player.lg_tv
+    state: "on"
+  - condition: state
+    entity_id: media_player.lg_tv
+    attribute: source
+    state: Chromecast
+action:
+  - service: script.tv_screen_on

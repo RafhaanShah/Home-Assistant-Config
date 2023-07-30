@@ -3,34 +3,12 @@ description: "When TV is not playing, send clear command"
 trigger:
   platform: state
   entity_id: media_player.lg_tv
-  attribute: source
+  from: "on"
+  to: "off"
 condition:
   - condition: state
     entity_id: person.raf
     state: home
-  - condition: or
-    conditions:
-      - condition: state
-        entity_id: media_player.lg_tv
-        state: "off"
-      - condition: not
-        conditions:
-          - condition: state
-            entity_id: media_player.lg_tv
-            attribute: source
-            state:
-              - Amazon Prime Video
-              - Apple TV+
-              - BBC iPlayer
-              - Disney+
-              - Netflix
-              - ITV Hub
-              - NOW
-              - Photo & Video
-              - Plex
-              - Spotify - Music and Podcasts
-              - Twitch
-              - YouTube
 action:
   - service: joaoapps_join.rafs_phone_send_tasker
     data:
