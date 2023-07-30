@@ -4,7 +4,7 @@ description: "When Vacuum has been cleaning for long enough, dock or stop it"
 trigger:
   platform: numeric_state
   entity_id: sensor.robovac_runtime_today
-  above: 1.00
+  above: 0.75
 condition:
   - "{{ trigger.from_state.state not in ['unknown', 'unavailable', 'none'] }}"
   - "{{ trigger.to_state.state not in ['unknown', 'unavailable', 'none'] }}"

@@ -10,11 +10,11 @@ condition:
   - or:
       - condition: time
         weekday:
-          # - mon
+          - mon
           - tue
-          # - wed
+          - wed
           - thu
-          # - fri
+          - fri
           - sat
           - sun
       - condition: state
