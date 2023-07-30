@@ -4,7 +4,7 @@ trigger:
   platform: event
   event_type: keyboard_remote_command_received
   event_data:
-    device_name: flirc.tv flirc Keyboard
+    device_name: "flirc.tv flirc Keyboard"
     key_code: 208
 condition:
   - condition: state
