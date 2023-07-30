@@ -1,0 +1,48 @@
+alias: "Keyboard Remote: LG TV Netflix Login"
+description: "When stop button is pressed, if on Netflix, login"
+trigger:
+  platform: event
+  event_type: keyboard_remote_command_received
+  event_data:
+    device_name: "flirc.tv flirc Keyboard"
+    key_code: 83
+condition:
+  - condition: state
+    entity_id: media_player.lg_tv
+    attribute: source
+    state: Netflix
+action:
+  - service: webostv.button
+    entity_id: media_player.lg_tv
+    data:
+      button: "ENTER"
+  - delay:
+      milliseconds: 100
+  - service: webostv.button
+    entity_id: media_player.lg_tv
+    data:
+      button: !secret lg_tv_netflix_login_1
+  - delay:
+      milliseconds: 50
+  - service: webostv.button
+    entity_id: media_player.lg_tv
+    data:
+      button: !secret lg_tv_netflix_login_2
+  - delay:
+      milliseconds: 50
+  - service: webostv.button
+    entity_id: media_player.lg_tv
+    data:
+      button: !secret lg_tv_netflix_login_3
+  - delay:
+      milliseconds: 50
+  - service: webostv.button
+    entity_id: media_player.lg_tv
+    data:
+      button: !secret lg_tv_netflix_login_4
+  - delay:
+      milliseconds: 50
+  - service: webostv.button
+    entity_id: media_player.lg_tv
+    data:
+      button: "ENTER"
