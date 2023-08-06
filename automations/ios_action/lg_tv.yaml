@@ -1,0 +1,11 @@
+# https://companion.home-assistant.io/docs/core/actions/
+alias: "iOS Action: LG TV"
+description: "When iOS Action received, toggle LG TV"
+trigger:
+  - platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: lg_tv
+action:
+  - service: media_player.toggle
+    entity_id: media_player.lg_tv

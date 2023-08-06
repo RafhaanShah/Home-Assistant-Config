@@ -1,0 +1,11 @@
+# https://companion.home-assistant.io/docs/core/actions/
+alias: "iOS Action: Light Bedside Lamp"
+description: "When iOS Action received, toggle Bedside Lamp"
+trigger:
+  - platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: light_bedside_lamp
+action:
+  - service: light.toggle
+    entity_id: light.bedside_lamp

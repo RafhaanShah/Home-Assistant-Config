@@ -1,0 +1,11 @@
+# https://companion.home-assistant.io/docs/core/actions/
+alias: "iOS Action: Lynns PC Power"
+description: "When iOS Action received, toggle Lynn's PC Power"
+trigger:
+  - platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: lynns_pc_power
+action:
+  - service: switch.toggle
+    entity_id: switch.lynns_pc_power
