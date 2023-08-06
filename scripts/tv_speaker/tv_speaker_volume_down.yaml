@@ -1,6 +1,7 @@
-# Script to call Broadlink device to send IR command to turn speaker volume down
 alias: "TV Speaker Volume Down"
+description: Call Broadlink device to send IR command to turn speaker volume down
 icon: mdi:volume-minus
+mode: queued
 sequence:
   - service: remote.send_command
     data:

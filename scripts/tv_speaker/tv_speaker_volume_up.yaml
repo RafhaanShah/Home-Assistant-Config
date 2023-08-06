@@ -1,6 +1,7 @@
-# Script to call Broadlink device to send IR command to turn speaker volume up
 alias: "TV Speaker Volume Up"
+description: Call Broadlink device to send IR command to turn speaker volume up
 icon: mdi:volume-plus
+mode: queued
 sequence:
   - service: remote.send_command
     data:

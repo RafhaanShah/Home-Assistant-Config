@@ -6,7 +6,7 @@ trigger:
   from: "on"
   to: "off"
   for:
-    seconds: 2
+    seconds: 10
 condition:
   - condition: state
     entity_id: binary_sensor.tv_speaker_power

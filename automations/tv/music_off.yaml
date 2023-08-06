@@ -5,11 +5,12 @@ trigger:
   entity_id: media_player.lg_tv
   from: "off"
   to: "on"
+  for:
+    minutes: 1
 condition:
-  - not:
-      - condition: state
-        entity_id: media_player.speaker
-        state: "off"
+  - condition: state
+    entity_id: media_player.speaker
+    state: "playing"
 action:
   - service: media_player.media_pause
     data:
