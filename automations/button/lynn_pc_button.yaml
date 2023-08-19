@@ -1,0 +1,9 @@
+alias: "Button: Lynns PC Button"
+description: "When Lynns PC Button is pressed, turn on the PC"
+trigger:
+  - platform: state
+    entity_id: sensor.lynns_pc_button_action
+    to: "single"
+action:
+  - service: switch.turn_on
+    entity_id: switch.lynns_pc_power

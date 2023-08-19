@@ -6,7 +6,7 @@ trigger:
   from: "off"
   to: "on"
   for:
-    minutes: 1
+    seconds: 30
 condition:
   - condition: state
     entity_id: media_player.speaker

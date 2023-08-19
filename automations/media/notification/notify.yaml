@@ -17,6 +17,9 @@ condition:
   - condition: template
     value_template: >-
       {{ trigger.to_state.state != 'off' and trigger.to_state.media_title is not none }}
+  - condition: state
+    entity_id: media_player.lg_tv
+    state: "off"
 action:
   - service: joaoapps_join.rafs_phone_send_tasker
     data:
