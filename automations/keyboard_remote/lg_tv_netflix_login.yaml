@@ -17,31 +17,31 @@ action:
     data:
       button: "ENTER"
   - delay:
-      milliseconds: 100
+      milliseconds: 150
   - service: webostv.button
     entity_id: media_player.lg_tv
     data:
       button: !secret lg_tv_netflix_login_1
   - delay:
-      milliseconds: 100
+      milliseconds: 150
   - service: webostv.button
     entity_id: media_player.lg_tv
     data:
       button: !secret lg_tv_netflix_login_2
   - delay:
-      milliseconds: 100
+      milliseconds: 150
   - service: webostv.button
     entity_id: media_player.lg_tv
     data:
       button: !secret lg_tv_netflix_login_3
   - delay:
-      milliseconds: 100
+      milliseconds: 150
   - service: webostv.button
     entity_id: media_player.lg_tv
     data:
       button: !secret lg_tv_netflix_login_4
   - delay:
-      milliseconds: 100
+      milliseconds: 150
   - service: webostv.button
     entity_id: media_player.lg_tv
     data:

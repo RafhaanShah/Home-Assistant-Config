@@ -1,0 +1,39 @@
+alias: "Presence: Home Check At Home"
+description: "When detected at home but not set, check if at home"
+trigger:
+  - platform: state
+    entity_id: person.raf
+    to: "home"
+    for:
+      minutes: 5
+  - platform: state
+    entity_id: person.lynn
+    to: "home"
+    for:
+      minutes: 10
+condition:
+  - condition: state
+    entity_id: input_boolean.at_home
+    state: "off"
+action:
+  - variables:
+      action_turn_on: "{{ 'AT_HOME_TURN_ON_'  ~ context.id }}"
+  - service: notify.mobile_app_rafs_phone
+    data:
+      title: "Detected 'at_home' is off"
+      message: "Raf: {{ states('person.raf') }} \nLynn: {{ states('person.lynn') }}"
+      data:
+        actions:
+          - action: "{{ action_turn_on }}"
+            title: "Turn On"
+  - wait_for_trigger:
+      - platform: event
+        event_type: mobile_app_notification_action
+        event_data:
+          action: "{{ action_turn_on }}"
+    timeout:
+      minutes: 30
+    continue_on_timeout: false
+  - service: input_boolean.turn_on
+    data:
+      entity_id: input_boolean.at_home

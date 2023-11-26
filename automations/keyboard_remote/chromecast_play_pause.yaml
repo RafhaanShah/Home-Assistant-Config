@@ -1,0 +1,21 @@
+alias: "Keyboard Remote: Chromecast Play Pause"
+description: "When play pause button pressed, if on Chromecast, toggle playback"
+trigger:
+  platform: event
+  event_type: keyboard_remote_command_received
+  event_data:
+    device_name: "flirc.tv flirc Keyboard"
+    key_code: 164
+condition:
+  - condition: state
+    entity_id: media_player.lg_tv
+    attribute: source
+    state: Chromecast
+  - condition: not
+    conditions:
+      - condition: state
+        entity_id: media_player.living_room_tv
+        state: "off"
+action:
+  - service: media_player.media_play_pause
+    entity_id: media_player.living_room_tv

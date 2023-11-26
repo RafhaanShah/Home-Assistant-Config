@@ -4,6 +4,8 @@ trigger:
   platform: state
   entity_id: person.lynn
   to: "home"
+  for:
+    seconds: 10
 condition:
   - not:
       - condition: state

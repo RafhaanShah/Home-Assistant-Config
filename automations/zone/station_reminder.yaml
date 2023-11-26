@@ -4,6 +4,8 @@ trigger:
   - platform: numeric_state
     entity_id: zone.station
     above: 0
+    for:
+      seconds: 10
     variables:
       notification_title: "Location Update"
       notification_message:

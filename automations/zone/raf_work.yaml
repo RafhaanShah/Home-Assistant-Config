@@ -4,11 +4,15 @@ trigger:
   - platform: state
     entity_id: person.raf
     to: "Raf's Work"
+    for:
+      seconds: 10
     variables:
       message_verb: "arrived at"
   - platform: state
     entity_id: person.raf
     from: "Raf's Work"
+    for:
+      seconds: 10
     variables:
       message_verb: "left"
 condition:

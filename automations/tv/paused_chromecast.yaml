@@ -2,7 +2,7 @@ alias: "TV: Paused Chromecast"
 description: "When Chromecast is paused for too long, turn off the TV Screen"
 trigger:
   - platform: state
-    entity_id: media_player.lg_tv
+    entity_id: media_player.living_room_tv
     to: "paused"
     for:
       seconds: 30

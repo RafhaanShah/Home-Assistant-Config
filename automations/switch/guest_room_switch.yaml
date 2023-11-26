@@ -1,0 +1,12 @@
+alias: "Switch: Guest Room"
+description: "When guest room switch pressed, toggle lights"
+trigger:
+  - platform: state
+    entity_id: sensor.guest_room_switch_action
+    to: "on"
+  - platform: state
+    entity_id: sensor.guest_room_switch_action
+    to: "off"
+action:
+  - service_template: "light.turn_{{trigger.to_state.state}}"
+    entity_id: light.ceiling_4

@@ -10,7 +10,7 @@ condition:
     entity_id: binary_sensor.living_room_window_sensor_contact
     state: "on"
   - condition: state
-    entity_id: weather.dark_sky
+    entity_id: weather.pirateweather
     state: rainy
 action:
   - service: tts.google_say

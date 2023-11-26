@@ -18,3 +18,6 @@ logger:
       - "connection broken"
     blinkpy.auth:
       - "possibly down or throttled"
+    homeassistant.components.mqtt.mixins:
+      - "MQTT entity name starts with the device name"
+      - "MQTT device name is equal to entity name in your config"

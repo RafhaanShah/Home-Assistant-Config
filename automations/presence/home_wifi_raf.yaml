@@ -15,7 +15,7 @@ condition:
     state: not_home
   - condition: numeric_state
     entity_id: proximity.raf_home
-    below: 2.0
+    below: 10.0
 action:
   - service: joaoapps_join.rafs_phone_send_tasker
     data:
