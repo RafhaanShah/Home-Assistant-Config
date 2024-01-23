@@ -2,7 +2,7 @@
 platform: history_stats
 name: robovac_runtime_today
 entity_id: vacuum.robovac
-state: "on"
+state: "cleaning"
 type: time
 start: "{{ now().replace(hour=0, minute=0, second=0) }}"
 end: "{{ now() }}"

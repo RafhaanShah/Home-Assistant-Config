@@ -1,22 +1,17 @@
 alias: "Presence: Home Set At Home"
 description: "When door opens after being away, set at home"
 trigger:
-  platform: state
-  entity_id: binary_sensor.front_door_sensor_contact
-  from: "off"
-  to: "on"
+  - platform: state
+    entity_id: binary_sensor.front_door_sensor_contact
+    from: "off"
+    to: "on"
+  - platform: state
+    entity_id: group.all_people
+    to: home
 condition:
   - condition: state
     entity_id: input_boolean.at_home
     state: "off"
-  - condition: or
-    conditions:
-      - condition: numeric_state
-        entity_id: proximity.raf_home
-        below: 2.0
-      - condition: numeric_state
-        entity_id: proximity.lynn_home
-        below: 2.0
 action:
   - service: input_boolean.turn_on
     data:

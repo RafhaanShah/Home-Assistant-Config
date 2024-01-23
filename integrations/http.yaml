@@ -4,4 +4,4 @@ http:
   ssl_certificate: !secret ssl_certificate
   ssl_key: !secret ssl_key
   ip_ban_enabled: true
-  login_attempts_threshold: 1
+  login_attempts_threshold: 3

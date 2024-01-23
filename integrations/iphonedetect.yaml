@@ -7,3 +7,4 @@ device_tracker:
       track_new_devices: false
     hosts:
       lynns_iphone_wifi: !secret ip_lynns_iphone
+      thathus_iphone_wifi: !secret ip_thathus_iphone

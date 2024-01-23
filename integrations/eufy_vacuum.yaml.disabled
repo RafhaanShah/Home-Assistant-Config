@@ -1,4 +1,5 @@
 # https://github.com/mitchellrj/eufy_robovac
+# see https://github.com/CodeFoodPixels/robovac also
 eufy_vacuum:
   devices:
     - name: RoboVac

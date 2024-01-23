@@ -1,9 +1,7 @@
 # https://www.home-assistant.io/integrations/google_assistant/
 google_assistant:
   project_id: !secret google_project_id
-  service_account:
-    private_key: !secret google_service_account_key
-    client_email: !secret google_service_account_email
+  service_account: !include ../SERVICE_ACCOUNT.JSON
   report_state: true
   expose_by_default: false
   entity_config:
@@ -42,9 +40,13 @@ google_assistant:
     switch.tv_speaker_power:
       name: Sound System
       room: Living Room
+      aliases:
+        - "TV Speakers"
     switch.plug5_power:
       name: Electric Blanket
       room: Bedroom
+      aliases:
+        - "Blanket"
     script.tv_speaker_volume_up:
       name: Sound System Up
       room: Living Room
@@ -59,3 +61,10 @@ google_assistant:
       aliases:
         - "TV Speaker Down"
         - "TV Speaker Lower"
+    vacuum.robovac:
+      name: Robovac
+      room: Living Room
+      expose: true
+      aliases:
+        - "Dusty"
+        - "Vacuum"

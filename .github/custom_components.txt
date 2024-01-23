@@ -1,5 +1,4 @@
 adaptive_lighting.yaml
 arpscan_tracker.yaml
-eufy_vacuum.yaml
 iphonedetect.yaml
 spotcast.yaml
