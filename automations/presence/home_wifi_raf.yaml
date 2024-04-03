@@ -3,8 +3,7 @@ description: "When home, turn on WiFi"
 trigger:
   - platform: state
     entity_id: person.raf
-    from: "off"
-    to: "on"
+    to: "home"
   - platform: state
     entity_id: input_boolean.at_home
     from: "off"
@@ -13,9 +12,6 @@ condition:
   - condition: state
     entity_id: device_tracker.rafs_phone_wifi
     state: not_home
-  - condition: numeric_state
-    entity_id: proximity.raf_home
-    below: 10.0
 action:
   - service: joaoapps_join.rafs_phone_send_tasker
     data:

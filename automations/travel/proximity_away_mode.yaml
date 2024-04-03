@@ -2,10 +2,10 @@ alias: "Travel: Proximity Away Mode"
 description: "When close to home, turn off away mode"
 trigger:
   - platform: numeric_state
-    entity_id: proximity.raf_home
+    entity_id: sensor.rafs_flat_raf_distance
     below: 2
   - platform: numeric_state
-    entity_id: proximity.lynn_home
+    entity_id: sensor.rafs_flat_lynn_distance
     below: 2
 condition:
   - condition: state

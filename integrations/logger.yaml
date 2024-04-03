@@ -4,16 +4,17 @@ logger:
   default: warn
   filters:
     homeassistant.helpers.entity:
-      - "Update of binary_sensor.rafs_pc_power is taking over 10 seconds"
+      - "is taking over 10 seconds"
     homeassistant.helpers.template:
       - "when rendering"
     homeassistant.components.homeassistant.triggers.numeric_state:
       - "Error initializing 'Media: Max Volumes' trigger: In 'numeric_state' condition: attribute 'volume_level'"
       - "Error in 'Media: Max Volumes' trigger: In 'numeric_state' condition: attribute 'volume_level'"
-      - "Error initializing 'Travel: Proximity Away Mode'"
     pychromecast.socket_client:
       - "Heartbeat timeout"
       - "Error communicating with socket"
+      - "Error reading from socket"
+      - "Failed to connect to service"
     urllib3.connectionpool:
       - "connection broken"
     blinkpy.auth:
@@ -21,3 +22,5 @@ logger:
     homeassistant.components.mqtt.mixins:
       - "MQTT entity name starts with the device name"
       - "MQTT device name is equal to entity name in your config"
+    homeassistant.util.logging:
+      - "The current sub state must be"

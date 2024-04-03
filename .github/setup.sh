@@ -7,9 +7,12 @@ set -e
 mv secrets_example.yaml secrets.yaml
 
 # Add fake ssl files
-mkdir ssl
+mkdir -p ssl
 touch ssl/fullchain.pem 
 touch ssl/privkey.pem
+
+# Add fake Google service file
+touch SERVICE_ACCOUNT.JSON
 
 # Remove custom_components integration config files
 while read -r line; do
