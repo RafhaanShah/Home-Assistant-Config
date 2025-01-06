@@ -1,12 +1,22 @@
 alias: "Calendar: Contacts Event"
 description: "When there is an event related to a contact, send a notification"
 trigger:
-  platform: state
-  entity_id: calendar.raf_contacts
-  from: "off"
-  to: "on"
+  platform: calendar
+  entity_id: calendar.birthdays
+  event: start
 action:
+  - service: calendar.get_events
+    target:
+      entity_id:
+        - calendar.birthdays
+    data:
+      duration:
+        hours: 24
+    response_variable: agenda
   - service: notify.mobile_app_rafs_phone
     data:
-      title: "{{ trigger.to_state.attributes.message }}"
-      message: "{{ trigger.to_state.attributes.description }}"
+      title: "Someone's birthday!"
+      message: >-
+        {% for event in agenda["calendar.birthdays"]["events"] %}
+        {{ event.summary}}: {{ event.description }}<br>
+        {% endfor %}

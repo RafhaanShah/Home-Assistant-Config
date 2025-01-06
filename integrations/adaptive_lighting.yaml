@@ -3,20 +3,22 @@ adaptive_lighting:
   - name: "Bathroom"
     lights:
       - light.bathroom
-    prefer_rgb_color: false
-    initial_transition: 1
-    transition: 60
     interval: 300
-    min_color_temp: 2820
-    max_color_temp: 5500
+    transition: 60
+    initial_transition: 1
     min_brightness: 100
     max_brightness: 100
-    sleep_transition: 1
+    min_color_temp: 2820
+    max_color_temp: 5500
+    prefer_rgb_color: False
     sleep_brightness: 1
+    sleep_rgb_or_color_temp: "color_temp"
     sleep_color_temp: 1000
-    take_over_control: true
-    detect_non_ha_changes: false
-    only_once: false
+    sleep_transition: 1
+    transition_until_sleep: False
+    take_over_control: False
+    detect_non_ha_changes: False
+    only_once: False
 
   - name: "Living Room"
     lights:
@@ -24,12 +26,19 @@ adaptive_lighting:
       - light.ceiling_2
       - light.desk_lightstrip
       - light.floor_lamp
-    prefer_rgb_color: false
-    initial_transition: 1
-    transition: 60
     interval: 300
+    transition: 60
+    initial_transition: 1
+    min_brightness: 100
+    max_brightness: 100
     min_color_temp: 2820
     max_color_temp: 5500
-    take_over_control: true
-    detect_non_ha_changes: true
-    only_once: false
+    prefer_rgb_color: False
+    sleep_brightness: 1
+    sleep_rgb_or_color_temp: "color_temp"
+    sleep_color_temp: 1000
+    sleep_transition: 1
+    transition_until_sleep: False
+    take_over_control: True
+    detect_non_ha_changes: True
+    only_once: False

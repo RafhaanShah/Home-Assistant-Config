@@ -28,6 +28,8 @@ logger:
 api:
 
 ota:
+  - platform: esphome
+    password: !secret ota_password
 
 time:
   - platform: homeassistant

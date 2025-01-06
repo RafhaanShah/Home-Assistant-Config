@@ -5,3 +5,6 @@ http:
   ssl_key: !secret ssl_key
   ip_ban_enabled: true
   login_attempts_threshold: 3
+  # needed for chrome extension shortcut
+  # https://chromewebstore.google.com/detail/home-assistant/hpoiflhmfklhfcfpibmdmpeonphmdbda
+  use_x_frame_options: false

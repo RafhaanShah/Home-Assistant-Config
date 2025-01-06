@@ -1,0 +1,11 @@
+# https://companion.home-assistant.io/docs/core/actions/
+alias: "iOS Action: Fan Power"
+description: "When iOS Action received, toggle Fan Power"
+trigger:
+  - platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: fan_power
+action:
+  - service: switch.toggle
+    entity_id: switch.plug6_power

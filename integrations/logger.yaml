@@ -24,3 +24,9 @@ logger:
       - "MQTT device name is equal to entity name in your config"
     homeassistant.util.logging:
       - "The current sub state must be"
+      # https://github.com/LAB02-Research/HASS.Agent/issues/411
+      - "Exception in updated when handling msg"
+    homeassistant.helpers.frame:
+      - "Detected that custom integration 'hass_agent' calls async_create_task"
+    py.warnings:
+      - "RuntimeWarning: coroutine 'handle_apis_changed' was never awaited"

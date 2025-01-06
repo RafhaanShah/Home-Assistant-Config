@@ -4,7 +4,6 @@ description: "When Vacuum has been returning for long enough, stop it"
 trigger:
   platform: state
   entity_id: vacuum.robovac
-  attribute: status
   to: "returning"
   for:
     minutes: 20

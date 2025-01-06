@@ -2,3 +2,4 @@ name: All People
 entities:
   - person.raf
   - person.lynn
+  - person.guest

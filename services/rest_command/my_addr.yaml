@@ -1,0 +1,3 @@
+# https://myaddr.tools/
+url: !secret my_addr_update
+method: GET

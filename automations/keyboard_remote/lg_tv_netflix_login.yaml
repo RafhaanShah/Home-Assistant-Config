@@ -12,37 +12,27 @@ condition:
     attribute: source
     state: Netflix
 action:
-  - service: webostv.button
-    entity_id: media_player.lg_tv
-    data:
-      button: "ENTER"
   - delay:
-      milliseconds: 150
+      milliseconds: 100
   - service: webostv.button
     entity_id: media_player.lg_tv
     data:
       button: !secret lg_tv_netflix_login_1
   - delay:
-      milliseconds: 150
+      milliseconds: 100
   - service: webostv.button
     entity_id: media_player.lg_tv
     data:
       button: !secret lg_tv_netflix_login_2
   - delay:
-      milliseconds: 150
+      milliseconds: 100
   - service: webostv.button
     entity_id: media_player.lg_tv
     data:
       button: !secret lg_tv_netflix_login_3
   - delay:
-      milliseconds: 150
+      milliseconds: 100
   - service: webostv.button
     entity_id: media_player.lg_tv
     data:
       button: !secret lg_tv_netflix_login_4
-  - delay:
-      milliseconds: 150
-  - service: webostv.button
-    entity_id: media_player.lg_tv
-    data:
-      button: "ENTER"

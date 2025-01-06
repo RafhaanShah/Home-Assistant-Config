@@ -13,54 +13,66 @@ google_assistant:
       name: Living Rooom Heater
       room: Living Room
       expose: true
-    light.sofa_lightstrip:
-      name: Sofa Lightstrip
-      room: Living Room
-      expose: true
+    # light.sofa_lightstrip:
+    #   name: Sofa Lightstrip
+    #   room: Living Room
+    #   expose: true
     light.kitchen:
       name: Kitchen Lights
       room: Kitchen
       expose: true
+    # media_player.lg_tv:
+    #   name: LG TV
+    #   room: Living Room
+    #   expose: true
+    #   aliases:
+    #     - "TV"
+    #     - "Living Room TV"
     switch.plug6_power:
       name: Fan
       room: Living Room
       expose: true
-    switch.rafs_pc_power:
-      name: Computer
-      room: Living Room
-      expose: true
-      aliases:
-        - "Raf's Computer"
-    switch.lynns_pc_power:
-      name: Laptop
-      room: Living Room
-      expose: true
-      aliases:
-        - "Lynn's Laptop"
-    switch.tv_speaker_power:
-      name: Sound System
-      room: Living Room
-      aliases:
-        - "TV Speakers"
+    # switch.rafs_pc_power:
+    #   name: Computer
+    #   room: Living Room
+    #   expose: true
+    #   aliases:
+    #     - "Raf's Computer"
+    # switch.lynns_pc_power:
+    #   name: Laptop
+    #   room: Living Room
+    #   expose: true
+    #   aliases:
+    #     - "Lynn's Laptop"
+    # switch.tv_speaker_power:
+    #   name: Sound System
+    #   room: Living Room
+    #   aliases:
+    #     - "TV Speakers"
     switch.plug5_power:
       name: Electric Blanket
       room: Bedroom
       aliases:
         - "Blanket"
-    script.tv_speaker_volume_up:
-      name: Sound System Up
+    switch.rafs_ps5_power:
+      name: PS5
       room: Living Room
-      expose: true
       aliases:
-        - "TV Speaker Up"
-        - "TV Speaker Higher"
-    script.tv_speaker_volume_down:
-      name: Sound System Down
-      room: Living Room
-      expose: true
-      aliases:
-        - "TV Speaker Down"
-        - "TV Speaker Lower"
+        - "PlayStation"
+    # script.tv_speaker_volume_up:
+    #   name: Sound System Up
+    #   room: Living Room
+    #   expose: true
+    #   aliases:
+    #     - "TV Speaker Up"
+    #     - "TV Speaker Higher"
+    # script.tv_speaker_volume_down:
+    #   name: Sound System Down
+    #   room: Living Room
+    #   expose: true
+    #   aliases:
+    #     - "TV Speaker Down"
+    #     - "TV Speaker Lower"
     vacuum.robovac:
       name: Robovac
       room: Living Room

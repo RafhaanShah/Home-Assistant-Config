@@ -1,0 +1,9 @@
+# https://companion.home-assistant.io/docs/core/actions/
+name: switch_fan
+background_color: "#03A9F4"
+label:
+  text: "Fan"
+  color: "#FFFFFF"
+icon:
+  icon: fan
+  color: "#FFFFFF"
