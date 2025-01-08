@@ -3,7 +3,6 @@ description: "When TV turns off, if Chromecast is on, turn it off"
 trigger:
   - platform: state
     entity_id: media_player.lg_tv
-    from: "on"
     to: "off"
   - platform: state
     entity_id: media_player.lg_tv

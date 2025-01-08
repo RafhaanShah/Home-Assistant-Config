@@ -3,7 +3,6 @@ description: "When TV turns off, if evening, activate evening scene"
 trigger:
   platform: state
   entity_id: media_player.lg_tv
-  from: "on"
   to: "off"
 condition:
   - "{{ state_attr('sun.sun', 'elevation') <= states('input_number.sunset_elevation')|float }}"

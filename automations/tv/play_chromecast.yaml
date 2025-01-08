@@ -8,9 +8,6 @@ trigger:
 condition:
   - condition: state
     entity_id: media_player.lg_tv
-    state: "on"
-  - condition: state
-    entity_id: media_player.lg_tv
     attribute: source
     state: Chromecast
 action:

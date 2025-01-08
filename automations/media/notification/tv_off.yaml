@@ -3,7 +3,6 @@ description: "When TV is not playing, send clear command"
 trigger:
   platform: state
   entity_id: media_player.lg_tv
-  from: "on"
   to: "off"
 condition:
   - condition: state

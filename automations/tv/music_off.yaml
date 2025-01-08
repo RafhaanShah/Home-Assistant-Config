@@ -4,7 +4,6 @@ trigger:
   platform: state
   entity_id: media_player.lg_tv
   from: "off"
-  to: "on"
   for:
     seconds: 30
 condition:
