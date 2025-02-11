@@ -2,7 +2,7 @@ alias: "Presence: Away Update GPS Lynn"
 description: "When disconnected from WiFi, request GPS update"
 trigger:
   platform: state
-  entity_id: device_tracker.lynns_iphone_wifi
+  entity_id: device_tracker.lynns_phone_wifi
   from: home
   for:
     minutes: 10

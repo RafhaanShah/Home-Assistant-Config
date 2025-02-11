@@ -15,7 +15,7 @@ condition:
     entity_id: sensor.raf_lynn_distance
     above: 1
 action:
-  - service: notify.mobile_app_lynns_iphone
+  - service: notify.mobile_app_lynns_phone
     data:
       title: "Location Update"
       message: "Raf has arrived at home"

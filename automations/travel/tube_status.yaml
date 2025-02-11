@@ -13,7 +13,7 @@ action:
     data:
       title: "{{ trigger.to_state.name }}"
       message: "{{ trigger.to_state.state }}, {{ trigger.to_state.attributes.Description }}"
-  - service: notify.mobile_app_lynns_iphone
+  - service: notify.mobile_app_lynns_phone
     data:
       title: "{{ trigger.to_state.name }}"
       message: "{{ trigger.to_state.state }}, {{ trigger.to_state.attributes.Description }}"

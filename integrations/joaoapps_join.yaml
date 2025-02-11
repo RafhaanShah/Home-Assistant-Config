@@ -1,8 +1,8 @@
 # https://www.home-assistant.io/integrations/joaoapps_join/
 joaoapps_join:
   - name: rafs_phone
-    device_id: !secret join_rafs_phone
+    device_names: Phone
     api_key: !secret joaoapps_join
   - name: rafs_pc
-    device_id: !secret join_rafs_pc
+    device_names: PC
     api_key: !secret joaoapps_join

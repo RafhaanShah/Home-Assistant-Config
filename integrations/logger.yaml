@@ -27,6 +27,6 @@ logger:
       # https://github.com/LAB02-Research/HASS.Agent/issues/411
       - "Exception in updated when handling msg"
     homeassistant.helpers.frame:
-      - "Detected that custom integration 'hass_agent' calls async_create_task"
+      - "Detected that custom integration 'hass_agent' calls"
     py.warnings:
       - "RuntimeWarning: coroutine 'handle_apis_changed' was never awaited"

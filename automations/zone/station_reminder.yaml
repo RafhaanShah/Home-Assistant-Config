@@ -19,7 +19,7 @@ condition:
         for:
           minutes: 30
       - condition: state
-        entity_id: device_tracker.lynns_iphone_wifi
+        entity_id: device_tracker.lynns_phone_wifi
         state: not_home
         for:
           minutes: 30
@@ -28,7 +28,7 @@ action:
     data:
       title: "{{ notification_title }}"
       message: "{{ notification_message }}"
-  - service: notify.mobile_app_lynns_iphone
+  - service: notify.mobile_app_lynns_phone
     data:
       title: "{{ notification_title }}"
       message: "{{ notification_message }}"

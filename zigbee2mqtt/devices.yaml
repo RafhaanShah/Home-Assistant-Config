@@ -99,9 +99,6 @@
 
 ## Power Plugs
 # IKEA E1603/E1702 https://www.zigbee2mqtt.io/devices/E1603_E1702_E1708.html
-"0x086bd7fffe054129":
-  friendly_name: plug4
-  debounce: 1
 "0x000b3cfffefad894":
   friendly_name: plug5
   debounce: 1

@@ -2,7 +2,7 @@ alias: "Location: Owntracks Update Lynn"
 description: "When location changes, push to Owntracks"
 trigger:
   platform: state
-  entity_id: device_tracker.lynns_iphone_app
+  entity_id: device_tracker.lynns_phone_app
 condition:
   - condition: numeric_state
     entity_id: person.lynn

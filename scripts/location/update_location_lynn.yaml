@@ -3,6 +3,6 @@
 alias: "Update Location Lynn"
 icon: mdi:map-marker-outline
 sequence:
-  - service: notify.mobile_app_lynns_iphone
+  - service: notify.mobile_app_lynns_phone
     data:
       message: "request_location_update"

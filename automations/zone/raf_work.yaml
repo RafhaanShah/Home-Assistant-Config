@@ -24,7 +24,7 @@ condition:
         after: "11:00:00"
         before: "15:00:00"
 action:
-  - service: notify.mobile_app_lynns_iphone
+  - service: notify.mobile_app_lynns_phone
     data:
       title: "Location Update"
       message: "Raf has {{ message_verb }} the office"

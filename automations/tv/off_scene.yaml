@@ -4,6 +4,8 @@ trigger:
   platform: state
   entity_id: media_player.lg_tv
   to: "off"
+  for:
+    seconds: 15
 condition:
   - "{{ state_attr('sun.sun', 'elevation') <= states('input_number.sunset_elevation')|float }}"
 action:
