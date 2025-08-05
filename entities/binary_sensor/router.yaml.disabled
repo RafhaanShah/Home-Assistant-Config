@@ -1,6 +1,0 @@
-# https://www.home-assistant.io/integrations/ping/
-platform: ping
-name: router
-host: !secret ip_router
-count: 10
-scan_interval: 60

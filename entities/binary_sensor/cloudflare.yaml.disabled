@@ -1,6 +1,0 @@
-# https://www.home-assistant.io/integrations/ping/
-platform: ping
-name: cloudflare
-host: 1.1.1.1
-count: 10
-scan_interval: 60
