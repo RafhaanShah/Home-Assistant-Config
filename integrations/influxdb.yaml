@@ -23,6 +23,7 @@ influxdb:
       - sensor.*_battery_*
       - sensor.*_illuminance_lux
       - sensor.*_motion_sensor_temperature
+      - sensor.hue_*
   ignore_attributes:
     - device_class
     - domain
@@ -45,6 +46,7 @@ influxdb:
       ignore_attributes:
         - editable
         - id
+        - device_trackers
         - gps_accuracy
         - source
         - user_id
@@ -60,10 +62,3 @@ influxdb:
         - next_rising
         - next_setting
         - rising
-    sensor.hue_motion_sensor_1_illuminance:
-      ignore_attributes:
-        - daylight
-        - dark
-        - lightlevel
-        - threshold_dark
-        - threshold_offset

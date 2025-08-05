@@ -11,3 +11,9 @@ logbook:
     entity_globs:
       - binary_sensor.*_leak
       - binary_sensor.*_smoke
+  exclude:
+    domains:
+      - device_tracker
+      - binary_sensor
+    entity_globs:
+      - sensor.*_geocoded_location

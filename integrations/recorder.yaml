@@ -1,7 +1,7 @@
 # https://www.home-assistant.io/integrations/recorder/
 recorder:
   db_url: !secret mariadb_url
-  purge_keep_days: 14
+  # purge_keep_days: 14 # default 10
   include:
     domains:
       - alarm_control_panel
@@ -25,7 +25,7 @@ recorder:
       - sensor.*_temperature
       - sensor.*_humidity
       - sensor.*_illuminance
-      - sensor.*_energy
+      # - sensor.*_energy # uses a lot of storage
       - sensor.*_wifi_connection
       - sensor.*_ssid
       - sensor.*_geocoded_location
