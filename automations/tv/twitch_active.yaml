@@ -1,0 +1,21 @@
+alias: "TV: Twitch Active"
+description: "When TV is on Twitch, keep the app active"
+mode: restart
+trigger:
+  - platform: state
+    entity_id: media_player.lg_tv
+    attribute: "source"
+    to: "Twitch"
+action:
+  - repeat:
+      while:
+        - condition: state
+          entity_id: media_player.lg_tv
+          attribute: "source"
+          state: "Twitch"
+      sequence:
+        - service: webostv.button
+          data:
+            entity_id: media_player.lg_tv
+            button: INFO
+        - delay: "00:01:00"
