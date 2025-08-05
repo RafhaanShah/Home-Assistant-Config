@@ -11,8 +11,12 @@ condition:
     entity_id: media_player.lg_tv
     attribute: source
     state:
+      - Chromecast
       - Prime Video
       - Plex
 action:
+  - delay:
+      seconds: 1
   - service: media_player.media_play_pause
-    entity_id: media_player.lg_tv
+    target:
+      entity_id: media_player.lg_tv
