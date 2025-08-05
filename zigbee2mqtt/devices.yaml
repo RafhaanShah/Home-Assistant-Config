@@ -4,116 +4,116 @@
 
 ## Lights
 # Gledopto GL-C-008 https://www.zigbee2mqtt.io/devices/GL-C-008.html
-"0x00124b001d43e217":
+'0x00124b001d43e217':
   friendly_name: sofa_lightstrip
 # Ikea Tradfri GU10 https://www.zigbee2mqtt.io/devices/LED1837R5.html
-"0xbc33acfffe93bef4":
+'0xbc33acfffe93bef4':
   friendly_name: kitchen_1
-"0x842e14fffe994dc9":
+'0x842e14fffe994dc9':
   friendly_name: kitchen_2
 
 ## Contact Sensors
 # Xiaomi MCCGQ01LM https://www.zigbee2mqtt.io/devices/MCCGQ01LM.html
-"0x00158d000358353c":
+'0x00158d000358353c':
   friendly_name: front_door_sensor
-"0x00158d000358348c":
+'0x00158d000358348c':
   friendly_name: living_room_window_sensor
-"0x00158d000483f7fa":
+'0x00158d000483f7fa':
   friendly_name: living_room_door_sensor
-"0x00158d000483f689":
+'0x00158d000483f689':
   friendly_name: bathroom_door_sensor
-"0x00158d000488cb45":
+'0x00158d000488cb45':
   friendly_name: guest_room_door_sensor
-"0x00158d000488cf1a":
+'0x00158d000488cf1a':
   friendly_name: bedroom_door_sensor
 
 ## Multi Sensors
 # Xiaomi WSDCGQ11LM https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
-"0x00158d000411aad5":
+'0x00158d000411aad5':
   friendly_name: bedroom_sensor
   debounce: 1
-"0x00158d0003f04673":
+'0x00158d0003f04673':
   friendly_name: living_room_sensor
   debounce: 1
-"0x00158d00053df9c7":
+'0x00158d00053df9c7':
   friendly_name: bathroom_sensor
   debounce: 1
-"0x00158d00053dfa02":
+'0x00158d00053dfa02':
   friendly_name: guest_room_sensor
   debounce: 1
-"0x00158d0004ac32ca":
+'0x00158d0004ac32ca':
   friendly_name: outdoor_sensor
   debounce: 1
 
 ## Motion Sensors
 # Xiaomi RTCGQ11LM https://www.zigbee2mqtt.io/devices/RTCGQ11LM.html
-"0x00158d0003f43658":
+'0x00158d0003f43658':
   friendly_name: bathroom_motion_sensor
   debounce: 0.2
-"0x00158d0003232db0":
+'0x00158d0003232db0':
   friendly_name: bedroom_motion_sensor
   debounce: 0.2
-"0x00158d00052d4500":
+'0x00158d00052d4500':
   friendly_name: guest_room_motion_sensor
   debounce: 0.2
-"0x00158d000572a400":
+'0x00158d000572a400':
   friendly_name: front_door_motion_sensor
   debounce: 0.2
 
 ## Water Leak Sensors
 # Xiaomi SJCGQ11LM https://www.zigbee2mqtt.io/devices/SJCGQ11LM.html
-"0x00158d000460445d":
+'0x00158d000460445d':
   friendly_name: kitchen_water_sensor
   retain: true
-"0x00158d00045fe6e6":
+'0x00158d00045fe6e6':
   friendly_name: boiler_water_sensor
   retain: true
-"0x00158d00042beab3":
+'0x00158d00042beab3':
   friendly_name: bathroom_water_sensor
   retain: true
-"0x00158d0005d015cc":
+'0x00158d0005d015cc':
   friendly_name: outdoor_water_sensor
   retain: true
 
 ## Wall Switches
 # Xiaomi WXKG02LM https://www.zigbee2mqtt.io/devices/WXKG02LM_rev2.html
-"0x00158d00047e503f":
+'0x00158d00047e503f':
   friendly_name: hallway_switch
   legacy: false
-"0x00158d00049fd58f":
+'0x00158d00049fd58f':
   friendly_name: kitchen_switch
   legacy: false
 
 # IKEA E1743 https://www.zigbee2mqtt.io/devices/E1743.html
-"0xec1bbdfffea0d6b0":
+'0xec1bbdfffea0d6b0':
   friendly_name: bedroom_switch
   legacy: false
-"0x14b457fffe68236c":
+'0x14b457fffe68236c':
   friendly_name: guest_room_switch
   legacy: false
 
 ## Buttons
 # TuYa IH-K663 https://www.zigbee2mqtt.io/devices/IH-K663.html
-"0xa4c138fd12e2d2b6":
+'0xa4c138fd12e2d2b6':
   friendly_name: lynns_pc_button
 
 ## Power Plugs
 # IKEA E1603/E1702 https://www.zigbee2mqtt.io/devices/E1603_E1702_E1708.html
-"0x000b3cfffefad894":
+'0x000b3cfffefad894':
   friendly_name: plug5
   debounce: 1
 
 ## Vibration Sensors
 # Xiaomi DJT11LM https://www.zigbee2mqtt.io/devices/DJT11LM.html
-"0x00158d0005870445":
+'0x00158d0005870445':
   friendly_name: washer_vibration_sensor
-"0x00158d0005bd7879":
+'0x00158d0005bd7879':
   friendly_name: dryer_vibration_sensor
 
 ## Other
 # CC2531 Router https://www.zigbee2mqtt.io/information/zigbee_network.html
-"0x00124b00194a075c":
+'0x00124b00194a075c':
   friendly_name: cc_router_1
 # Xiaomi JTYJ-GD-01LM/BW https://www.zigbee2mqtt.io/devices/JTYJ-GD-01LM_BW.html
-"0x00158d00052d0cd4":
+'0x00158d00052d0cd4':
   friendly_name: smoke_sensor
