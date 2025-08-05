@@ -1,7 +1,0 @@
-alias: "System: My Addr"
-description: "Update MyAddr IP"
-trigger:
-  platform: time_pattern
-  hours: 1
-action:
-  - action: rest_command.my_addr
