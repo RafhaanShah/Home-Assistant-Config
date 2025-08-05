@@ -1,6 +1,0 @@
-# https://www.home-assistant.io/integrations/dnsip/
-platform: dnsip
-hostname: !secret duckdns_alias_url
-name: duckdns_ip
-resolver: !secret ip_router
-scan_interval: 300

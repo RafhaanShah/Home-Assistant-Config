@@ -1,9 +1,0 @@
-# https://companion.home-assistant.io/docs/core/actions/
-name: light_bedroom_ceiling
-background_color: "#03A9F4"
-label:
-  text: "Bedroom Ceiling"
-  color: "#FFFFFF"
-icon:
-  icon: ceiling-light
-  color: "#FFFFFF"

@@ -1,8 +1,0 @@
-# https://www.home-assistant.io/integrations/fitbit
-platform: fitbit
-clock_format: 12H
-unit_system: metric
-monitored_resources:
-  - "activities/distance"
-  - "activities/steps"
-  - "sleep/minutesAsleep"

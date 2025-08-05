@@ -10,10 +10,4 @@ sensors:
       [strptime(states('sensor.date'), '%Y-%m-%d').month-1] }}"
   day_of_month:
     value_template: >
-      {%- set day_number = strptime(states('sensor.date'), '%Y-%m-%d').day | int %}
-      {%- set ord = {1:'st',2:'nd',3:'rd'} %}
-      {%- if 10 < day_number % 100 <= 20 %}
-        {{- day_number }}th
-      {%- else %}
-        {{- day_number }}{{ ord.get(day_number % 10, 'th') }}
-      {%- endif %}
+      {{- set day_number = strptime(states('sensor.date'), '%Y-%m-%d').day | int }}
