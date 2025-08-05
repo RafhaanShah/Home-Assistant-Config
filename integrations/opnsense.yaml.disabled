@@ -1,6 +1,0 @@
-# https://www.home-assistant.io/integrations/opnsense/
-opnsense:
-  url: !secret opnsense_url
-  api_secret: !secret opnsense_secret
-  api_key: !secret opnsense_key
-  verify_ssl: true
