@@ -1,8 +1,8 @@
 alias: "System: Certificate Expiry"
 description: "When certificate is close to expiring, send a notification"
 trigger:
-  platform: state
-  entity_id: sensor.cert_expiry_home_assistant
+  - platform: time
+    at: "09:00:00"
 condition: "{{ ((strptime(states('sensor.cert_expiry_home_assistant')
   | truncate(10, True, ''), '%Y-%m-%d').date()
   - strptime(states('sensor.date'), '%Y-%m-%d').date()).days)

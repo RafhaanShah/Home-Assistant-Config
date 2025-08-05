@@ -1,0 +1,13 @@
+alias: "System: Certificate Renew"
+description: "When certificate is close to expiring, renew"
+trigger:
+  - platform: time
+    at: "03:00:00"
+condition: "{{ ((strptime(states('sensor.cert_expiry_home_assistant')
+  | truncate(10, True, ''), '%Y-%m-%d').date()
+  - strptime(states('sensor.date'), '%Y-%m-%d').date()).days)
+  < 30 }}"
+action:
+  - service: hassio.addon_start
+    data:
+      addon: core_letsencrypt
