@@ -1,6 +1,0 @@
-# https://www.home-assistant.io/integrations/html5/
-platform: html5
-name: web
-vapid_pub_key: !secret vapid_pub_key
-vapid_prv_key: !secret vapid_prv_key
-vapid_email: !secret email

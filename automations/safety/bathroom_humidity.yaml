@@ -6,27 +6,8 @@ trigger:
     - sensor.bathroom_sensor_humidity
   above: 80
   for:
-    minutes: 10
+    minutes: 15
 action:
   - service: notify.telegram_raf
     data:
       message: "High Humidity: {{ trigger.to_state.name }}"
-  - service: media_player.media_pause
-    data:
-      entity_id: media_player.bathroom_mini
-  - service: media_player.volume_set
-    data:
-      entity_id:
-        - media_player.bathroom_mini
-      volume_level: 0.6
-  - service: tts.google_say
-    data:
-      entity_id: media_player.bathroom_mini
-      message: "It is very humid, please open the door."
-  - service: media_player.volume_set
-    data:
-      entity_id: media_player.bathroom_mini
-      volume_level: 0.4
-  - service: media_player.turn_off
-    data:
-      entity_id: media_player.bathroom_mini
