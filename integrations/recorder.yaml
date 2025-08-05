@@ -9,25 +9,17 @@ recorder:
       - climate
       - person
       - vacuum
-    entities:
-      - light.bedroom
-      - light.bathroom
-      - light.kitchen
-      - light.living_room
-      - light.guest_room
+      - light
+      - device_tracker
     entity_globs:
       - binary_sensor.*_pc_power
       - binary_sensor.*_leak
       - binary_sensor.*_smoke
-      - binary_sensor.*_over*
-      - device_tracker.*_wifi
-      - device_tracker.*_app
       - sensor.*_temperature
       - sensor.*_humidity
       - sensor.*_illuminance
       # - sensor.*_energy # uses a lot of storage
       - sensor.*_wifi_connection
-      - sensor.*_ssid
       - sensor.*_geocoded_location
   exclude:
     entity_globs:
