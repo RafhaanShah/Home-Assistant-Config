@@ -1,15 +1,19 @@
 alias: "Media: Notification Clear"
 description: "When media stops, send clear command"
-trigger:
-  platform: state
-  to: "off"
-  entity_id:
-    - media_player.speaker
-    - media_player.bedroom_tv
-    - media_player.bedroom_display
-    - media_player.bathroom_mini
-    - media_player.home_group
-    - media_player.living_room_display
+triggers:
+  - trigger: state
+    to: "off"
+    entity_id:
+      - media_player.speaker
+      - media_player.bedroom_tv
+      - media_player.bedroom_display
+      - media_player.bathroom_mini
+      - media_player.home_group
+      - media_player.living_room_display
+  - trigger: state
+    to: "idle"
+    entity_id:
+      - media_player.spotify_raf
 condition:
   - condition: state
     entity_id: person.raf

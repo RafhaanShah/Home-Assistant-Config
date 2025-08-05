@@ -1,0 +1,18 @@
+alias: "Media: Spotify Redirect Raf"
+description: "When spotify plays on Living Room Display, redirect to Speaker"
+triggers:
+  - trigger: state
+    entity_id: media_player.spotify_raf
+    attribute: "source"
+    to: "Living Room Display"
+action:
+  - service: media_player.select_source
+    target:
+      entity_id: media_player.spotify_raf
+    data:
+      source: "Speaker"
+  - service: media_player.volume_set
+    data:
+      volume_level: 0.4
+    target:
+      device_id: media_player.spotify_raf

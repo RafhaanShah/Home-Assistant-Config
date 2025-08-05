@@ -1,0 +1,26 @@
+alias: "Media: Notification Notify Spotify"
+description: "When spotify is on Speaker, send notify command"
+trigger:
+  platform: state
+  attribute: media_title
+  entity_id:
+    - media_player.spotify_raf
+condition:
+  - condition: state
+    entity_id: media_player.spotify_raf
+    attribute: "source"
+    state: "Speaker"
+  - condition: state
+    entity_id: person.raf
+    state: home
+  - condition: state
+    entity_id: media_player.lg_tv
+    state: "off"
+  - condition: template
+    value_template: >-
+      {{ trigger.to_state.state != 'idle' and trigger.to_state.media_title is not none }}
+action:
+  - service: joaoapps_join.rafs_phone_send_tasker
+    data:
+      command: >-
+        {{ 'homemedia=:=notify=:=' ~ trigger.to_state.object_id }}
