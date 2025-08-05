@@ -1,0 +1,10 @@
+alias: "Alarm: Morning Sleeping State"
+description: "At alarm time, turn off sleeping state if still on after delay"
+trigger:
+  platform: time
+  at: input_datetime.morning_alarm
+action:
+  - delay: "00:30:00"
+  - service: input_boolean.turn_off
+    data:
+      entity_id: input_boolean.sleeping

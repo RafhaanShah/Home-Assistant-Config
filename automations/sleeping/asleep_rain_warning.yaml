@@ -13,7 +13,7 @@ condition:
     entity_id: weather.pirateweather
     state: rainy
 action:
-  - service: tts.google_say
+  - service: notify.mobile_app_rafs_phone
     data:
-      entity_id: media_player.bedroom_display
-      message: "The window is open and it may rain"
+      title: "Rain warning"
+      message: "May rain overnight, window is open"

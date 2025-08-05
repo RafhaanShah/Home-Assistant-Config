@@ -13,6 +13,5 @@ action:
   - service: "automation.turn_{{ trigger.from_state.state }}"
     data:
       entity_id:
-        - automation.sleeping_asleep_lights
         - automation.light_guest_room_motion_off
         - automation.light_guest_room_no_motion
