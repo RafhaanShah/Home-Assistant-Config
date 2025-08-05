@@ -8,3 +8,8 @@ http:
   # needed for chrome extension shortcut
   # https://chromewebstore.google.com/detail/home-assistant/hpoiflhmfklhfcfpibmdmpeonphmdbda
   use_x_frame_options: false
+  # for cloudflare tunnel
+  # https://github.com/brenner-tobias/addon-cloudflared/blob/main/cloudflared/DOCS.md
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 172.30.33.0/24
