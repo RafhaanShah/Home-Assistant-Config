@@ -1,5 +1,6 @@
 platform: group
 name: Kitchen
+unique_id: 3d83adda-7293-11f0-8de9-0242ac120002
 entities:
   - light.kitchen_1
   - light.kitchen_2
