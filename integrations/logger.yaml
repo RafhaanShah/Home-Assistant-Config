@@ -30,3 +30,5 @@ logger:
       - "Detected that custom integration 'hass_agent' calls"
     py.warnings:
       - "RuntimeWarning: coroutine 'handle_apis_changed' was never awaited"
+    custom_components.openrgb:
+      - Connection lost to OpenRGB SDK Server
