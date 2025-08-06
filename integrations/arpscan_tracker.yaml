@@ -1,7 +1,7 @@
 # https://github.com/cyberjunky/home-assistant-arpscan_tracker
 device_tracker:
   - platform: arpscan_tracker
-    scan_options: " --interface=enp6s18 192.168.1.0/24 -g"
+    scan_options: !secret ip_arpscan_option
     interval_seconds: 12
     consider_home: 300
     track_new_devices: false

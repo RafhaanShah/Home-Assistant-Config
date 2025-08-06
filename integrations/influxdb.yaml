@@ -1,7 +1,7 @@
 # https://www.home-assistant.io/integrations/influxdb/
 influxdb:
   api_version: 2
-  host: server.lan
+  host: !secret ip_influxdb
   port: 8428
   ssl: false
   max_retries: 10
