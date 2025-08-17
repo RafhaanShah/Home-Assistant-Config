@@ -1,5 +1,5 @@
 friendly_name: "Lynn's PC"
-icon_template: mdi:laptop
+icon_template: mdi:desktop-tower-monitor
 value_template: "{{ is_state('binary_sensor.lynns_pc_power', 'on') }}"
 turn_on:
   service: wake_on_lan.send_magic_packet

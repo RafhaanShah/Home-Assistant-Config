@@ -1,5 +1,6 @@
 platform: group
 name: Hallway
+unique_id: ba37c6b6-7308-11f0-8de9-0242ac120002
 entities:
   - light.hallway_1
   - light.hallway_2
