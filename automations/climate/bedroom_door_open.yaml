@@ -11,6 +11,7 @@ condition:
     entity_id: binary_sensor.bedroom_door_sensor_contact
     state: "on"
 action:
-  - service: notify.telegram_raf
+  - service: notify.send_message
     data:
+      entity_id: notify.telegram_raf
       message: "Bedroom Heater is on with the door open"

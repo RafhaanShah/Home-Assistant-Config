@@ -9,7 +9,8 @@ trigger:
   from: "off"
   to: "on"
 action:
-  - service: notify.telegram_raf
+  - service: notify.send_message
     data:
+      entity_id: notify.telegram_raf
       message: >-
         "Alert: Water Leak: {{ trigger.to_state.name }}"

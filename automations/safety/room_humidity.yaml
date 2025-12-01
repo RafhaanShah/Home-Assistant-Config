@@ -10,6 +10,7 @@ trigger:
   for:
     minutes: 10
 action:
-  - service: notify.telegram_raf
+  - service: notify.send_message
     data:
+      entity_id: notify.telegram_raf
       message: "High Humidity: {{ trigger.to_state.name }}"

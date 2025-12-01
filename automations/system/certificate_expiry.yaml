@@ -8,6 +8,7 @@ condition: "{{ ((strptime(states('sensor.cert_expiry_home_assistant')
   - strptime(states('sensor.date'), '%Y-%m-%d').date()).days)
   < 7 }}"
 action:
-  - service: notify.telegram_raf
+  - service: notify.send_message
     data:
+      entity_id: notify.telegram_raf
       message: "Home Assistant Certificate Expiring On: {{ trigger.to_state.state }}"
