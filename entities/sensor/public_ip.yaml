@@ -1,8 +1,11 @@
-# https://www.ipify.org/
+# https://www.home-assistant.io/integrations/sensor.rest/
 platform: rest
 name: public_ip
 # https://ipecho.net/plain
 # https://api.ipify.org/
 # https://ifconfig.me/ip
-resource: http://ifconfig.me/ip
+# https://www.ipify.org/
+# https://jsonip.com/
+resource: https://jsonip.com/
+value_template: "{{ value_json.ip }}"
 scan_interval: 1500

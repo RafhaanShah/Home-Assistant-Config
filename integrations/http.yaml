@@ -1,14 +1,15 @@
 # https://www.home-assistant.io/integrations/http/
 http:
+  # enable HTTPS for LAN access without Cloudflare
   server_port: !secret server_port
   ssl_certificate: !secret ssl_certificate
   ssl_key: !secret ssl_key
   ip_ban_enabled: true
   login_attempts_threshold: 3
-  # needed for chrome extension shortcut
+  # needed for Home Assistant Chrome extension
   # https://chromewebstore.google.com/detail/home-assistant/hpoiflhmfklhfcfpibmdmpeonphmdbda
   use_x_frame_options: false
-  # for cloudflare tunnel
+  # allow Cloudflare tunnel proxying
   # https://github.com/brenner-tobias/addon-cloudflared/blob/main/cloudflared/DOCS.md
   use_x_forwarded_for: true
   trusted_proxies:
