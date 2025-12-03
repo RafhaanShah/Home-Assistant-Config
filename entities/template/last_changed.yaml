@@ -1,0 +1,21 @@
+# https://www.home-assistant.io/integrations/template/
+# https://community.home-assistant.io/t/persistent-version-of-last-changed-for-the-ui/467163/67
+triggers:
+  - trigger: state
+    # list of entities to track
+    entity_id:
+      - input_boolean.test_value
+    not_to:
+      - unavailable
+      - unknown
+    not_from:
+      - unavailable
+      - unknown
+sensor:
+  - name: Last Changed
+    state: "OK"
+    attributes:
+      changes: >
+        {% set current = this.attributes.get('changes', {}) %}
+        {% set new = {trigger.entity_id: trigger.to_state.last_changed.isoformat()} %}
+        {{ dict(current, **new) }}
