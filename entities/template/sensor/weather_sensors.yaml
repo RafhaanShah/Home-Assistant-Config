@@ -1,0 +1,14 @@
+# https://www.home-assistant.io/integrations/template/#sensor
+sensor:
+  - name: weather_temperature
+    state: "{{ state_attr('weather.pirateweather', 'temperature') }}"
+    unit_of_measurement: "°C"
+    device_class: temperature
+  - name: weather_humidity
+    state: "{{ state_attr('weather.pirateweather', 'humidity') }}"
+    unit_of_measurement: "%"
+    device_class: humidity
+  - name: weather_pressure
+    state: "{{ state_attr('weather.pirateweather', 'pressure') }}"
+    unit_of_measurement: "hPa"
+    device_class: pressure

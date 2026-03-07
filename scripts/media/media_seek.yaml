@@ -16,7 +16,7 @@ fields:
   media_player:
     name: Media Player
     description: Entity ID for the Media Player.
-    example: "media_player.living_room_tv"
+    example: "media_player.test_media_player"
     selector:
       entity:
         filter:

@@ -6,4 +6,4 @@ sequence:
   - service: webostv.command
     data:
       command: com.webos.service.tvpower/power/turnOnScreen
-      entity_id: media_player.lg_tv
+      entity_id: media_player.living_room_tv

@@ -1,7 +1,7 @@
 name: "Living Room: Evening"
 icon: mdi:sofa
 entities:
-  light.desk_lightstrip:
+  light.table_lamp:
     state: "on"
     brightness: 255
     # color_temp: 354

@@ -1,0 +1,4 @@
+- Organise folders by the thing it affects (e.g. lights, climate)
+- Then sub-folders by area if needed
+
+- For others, organise by trigger function (e.g. presence, calendar)

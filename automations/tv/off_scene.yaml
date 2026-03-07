@@ -2,7 +2,7 @@ alias: "TV: Off Scene"
 description: "When TV turns off, if evening, activate evening scene"
 trigger:
   platform: state
-  entity_id: media_player.lg_tv
+  entity_id: media_player.living_room_tv
   to: "off"
   for:
     seconds: 15

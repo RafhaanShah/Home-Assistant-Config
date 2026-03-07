@@ -22,9 +22,8 @@ adaptive_lighting:
 
   - name: "Living Room"
     lights:
-      - light.ceiling_1
-      - light.ceiling_2
-      - light.desk_lightstrip
+      - light.office_light_strip
+      - light.table_lamp
       - light.floor_lamp
     interval: 300
     transition: 60

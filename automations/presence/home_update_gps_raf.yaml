@@ -6,7 +6,7 @@ trigger:
     from: "off"
     to: "on"
   - platform: state
-    entity_id: binary_sensor.front_door_motion_sensor_occupancy
+    entity_id: binary_sensor.front_door_lock_door
     from: "off"
     to: "on"
 condition:

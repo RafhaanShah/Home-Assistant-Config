@@ -1,13 +1,13 @@
 # https://www.home-assistant.io/integrations/influxdb/
 influxdb:
-  api_version: 2
-  host: !secret ip_influxdb
-  port: 8428
-  ssl: false
+  # api_version: 2
+  # host: !secret ip_influxdb
+  # port: 8428
+  # ssl: false
+  # token: TOKEN
+  # organization: ORGANIZATION
   max_retries: 10
   default_measurement: state
-  token: TOKEN
-  organization: ORGANIZATION
   include:
     domains:
       - person

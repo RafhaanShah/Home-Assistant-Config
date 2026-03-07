@@ -1,2 +1,2 @@
-# https://www.home-assistant.io/integrations/sensor/
+# https://www.home-assistant.io/integrations/template
 template: !include_dir_list ../entities/template

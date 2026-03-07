@@ -3,11 +3,6 @@ description: "At sunset, turn on living room evening scene"
 trigger:
   - platform: template
     value_template: "{{ state_attr('sun.sun', 'elevation') <= states('input_number.sunset_elevation')|float }}"
-  - platform: numeric_state
-    entity_id: sensor.hue_motion_sensor_1_illuminance
-    below: 400
-    for:
-      minutes: 10
 condition:
   - condition: time
     after: "14:30:00"
@@ -20,7 +15,7 @@ condition:
   - condition: not
     conditions:
       - condition: state
-        entity_id: media_player.lg_tv
+        entity_id: media_player.living_room_tv
         attribute: source
         state:
           - Apple TV
@@ -30,10 +25,11 @@ condition:
           - Disney+
           - Plex
           - ITVX
+          - NOW
 action:
   - service: scene.turn_on
     data:
       transition: 300
       entity_id: >-
-        {% if is_state('media_player.lg_tv', 'off') %}scene.living_room_evening
+        {% if is_state('media_player.living_room_tv', 'off') %}scene.living_room_evening
         {% else %}scene.living_room_evening_tv{% endif %}

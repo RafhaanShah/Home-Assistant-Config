@@ -9,7 +9,4 @@ action:
   - service: automation.turn_on
     data:
       entity_id:
-        - automation.alarm_pre_morning_heating_bedroom
-        - automation.alarm_pre_morning_heating_living_room
-        - automation.alarm_pre_morning_blanket
         - automation.alarm_pre_morning_lights

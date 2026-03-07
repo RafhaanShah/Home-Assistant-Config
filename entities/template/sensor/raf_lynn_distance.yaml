@@ -1,0 +1,4 @@
+# https://www.home-assistant.io/integrations/template/#sensor
+sensor:
+  - name: Raf Lynn Distance
+    state: "{{ distance('person.raf', 'person.lynn') | float(0.0) }}"

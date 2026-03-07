@@ -14,7 +14,7 @@ condition:
     entity_id: person.raf
     state: home
   - condition: state
-    entity_id: media_player.lg_tv
+    entity_id: media_player.living_room_tv
     state: "off"
   - condition: template
     value_template: >-

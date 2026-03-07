@@ -2,7 +2,7 @@ alias: "TV: Music Off"
 description: "When TV turns on, if music is playing, turn it off"
 trigger:
   platform: state
-  entity_id: media_player.lg_tv
+  entity_id: media_player.living_room_tv
   from: "off"
   for:
     seconds: 30

@@ -2,7 +2,7 @@ alias: "TV: Speakers On"
 description: "When TV turns on, if speakers are off, turn on"
 trigger:
   platform: state
-  entity_id: media_player.lg_tv
+  entity_id: media_player.living_room_tv
   from: "off"
   to: "on"
   for:

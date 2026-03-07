@@ -1,0 +1,5 @@
+# https://www.home-assistant.io/integrations/template/#binary_sensor
+binary_sensor:
+  - name: TV Speaker Power
+    device_class: power
+    state: "{{ states('sensor.tv_speaker_plug_wattage') | float(0) > 2 }}"

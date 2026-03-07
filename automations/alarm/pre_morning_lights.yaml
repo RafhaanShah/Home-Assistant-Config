@@ -6,6 +6,6 @@ trigger:
 action:
   - service: light.turn_on
     data:
-      entity_id: light.bedside_lamp
+      entity_id: light.bedside_lamp_1
       brightness_pct: 100
       transition: 1800

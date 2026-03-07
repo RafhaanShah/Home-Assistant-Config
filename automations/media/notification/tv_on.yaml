@@ -2,7 +2,7 @@ alias: "Media: Notification TV Notify"
 description: "When TV is playing, send notify command"
 trigger:
   platform: state
-  entity_id: media_player.lg_tv
+  entity_id: media_player.living_room_tv
   attribute: source
   for:
     seconds: 10
@@ -13,9 +13,9 @@ condition:
   - condition: not
     conditions:
       - condition: state
-        entity_id: media_player.lg_tv
+        entity_id: media_player.living_room_tv
         state: "off"
 action:
   - service: joaoapps_join.rafs_phone_send_tasker
     data:
-      command: "homemedia=:=tv=:=lg_tv"
+      command: "homemedia=:=tv=:=living_room_tv"

@@ -2,7 +2,7 @@ alias: "TV: On Scene"
 description: "When TV turns on, if lights on, activate tv scene"
 trigger:
   platform: state
-  entity_id: media_player.lg_tv
+  entity_id: media_player.living_room_tv
   from: "off"
   to: "on"
 condition:

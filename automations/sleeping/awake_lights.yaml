@@ -11,11 +11,11 @@ action:
       entity_id: switch.adaptive_lighting_sleep_mode_bathroom
   - service: light.turn_on
     data:
-      entity_id: light.bedside_lamp
+      entity_id: light.bedside_lamp_1
       brightness_pct: 100
       transition: 60
   - delay:
-      hours: 1
+      minutes: 5
   - service: light.turn_off
     data:
       entity_id: light.bedroom

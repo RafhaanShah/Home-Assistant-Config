@@ -1,0 +1,9 @@
+# https://www.home-assistant.io/integrations/template/#switch
+switch:
+  - name: "TV Speaker"
+    icon: mdi:surround-sound
+    state: "{{ is_state('binary_sensor.tv_speaker_power', 'on') }}"
+    turn_on:
+      service: script.tv_speaker_power
+    turn_off:
+      service: script.tv_speaker_power

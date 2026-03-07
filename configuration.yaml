@@ -11,7 +11,7 @@ default_config:
 # https://www.home-assistant.io/integrations/homeassistant/
 homeassistant:
   name: Raf's Flat
-  elevation: 10
+  elevation: !secret home_height
   latitude: !secret home_lat
   longitude: !secret home_lon
   time_zone: Europe/London
