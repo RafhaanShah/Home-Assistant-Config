@@ -5,7 +5,7 @@ trigger:
   entity_id: person.lynn
   to: "home"
   for:
-    seconds: 10
+    seconds: 60
 condition:
   - not:
       - condition: state

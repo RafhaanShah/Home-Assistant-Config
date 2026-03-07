@@ -3,16 +3,16 @@ description: "Send a notification when at work"
 trigger:
   - platform: state
     entity_id: person.raf
-    to: "Raf's Work"
+    to: rafs_work
     for:
-      seconds: 10
+      seconds: 60
     variables:
       message_verb: "arrived at"
   - platform: state
     entity_id: person.raf
-    from: "Raf's Work"
+    from: rafs_work
     for:
-      seconds: 10
+      seconds: 60
     variables:
       message_verb: "left"
 condition:

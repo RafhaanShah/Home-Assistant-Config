@@ -5,7 +5,7 @@ trigger:
   entity_id: person.raf
   to: "home"
   for:
-    seconds: 10
+    seconds: 60
 condition:
   - not:
       - condition: state
