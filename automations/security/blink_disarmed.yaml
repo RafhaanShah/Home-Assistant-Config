@@ -3,17 +3,17 @@ description: "When Blink is disarmed for too long, send a notification"
 mode: restart
 trigger:
   - platform: state
-    entity_id: alarm_control_panel.blink_rafs_flat
+    entity_id: alarm_control_panel.blink_system
     to: disarmed
     for:
       minutes: 20
   - platform: state
-    entity_id: alarm_control_panel.blink_rafs_flat
+    entity_id: alarm_control_panel.blink_system
     to: disarmed
     for:
       minutes: 40
   - platform: state
-    entity_id: alarm_control_panel.blink_rafs_flat
+    entity_id: alarm_control_panel.blink_system
     to: disarmed
     for:
       minutes: 60
@@ -38,4 +38,4 @@ action:
     continue_on_timeout: false
   - service: alarm_control_panel.alarm_arm_away
     data:
-      entity_id: alarm_control_panel.blink_rafs_flat
+      entity_id: alarm_control_panel.blink_system

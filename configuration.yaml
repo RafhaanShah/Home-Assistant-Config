@@ -1,4 +1,4 @@
-########## Raf's Home Assistant Configuration ##########
+########## Home Assistant Configuration ##########
 
 ########## How to organise configs ##########
 # https://www.home-assistant.io/docs/configuration/splitting_configuration/
@@ -10,7 +10,7 @@ default_config:
 
 # https://www.home-assistant.io/integrations/homeassistant/
 homeassistant:
-  name: Raf's Flat
+  name: Raf and Lynn's Flat
   elevation: !secret home_height
   latitude: !secret home_lat
   longitude: !secret home_lon

@@ -8,7 +8,7 @@ condition:
     entity_id: input_boolean.at_home
     state: "on"
   - condition: state
-    entity_id: light.bedroom
+    entity_id: light.bedside_lamps
     state: "off"
 action:
   - service: scene.turn_on

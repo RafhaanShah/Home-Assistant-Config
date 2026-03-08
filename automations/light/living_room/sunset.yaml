@@ -10,7 +10,7 @@ condition:
     entity_id: input_boolean.at_home
     state: "on"
   - condition: state
-    entity_id: light.living_room
+    entity_id: light.living_room_lamps
     state: "off"
   - condition: not
     conditions:

@@ -14,4 +14,4 @@ condition:
 action:
   - service: switch.turn_on
     data:
-      entity_id: switch.tv_speaker_power
+      entity_id: switch.tv_speaker
