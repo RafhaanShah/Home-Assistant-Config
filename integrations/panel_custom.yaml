@@ -1,0 +1,2 @@
+# https://www.home-assistant.io/integrations/panel_custom/
+panel_custom: !include_dir_list ../panel_custom

@@ -16,6 +16,7 @@
 !entities/
 !esphome/
 !integrations/
+!panel_custom/
 !scenes/
 !scripts/
 !services/
