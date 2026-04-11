@@ -1,0 +1,6 @@
+name: "Office: Evening"
+icon: mdi:chair-rolling
+entities:
+  light.office_light_strip:
+    state: "on"
+    brightness: 255

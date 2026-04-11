@@ -26,6 +26,7 @@ condition:
           - Plex
           - ITVX
           - NOW
+          - HBO Max
 action:
   - service: scene.turn_on
     data:

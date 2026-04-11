@@ -1,11 +1,6 @@
 name: "Living Room: Evening TV"
 icon: mdi:television
 entities:
-  light.table_lamp:
+  light.living_room_lamps:
     state: "on"
-    brightness: 153
-    # color_temp: 354
-  light.floor_lamp:
-    state: "on"
-    brightness: 128
-    # color_temp: 354
+    brightness: 96

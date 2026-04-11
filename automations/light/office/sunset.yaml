@@ -1,0 +1,16 @@
+alias: "Light: Office Sunset"
+description: "At sunset, if home, turn on office evening scene"
+trigger:
+  platform: template
+  value_template: "{{ state_attr('sun.sun', 'elevation') <= states('input_number.sunset_elevation')|float }}"
+condition:
+  - condition: state
+    entity_id: input_boolean.at_home
+    state: "on"
+  - condition: state
+    entity_id: light.bedside_lamps
+    state: "off"
+action:
+  - service: scene.turn_on
+    data:
+      entity_id: scene.office_evenig

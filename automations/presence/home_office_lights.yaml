@@ -1,0 +1,13 @@
+alias: "Presence: Home Office Lights"
+description: "When home in the evening, turn office lights on"
+trigger:
+  platform: state
+  entity_id: input_boolean.at_home
+  from: "off"
+  to: "on"
+condition:
+  - "{{ state_attr('sun.sun', 'elevation') <= states('input_number.sunset_elevation')|float }}"
+action:
+  - service: scene.turn_on
+    data:
+      entity_id: scene.office_evening

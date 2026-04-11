@@ -1,11 +1,6 @@
 name: "Living Room: Evening"
 icon: mdi:sofa
 entities:
-  light.table_lamp:
+  light.living_room_lamps:
     state: "on"
     brightness: 255
-    # color_temp: 354
-  light.floor_lamp:
-    state: "on"
-    brightness: 255
-    # color_temp: 354
