@@ -10,3 +10,26 @@
   friendly_name: Bedside Lamp 2
 '0x00178801044b39bb':
   friendly_name: Office Light Strip
+'0x54ef4410014e5946':
+  friendly_name: Bedroom Curtain
+'0x54ef4410014e5bec':
+  friendly_name: Bedroom Sheer
+'0xa4c1386d29e1351a':
+  friendly_name: Bedroom Climate
+  temperature_calibration: 0
+  humidity_calibration: 4
+'0xa4c1384d15593984':
+  friendly_name: Living Room Climate
+  humidity_calibration: 4
+'0xa4c138b982e0929c':
+  friendly_name: Office Climate
+  humidity_calibration: 4
+'0x00158d0003f04673':
+  friendly_name: Utility Room Climate
+  humidity_calibration: -4
+'0x00158d00053dfa02':
+  friendly_name: Bathroom Climate
+  humidity_calibration: -4
+'0x00158d00053df9c7':
+  friendly_name: Guest Room Climate
+  humidity_calibration: -4

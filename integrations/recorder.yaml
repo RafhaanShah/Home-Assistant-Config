@@ -11,6 +11,8 @@ recorder:
       - vacuum
       - light
       - device_tracker
+      - lock
+      - vacuum
     entity_globs:
       - binary_sensor.*_pc_power
       - binary_sensor.*_leak
@@ -19,7 +21,7 @@ recorder:
       - sensor.*_humidity
       - sensor.*_illuminance
       # - sensor.*_energy # uses a lot of storage
-      - sensor.*_wifi_connection
+      # - sensor.*_wifi
       - sensor.*_geocoded_location
   exclude:
     entity_globs:

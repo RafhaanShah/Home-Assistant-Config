@@ -5,7 +5,7 @@
 !.github/
 !.vscode/
 !.yamllint
-!.prettierrc
+!.prettierrc.yaml
 !.prettierignore
 !.HA_VERSION
 !*.md
