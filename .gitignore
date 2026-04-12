@@ -1,6 +1,7 @@
 /*
 
 !.gitignore
+!.aiignore
 !.git-hooks/
 !.github/
 !.vscode/
@@ -29,3 +30,4 @@ google_calendars.yaml
 ip_bans.yaml
 known_devices.yaml
 secrets.yaml
+mcp.json

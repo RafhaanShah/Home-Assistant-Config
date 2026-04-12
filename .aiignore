@@ -1,0 +1,12 @@
+.cache/
+.cloud/
+.storage/
+
+custom_components/
+
+.env
+
+ip_bans.yaml
+known_devices.yaml
+secrets.yaml
+credentials.json
