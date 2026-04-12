@@ -1,0 +1,13 @@
+alias: "Media: Bathroom Off"
+description: "When bathroom speaker stops playing for 5 minutes, set volume"
+trigger:
+  platform: state
+  entity_id: media_player.bathroom_speaker
+  to: "off"
+  for:
+    minutes: 5
+action:
+  - service: media_player.volume_set
+    data:
+      entity_id: media_player.bathroom_speaker
+      volume_level: 0.4

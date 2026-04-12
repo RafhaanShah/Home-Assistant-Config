@@ -32,6 +32,15 @@ A live MCP connection to the HA instance is available via `ha_*` tool calls.
 - Never modify anything that is not part of the core HA configuration or is third party code (such as `custom_components/`), this generally includes all files ignored by version control.
 - Edit yaml files directly to read and write configurations, but use the MCP tools to find information about HA, such as entity IDs and to validate configurations.
 - Always ask for confirmation before calling destructive or reload‑style tools or calling services or changing entity states that will immediately affect HA.
+- Prefer standard HA automation / condition / service configuration over templates where it is possible.
+- Refer to the HA documentation when required for things like syntax and available keys:
+  - [Automation Triggers](https://www.home-assistant.io/docs/automation/trigger/)
+  - [Automation Conditions](https://www.home-assistant.io/docs/automation/condition/)
+  - [Automation Actions](https://www.home-assistant.io/docs/automation/action/)
+  - [Script Actions](https://www.home-assistant.io/docs/scripts/perform-actions/)
+  - [Script Conditions](https://www.home-assistant.io/docs/scripts/conditions/)
+  - [Dashboards](https://www.home-assistant.io/dashboards/dashboards/)
+  - [Template Syntax](https://www.home-assistant.io/docs/templating/syntax/)
 
 ## Lint / Validate
 

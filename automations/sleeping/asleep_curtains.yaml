@@ -1,0 +1,13 @@
+alias: "Sleeping: Asleep Curtains"
+description: "When asleep, close the bedroom curtains"
+trigger:
+  platform: state
+  entity_id: input_boolean.sleeping
+  from: "off"
+  to: "on"
+action:
+  - service: cover.close_cover
+    data:
+      entity_id:
+        - cover.bedroom_curtain
+        - cover.bedroom_sheer

@@ -1,25 +1,50 @@
 alias: "Media: Notification Notify"
 description: "When media title changes, send notify command"
 trigger:
-  platform: state
-  attribute: media_title
-  entity_id:
-    - media_player.guest_room_tv
-    - media_player.bedroom_display
-    - media_player.bathroom_speaker
-    - media_player.kitchen_display
-    - media_player.living_room_speaker
-    - media_player.living_room_tv_cast
+  - platform: state
+    attribute: media_title
+    id: media
+    entity_id:
+      - media_player.bedroom_display
+      - media_player.bathroom_speaker
+      - media_player.kitchen_display
+      - media_player.living_room_speaker
+      - media_player.living_room_tv_cast
+  - platform: state
+    attribute: media_title
+    id: spotify
+    entity_id:
+      - media_player.spotify_raf
 condition:
   - condition: state
     entity_id: person.raf
     state: home
-  - condition: template
-    value_template: >-
-      {{ trigger.to_state.state != 'off' and trigger.to_state.media_title is not none }}
   - condition: state
     entity_id: media_player.living_room_tv
     state: "off"
+  - condition: template
+    value_template: >-
+      {{ trigger.to_state.media_title is not none }}
+  - or:
+      - and:
+          - condition: trigger
+            id: spotify
+          - condition: state
+            entity_id: media_player.spotify_raf
+            attribute: source
+            state:
+              - "Speaker"
+              - "Beoplay Speaker"
+          - not:
+              - condition: state
+                entity_id: media_player.spotify_raf
+                state: idle
+      - and:
+          - condition: trigger
+            id: media
+          - condition: template
+            value_template: >-
+              {{ trigger.to_state.state != 'off' }}
 action:
   - service: joaoapps_join.rafs_phone_send_tasker
     data:
