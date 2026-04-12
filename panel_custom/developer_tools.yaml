@@ -1,0 +1,6 @@
+name: config/developer-tools
+sidebar_title: Developer Tools
+sidebar_icon: mdi:tools
+module_url: config/developer-tools
+embed_iframe: true
+require_admin: true

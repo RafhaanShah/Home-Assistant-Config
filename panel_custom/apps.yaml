@@ -1,0 +1,6 @@
+name: config/apps
+sidebar_title: Apps
+sidebar_icon: mdi:tools
+module_url: config/puzzle
+embed_iframe: true
+require_admin: true

@@ -1,0 +1,6 @@
+name: config/integrations
+sidebar_title: Integrations
+sidebar_icon: mdi:devices
+module_url: config/integrations
+embed_iframe: true
+require_admin: true
