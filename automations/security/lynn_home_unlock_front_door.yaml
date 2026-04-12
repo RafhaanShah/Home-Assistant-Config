@@ -1,0 +1,52 @@
+alias: "Security: Lynn Home Unlock Front Door"
+description: "When Lynn arrives home, send actionable notification to unlock front door"
+mode: single
+trigger:
+  platform: state
+  entity_id: person.lynn
+  to: home
+  from: not_home
+condition:
+  - condition: not
+    conditions:
+      - condition: state
+        entity_id: person.lynn
+        state: "home"
+        for:
+          minutes: 15
+action:
+  - variables:
+      action_unlock_delayed: "{{ 'UNLOCK_FRONT_DOOR_' ~ context.id }}"
+      action_unlock_now: "{{ 'UNLOCK_FRONT_DOOR_NOW_' ~ context.id }}"
+  - service: notify.mobile_app_lynns_phone
+    data:
+      title: "Welcome Home"
+      message: "Unlock the front door?"
+      data:
+        notification_icon: mdi:lock-open
+        actions:
+          - action: "{{ action_unlock_delayed }}"
+            title: "Unlock in 60s"
+          - action: "{{ action_unlock_now }}"
+            title: "Unlock Now"
+  - wait_for_trigger:
+      - platform: event
+        event_type: mobile_app_notification_action
+        event_data:
+          action: "{{ action_unlock_delayed }}"
+      - platform: event
+        event_type: mobile_app_notification_action
+        event_data:
+          action: "{{ action_unlock_now }}"
+    timeout:
+      minutes: 15
+    continue_on_timeout: false
+  - if:
+      - condition: template
+        value_template: "{{ wait.trigger.event.data.action == action_unlock_delayed }}"
+    then:
+      - delay:
+          seconds: 60
+  - service: lock.unlock
+    target:
+      entity_id: lock.front_door_lock

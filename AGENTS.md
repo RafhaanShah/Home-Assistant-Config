@@ -13,17 +13,17 @@
 - `esphome/`, `zigbee2mqtt/`, `node-red/` — configs for companion services.
 - `secrets_example.yaml` — contains example secrets values.
 
-## MCP Tools
+## MCP Tools and Skills
 
 A live MCP connection to the HA instance is available via `ha_*` tool calls.
 
-- **Start here:** `ha_get_overview()` for system summary; `ha_search_entities(query)` to find entity IDs.
+- **Start with best practices:** Always start with calling `ha_get_skill_home_assistant_best_practices` then `read_resource(uri)` on the returned files for automation patterns, dashboard guides, helper selection, etc.
+- **System overview:** `ha_get_overview()` for system summary; `ha_search_entities(query)` to find entity IDs.
 - **Read state:** `ha_get_state(entity_id)` / `ha_get_states([...])` for current values; `ha_get_history()` for past.
 - **Config (check):** `ha_check_config` to check the configuration for errors.
 - **Config (read):** `ha_config_get_automation(id)`, `ha_config_get_script(id)`, `ha_config_get_dashboard()`.
 - **Config (write):** `ha_config_set_automation(config)`, `ha_config_set_script(id, config)`, `ha_config_set_dashboard(url_path, ...)`.
 - **Search configs:** `ha_deep_search(query)` searches inside automation/script/helper definitions.
-- **Best practices:** Call `ha_get_skill_home_assistant_best_practices` then `read_resource(uri)` on the returned files for automation patterns, dashboard guides, helper selection, etc.
 - **Full tool docs:** https://homeassistant-ai.github.io/ha-mcp/tools/
 
 ## Rules
@@ -33,14 +33,6 @@ A live MCP connection to the HA instance is available via `ha_*` tool calls.
 - Edit yaml files directly to read and write configurations, but use the MCP tools to find information about HA, such as entity IDs and to validate configurations.
 - Always ask for confirmation before calling destructive or reload‑style tools or calling services or changing entity states that will immediately affect HA.
 - Prefer standard HA automation / condition / service configuration over templates where it is possible.
-- Refer to the HA documentation when required for things like syntax and available keys:
-  - [Automation Triggers](https://www.home-assistant.io/docs/automation/trigger/)
-  - [Automation Conditions](https://www.home-assistant.io/docs/automation/condition/)
-  - [Automation Actions](https://www.home-assistant.io/docs/automation/action/)
-  - [Script Actions](https://www.home-assistant.io/docs/scripts/perform-actions/)
-  - [Script Conditions](https://www.home-assistant.io/docs/scripts/conditions/)
-  - [Dashboards](https://www.home-assistant.io/dashboards/dashboards/)
-  - [Template Syntax](https://www.home-assistant.io/docs/templating/syntax/)
 
 ## Lint / Validate
 

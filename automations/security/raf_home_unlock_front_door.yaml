@@ -1,10 +1,19 @@
-alias: "Security: Home Unlock Front Door"
-description: "When Raf arrives home, send actionable notification to unlock front door after 60 seconds"
+alias: "Security: Raf Home Unlock Front Door"
+description: "When Raf arrives home, send actionable notification to unlock front door"
 mode: single
 trigger:
   platform: state
   entity_id: person.raf
   to: home
+  from: not_home
+condition:
+  - condition: not
+    conditions:
+      - condition: state
+        entity_id: person.raf
+        state: "home"
+        for:
+          minutes: 15
 action:
   - variables:
       action_unlock_delayed: "{{ 'UNLOCK_FRONT_DOOR_' ~ context.id }}"
