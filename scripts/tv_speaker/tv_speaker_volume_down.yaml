@@ -1,11 +1,9 @@
 alias: "TV Speaker Volume Down"
-description: Call Broadlink device to send IR command to turn speaker volume down
+description: Send IR command for TV speakers
 icon: mdi:volume-minus
-mode: queued
+mode: parallel
 sequence:
-  - service: remote.send_command
+  - action: esphome.xiao_smart_ir_mate_transmit_nec
     data:
-      entity_id: remote.broadlink_rm3
-      device: tv_speakers
-      command: vol_down
-      num_repeats: 1
+      address: 40962
+      command: 38250

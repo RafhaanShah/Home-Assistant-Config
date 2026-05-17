@@ -1,9 +1,9 @@
-# Script to call Broadlink device to send IR command to toggle speakers sound
 alias: "TV Speaker Mute"
+description: Send IR command for TV speakers
 icon: mdi:volume-mute
+mode: parallel
 sequence:
-  - service: remote.send_command
+  - action: esphome.xiao_smart_ir_mate_transmit_nec
     data:
-      entity_id: remote.broadlink_rm3
-      device: tv_speakers
-      command: mute
+      address: 40962
+      command: 5610

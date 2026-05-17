@@ -15,18 +15,17 @@
 
 ## MCP Tools and Skills
 
-A live MCP connection to the HA instance is available via `ha_*` tool calls.
+Use `ha_*` tool calls for the live HA MCP tools, and always `Context7` for in-depth documentation, without me having to explicitly ask.
 
-- **Start with best practices:** Always start with calling `ha_get_skill_home_assistant_best_practices` then `read_resource(uri)` on the returned files for automation patterns, dashboard guides, helper selection, etc.
+- **Home Assistant Documentation:** use `Context7` for documentation and code examples, using library `/home-assistant/home-assistant.io`.
+- **ESPHome Documentation:** use `Context7` for ESPHome configuration and documentation, using library `/websites/esphome_io`.
+- **Best practices:** call `ha_get_skill_home_assistant_best_practices` then `read_resource(uri)` on the returned files for best practices and patterns for automations, dashboards, helper selections and more.
 - **System overview:** `ha_get_overview()` for system summary; `ha_search_entities(query)` to find entity IDs.
 - **Read state:** `ha_get_state(entity_id)` / `ha_get_states([...])` for current values; `ha_get_history()` for past.
-- **Config (check):** `ha_check_config` to check the configuration for errors.
+- **Config (check):** `ha_check_config` to check the configuration for errors after making config changes.
 - **Config (read):** `ha_config_get_automation(id)`, `ha_config_get_script(id)`, `ha_config_get_dashboard()`.
 - **Config (write):** `ha_config_set_automation(config)`, `ha_config_set_script(id, config)`, `ha_config_set_dashboard(url_path, ...)`.
 - **Search configs:** `ha_deep_search(query)` searches inside automation/script/helper definitions.
-- **Full tool docs:** https://homeassistant-ai.github.io/ha-mcp/tools/
-
-Always use Context7 when I need library/API documentation, code generation, setup or configuration steps without me having to explicitly ask, using /home-assistant/home-assistant.io.
 
 ## Rules
 
@@ -40,4 +39,4 @@ Always use Context7 when I need library/API documentation, code generation, setu
 
 - **Yaml lint:** `yamllint .` (config in `.yamllint`)
 - **Prettier:** `prettier --write "**/*.{md,yml,yaml}"` (config in `.prettierrc.yaml`)
-- **Config / Validation:** use MCP tools listed below
+- **Config / Validation:** use MCP tools listed

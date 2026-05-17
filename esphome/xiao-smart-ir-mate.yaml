@@ -1,0 +1,280 @@
+# https://wiki.seeedstudio.com/XIAO-ESP32C3-for-ESPHome-Support/
+# https://github.com/Seeed-Studio/xiao-esphome-projects/blob/main/projects/xiao_smart_ir_mate/xiao_smart_ir_mate.yaml
+# https://github.com/esphome/infrared-proxies/blob/main/xiao-ir-mate/xiao-ir-mate.yaml
+
+substitutions:
+  devicename: "xiao-smart-ir-mate"
+  upper_devicename: XIAO Smart IR Mate
+
+esphome:
+  name: ${devicename}
+  friendly_name: ${upper_devicename}
+  area: "Living Room"
+
+# https://esphome.io/components/wifi/
+wifi:
+  min_auth_mode: WPA2
+  networks:
+    - ssid: !secret wifi_ssid
+      password: !secret wifi_password
+    - ssid: !secret backup_wifi
+      password: !secret backup_wifi_password
+  ap:
+    ssid: "esphome_${devicename}"
+    password: !secret backup_wifi_password
+  on_connect:
+    - light.turn_on:
+        {id: status_led, red: 0%, green: 0%, blue: 100%, brightness: 100%}
+  on_disconnect:
+    - light.turn_on:
+        {id: status_led, red: 100%, green: 0%, blue: 0%, brightness: 100%}
+
+# https://esphome.io/components/esp32/
+esp32:
+  board: seeed_xiao_esp32c3
+  framework:
+    type: esp-idf
+
+# https://esphome.io/components/captive_portal/
+captive_portal:
+
+# https://esphome.io/components/ota/
+ota:
+  - platform: esphome
+    password: !secret ota_password
+
+# https://esphome.io/components/time/
+time:
+  - platform: homeassistant
+    id: homeassistant_time
+
+# https://esphome.io/components/logger/
+logger:
+  level: DEBUG
+  initial_level: WARN
+
+# https://esphome.io/components/select/logger/
+select:
+  - platform: logger
+    name: "Log Level"
+
+# https://esphome.io/components/api/
+# https://esphome.io/components/remote_transmitter/
+api:
+  services:
+    - service: transmit_nec
+      variables:
+        address: int
+        command: int
+      then:
+        - remote_transmitter.transmit_nec:
+            transmitter_id: ir_tx
+            address: !lambda "return address;"
+            command: !lambda "return command;"
+    - service: transmit_sony
+      variables:
+        data: int
+        nbits: int
+      then:
+        - remote_transmitter.transmit_sony:
+            transmitter_id: ir_tx
+            data: !lambda "return data;"
+            nbits: !lambda "return nbits;"
+    - service: transmit_lg
+      variables:
+        data: int
+        nbits: int
+      then:
+        - remote_transmitter.transmit_lg:
+            transmitter_id: ir_tx
+            data: !lambda "return data;"
+            nbits: !lambda "return nbits;"
+    - service: transmit_samsung
+      variables:
+        data: int
+        nbits: int
+      then:
+        - remote_transmitter.transmit_samsung:
+            transmitter_id: ir_tx
+            data: !lambda "return data;"
+            nbits: !lambda "return nbits;"
+    - service: transmit_panasonic
+      variables:
+        address: int
+        command: int
+      then:
+        - remote_transmitter.transmit_panasonic:
+            transmitter_id: ir_tx
+            address: !lambda "return address;"
+            command: !lambda "return command;"
+    - service: transmit_rc5
+      variables:
+        address: int
+        command: int
+      then:
+        - remote_transmitter.transmit_rc5:
+            transmitter_id: ir_tx
+            address: !lambda "return address;"
+            command: !lambda "return command;"
+
+    - service: transmit_rc6
+      variables:
+        address: int
+        command: int
+      then:
+        - remote_transmitter.transmit_rc6:
+            transmitter_id: ir_tx
+            address: !lambda "return address;"
+            command: !lambda "return command;"
+
+    - service: transmit_jvc
+      variables:
+        data: int
+      then:
+        - remote_transmitter.transmit_jvc:
+            transmitter_id: ir_tx
+            data: !lambda "return data;"
+
+    - service: transmit_pioneer
+      variables:
+        rc_code_1: int
+        rc_code_2: int
+      then:
+        - remote_transmitter.transmit_pioneer:
+            transmitter_id: ir_tx
+            rc_code_1: !lambda "return rc_code_1;"
+            rc_code_2: !lambda "return rc_code_2;"
+
+# https://esphome.io/components/sensor/
+sensor:
+  # https://esphome.io/components/sensor/wifi_signal/
+  - platform: wifi_signal
+    name: "WiFi Signal"
+    update_interval: 60s
+
+# https://esphome.io/components/light/
+light:
+  - platform: esp32_rmt_led_strip
+    id: status_led
+    internal: true
+    pin: GPIO7
+    rgb_order: GRB
+    num_leds: 1
+    chipset: WS2812
+    rmt_symbols: 48
+    restore_mode: "ALWAYS_ON"
+    initial_state:
+      state: on
+      color_mode: "RGB"
+      red: 100%
+      green: 0%
+      blue: 0%
+      brightness: 100%
+
+# https://esphome.io/components/remote_transmitter/
+remote_transmitter:
+  id: ir_tx
+  pin: GPIO3
+  carrier_duty_percent: 50%
+  non_blocking: true
+
+# https://esphome.io/components/remote_receiver/
+remote_receiver:
+  - id: ir_rx
+    pin:
+      number: GPIO4
+      inverted: true
+    dump: all
+    idle: 32ms
+    on_nec:
+      then:
+        - homeassistant.event:
+            event: esphome.ir_code_received
+            data:
+              device_name: ${devicename}
+              protocol: "nec"
+              address: !lambda "return x.address;"
+              command: !lambda "return x.command;"
+    on_sony:
+      then:
+        - homeassistant.event:
+            event: esphome.ir_code_received
+            data:
+              device_name: ${devicename}
+              protocol: "sony"
+              data: !lambda "return x.data;"
+              nbits: !lambda "return x.nbits;"
+    on_lg:
+      then:
+        - homeassistant.event:
+            event: esphome.ir_code_received
+            data:
+              device_name: ${devicename}
+              protocol: "lg"
+              data: !lambda "return x.data;"
+              nbits: !lambda "return x.nbits;"
+    on_samsung:
+      then:
+        - homeassistant.event:
+            event: esphome.ir_code_received
+            data:
+              device_name: ${devicename}
+              protocol: "samsung"
+              data: !lambda "return x.data;"
+              nbits: !lambda "return x.nbits;"
+    on_panasonic:
+      then:
+        - homeassistant.event:
+            event: esphome.ir_code_received
+            data:
+              device_name: ${devicename}
+              protocol: "panasonic"
+              address: !lambda "return x.address;"
+              command: !lambda "return x.command;"
+    on_rc5:
+      then:
+        - homeassistant.event:
+            event: esphome.ir_code_received
+            data:
+              device_name: ${devicename}
+              protocol: "rc5"
+              address: !lambda "return x.address;"
+              command: !lambda "return x.command;"
+    on_rc6:
+      then:
+        - homeassistant.event:
+            event: esphome.ir_code_received
+            data:
+              device_name: ${devicename}
+              protocol: "rc6"
+              address: !lambda "return x.address;"
+              command: !lambda "return x.command;"
+    on_jvc:
+      then:
+        - homeassistant.event:
+            event: esphome.ir_code_received
+            data:
+              device_name: ${devicename}
+              protocol: "jvc"
+              data: !lambda "return x.data;"
+    on_pioneer:
+      then:
+        - homeassistant.event:
+            event: esphome.ir_code_received
+            data:
+              device_name: ${devicename}
+              protocol: "pioneer"
+              rc_code_1: !lambda "return x.rc_code_1;"
+              rc_code_2: !lambda "return x.rc_code_2;"
+
+# https://esphome.io/components/infrared/
+# https://esphome.io/components/ir_rf_proxy/
+infrared:
+  - platform: ir_rf_proxy
+    name: IR Proxy Transmitter
+    id: ir_proxy_tx
+    remote_transmitter_id: ir_tx
+  - platform: ir_rf_proxy
+    name: IR Proxy Receiver
+    id: ir_proxy_rx
+    remote_receiver_id: ir_rx

@@ -1,11 +1,13 @@
-alias: "Keyboard Remote: LG TV Netflix Login"
-description: "When stop button is pressed, if on Netflix, login"
+alias: "IR Command: LG TV Netflix Login"
+description: "When IR Command received, if on Netflix, login"
 trigger:
   platform: event
-  event_type: keyboard_remote_command_received
+  event_type: esphome.ir_code_received
   event_data:
-    device_name: "flirc.tv flirc Keyboard"
-    key_code: 83
+    device_name: "xiao-smart-ir-mate"
+    protocol: nec
+    address: "64260"
+    command: "20145"
 condition:
   - condition: state
     entity_id: media_player.lg_tv
@@ -17,22 +19,22 @@ action:
   - service: webostv.button
     entity_id: media_player.lg_tv
     data:
-      button: !secret lg_tv_netflix_login_1
+      button: !secret netflix_pin_1
   - delay:
       milliseconds: 100
   - service: webostv.button
     entity_id: media_player.lg_tv
     data:
-      button: !secret lg_tv_netflix_login_2
+      button: !secret netflix_pin_2
   - delay:
       milliseconds: 100
   - service: webostv.button
     entity_id: media_player.lg_tv
     data:
-      button: !secret lg_tv_netflix_login_3
+      button: !secret netflix_pin_3
   - delay:
       milliseconds: 100
   - service: webostv.button
     entity_id: media_player.lg_tv
     data:
-      button: !secret lg_tv_netflix_login_4
+      button: !secret netflix_pin_4
