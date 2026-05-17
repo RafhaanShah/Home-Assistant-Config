@@ -2,13 +2,12 @@ alias: "Location: Owntracks Update Lynn"
 description: "When location changes, push to Owntracks"
 trigger:
   platform: state
-  entity_id: device_tracker.lynns_phone_app
+  entity_id: person.lynn
 condition:
-  - condition: numeric_state
-    entity_id: person.lynn
-    attribute: gps_accuracy
-    above: 0
-    below: 101
+  - condition: template
+    value_template: >-
+      {% set accuracy = state_attr('person.lynn', 'gps_accuracy') %}
+      {{ accuracy is none or accuracy | float(0) < 101 }}
   - condition: template
     value_template: >-
       {{ (trigger.from_state.attributes.latitude != trigger.to_state.attributes.latitude) or
