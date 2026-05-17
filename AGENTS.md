@@ -26,6 +26,8 @@ A live MCP connection to the HA instance is available via `ha_*` tool calls.
 - **Search configs:** `ha_deep_search(query)` searches inside automation/script/helper definitions.
 - **Full tool docs:** https://homeassistant-ai.github.io/ha-mcp/tools/
 
+Always use Context7 when I need library/API documentation, code generation, setup or configuration steps without me having to explicitly ask, using /home-assistant/home-assistant.io.
+
 ## Rules
 
 - Follow existing patterns and styles for defining new configurations (such as automations, scripts), in naming, organisation and structure.

@@ -33,3 +33,6 @@
 '0x00158d00053df9c7':
   friendly_name: Guest Room Climate
   humidity_calibration: -4
+'0xa4c13867a20c1f9a':
+  friendly_name: Office Motion
+  throttle: 1

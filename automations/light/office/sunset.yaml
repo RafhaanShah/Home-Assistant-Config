@@ -7,10 +7,7 @@ condition:
   - condition: state
     entity_id: input_boolean.at_home
     state: "on"
-  - condition: state
-    entity_id: light.bedside_lamps
-    state: "off"
 action:
   - service: scene.turn_on
     data:
-      entity_id: scene.office_evenig
+      entity_id: scene.office_evening
