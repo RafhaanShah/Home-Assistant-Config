@@ -3,6 +3,7 @@
         "*.yaml": "yaml"
     },
     "files.watcherExclude": {
+        "**/.git/**": true,
         "**/node-red/**": true,
         "**/esphome/**": true,
         "**/custom_components/**": true,
@@ -10,6 +11,7 @@
         "**/www/**": true,
     },
     "search.exclude": {
+        "**/.git/**": true,
         "**/node-red/**": true,
         "**/esphome/**": true,
         "**/custom_components/**": true,
@@ -22,5 +24,9 @@
         "!include_dir_named",
         "include_dir_merge_list",
         "include_dir_merge_named"
-    ]
+    ],
+    "git.autofetch": false,
+    "git.autorefresh": false,
+    "git.autoRepositoryDetection": false,
+    "git.decorations.enabled": false,
 }
