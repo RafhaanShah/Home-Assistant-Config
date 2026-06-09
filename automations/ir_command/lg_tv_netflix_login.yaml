@@ -10,31 +10,31 @@ trigger:
     command: "20145"
 condition:
   - condition: state
-    entity_id: media_player.lg_tv
+    entity_id: media_player.living_room_tv
     attribute: source
     state: Netflix
 action:
   - delay:
       milliseconds: 100
   - service: webostv.button
-    entity_id: media_player.lg_tv
+    entity_id: media_player.living_room_tv
     data:
       button: !secret netflix_pin_1
   - delay:
       milliseconds: 100
   - service: webostv.button
-    entity_id: media_player.lg_tv
+    entity_id: media_player.living_room_tv
     data:
       button: !secret netflix_pin_2
   - delay:
       milliseconds: 100
   - service: webostv.button
-    entity_id: media_player.lg_tv
+    entity_id: media_player.living_room_tv
     data:
       button: !secret netflix_pin_3
   - delay:
       milliseconds: 100
   - service: webostv.button
-    entity_id: media_player.lg_tv
+    entity_id: media_player.living_room_tv
     data:
       button: !secret netflix_pin_4

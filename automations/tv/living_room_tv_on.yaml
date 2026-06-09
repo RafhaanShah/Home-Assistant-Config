@@ -1,10 +1,14 @@
 # https://www.home-assistant.io/integrations/webostv/
 alias: "TV: Living Room TV On"
-description: "When TV on command received, send WOL packet"
+description: "When TV on command received, turn on via external command"
 trigger:
   platform: webostv.turn_on
   entity_id: media_player.living_room_tv
 action:
-  - service: wake_on_lan.send_magic_packet
+#   - service: wake_on_lan.send_magic_packet
+#     data:
+#       mac: !secret mac_living_room_tv
+  - service: esphome.xiao_smart_ir_mate_transmit_nec
     data:
-      mac: !secret mac_living_room_tv
+      address: 64260
+      command: 63240

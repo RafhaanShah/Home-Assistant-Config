@@ -8,7 +8,7 @@ trigger:
     seconds: 15
 condition:
   - condition: state
-    entity_id: binary_sensor.tv_speaker_power
+    entity_id: switch.tv_speaker
     state: "on"
 action:
   - service: switch.turn_off
