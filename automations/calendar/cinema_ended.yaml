@@ -1,0 +1,33 @@
+alias: "Calendar: Odeon Event Ended"
+description: "Send notification when an Odeon cinema event ends"
+trigger:
+  - platform: calendar
+    event: end
+    entity_id: calendar.calendar
+    id: main_calendar
+  - platform: calendar
+    event: end
+    entity_id: calendar.raf_lynn
+    id: shared_calendar
+condition:
+  - condition: template
+    value_template: >-
+      {{ trigger.calendar_event.description is not none and 'odeon.co.uk' in trigger.calendar_event.description.lower() }}
+action:
+  - variables:
+      trakt_url: >-
+        https://app.trakt.tv/search?m=media&q={{ trigger.calendar_event.summary | urlencode }}
+  - service: notify.mobile_app_rafs_phone
+    data:
+      title: "Finished a movie"
+      message: >-
+        Tap to search Trakt for: {{ trigger.calendar_event.summary }}
+      data:
+        url: "{{ trakt_url }}"
+  - service: notify.mobile_app_lynns_phone
+    data:
+      title: "Finished a movie"
+      message: >-
+        Tap to search Trakt for: {{ trigger.calendar_event.summary }}
+      data:
+        url: "{{ trakt_url }}"
