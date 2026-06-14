@@ -1,0 +1,33 @@
+alias: "Sleeping: Asleep Lights"
+description: "When asleep, turn off the lights in each room"
+trigger:
+  platform: state
+  entity_id: input_boolean.sleeping
+  from: "off"
+  to: "on"
+action:
+  - service: light.turn_off
+    target:
+      area_id: "{{ area_id('Bedroom') }}"
+    data:
+      transition: 30
+  - if:
+      - condition: state
+        entity_id: binary_sensor.office_motion_presence
+        state: "off"
+    then:
+      - service: light.turn_off
+        target:
+          area_id: "{{ area_id('Office') }}"
+        data:
+          transition: 30
+  - if:
+      - condition: state
+        entity_id: media_player.living_room_tv
+        state: "off"
+    then:
+      - service: light.turn_off
+        target:
+          area_id: "{{ area_id('Living Room') }}"
+        data:
+          transition: 30
