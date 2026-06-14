@@ -1,0 +1,20 @@
+id: vacuum_away_schedule
+alias: "Vacuum: Away Schedule"
+description: "When away, clean any rooms that are overdue"
+trigger:
+  platform: state
+  entity_id: input_boolean.at_home
+  from: "on"
+  to: "off"
+condition:
+  - condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+      - sat
+      - sun
+action:
+  - service: script.vacuum_clean_due_rooms

@@ -1,0 +1,32 @@
+# https://www.home-assistant.io/integrations/template/#sensor
+# Single source of truth for per-room cleaning config, keyed by HA area name.
+# Reorder the rows to change the cleaning order (see sensor.vacuum_rooms_due).
+sensor:
+  - name: Vacuum Rooms
+    # Count the last-cleaned helpers (one per room); avoids a self-reference
+    # to this sensor's own `rooms` attribute, which would make it unavailable.
+    state: >
+      {{ states.input_datetime
+         | selectattr('entity_id', 'match', '^input_datetime\.vacuum_last_cleaned_')
+         | list | count }}
+    attributes:
+      # Row order == cleaning order. `last_cleaned` is derived from the area name:
+      # input_datetime.vacuum_last_cleaned_<slugify(area)>.
+      rooms: >
+        {% set ns = namespace(rooms=[]) %}
+        {% set config = [
+          ["Bathroom", 2],
+          ["Bedroom", 3],
+          ["Hallway", 2],
+          ["Office", 3]
+          ["Kitchen", 2],
+          ["Living Room", 3],
+        ] %}
+        {% for area, frequency_days in config %}
+          {% set ns.rooms = ns.rooms + [{
+            "area": area,
+            "frequency_days": frequency_days,
+            "last_cleaned": "input_datetime.vacuum_last_cleaned_" ~ (area | slugify)
+          }] %}
+        {% endfor %}
+        {{ ns.rooms }}

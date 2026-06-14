@@ -3,7 +3,7 @@ alias: "Vacuum: Error"
 description: "When Vacuum has an error state, send a notification"
 trigger:
   platform: state
-  entity_id: vacuum.robovac
+  entity_id: vacuum.dreamevac
   to: "error"
   for:
     minutes: 5

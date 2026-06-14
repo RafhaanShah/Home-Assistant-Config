@@ -1,0 +1,46 @@
+id: vacuum_skipped_rooms_notify
+alias: "Vacuum: Skipped Rooms Notify"
+description: >
+  On dock, flag any room that was requested this run but never stamped since the
+  run started (e.g. door closed so the robot never entered it).
+trigger:
+  - platform: state
+    entity_id: vacuum.dreamevac
+    to: docked
+    for:
+      minutes: 10
+condition:
+  - condition: template
+    value_template: >
+      {% set raw = states('input_text.vacuum_cleaning_areas') %}
+      {{ raw not in ['', 'unknown', 'unavailable']
+         and (raw | from_json(default=[])) | count > 0 }}
+action:
+  - variables:
+      run_start_ts: "{{ state_attr('input_datetime.vacuum_run_started', 'timestamp') }}"
+      skipped: >
+        {% set ns = namespace(skip=[]) %}
+        {% for aid in (states('input_text.vacuum_cleaning_areas') | from_json) %}
+          {% set name = area_name(aid) %}
+          {% set dt = state_attr('sensor.vacuum_rooms', 'rooms')
+                      | selectattr('area', 'eq', name)
+                      | map(attribute='last_cleaned') | first %}
+          {% set ts = state_attr(dt, 'timestamp') %}
+          {% if ts is none or ts < run_start_ts %}
+            {% set ns.skip = ns.skip + [name] %}
+          {% endif %}
+        {% endfor %}
+        {{ ns.skip }}
+  - if:
+      - condition: template
+        value_template: "{{ skipped | count > 0 }}"
+    then:
+      - service: notify.send_message
+        data:
+          entity_id: notify.telegram_raf
+          message: "Vacuum skipped: {{ skipped | join(', ') }} (door closed?)"
+  - service: input_text.set_value
+    target:
+      entity_id: input_text.vacuum_cleaning_areas
+    data:
+      value: ""

@@ -1,0 +1,36 @@
+id: vacuum_record_last_cleaned
+alias: "Vacuum: Record Last Cleaned"
+description: >
+  As the robot cleans each room, stamp that room's last-cleaned input_datetime.
+  Vacuum-specific: resolves the Dreame current_segment to a room name via the
+  live rooms attribute, so a room the robot never enters stays un-stamped.
+trigger:
+  - platform: state
+    entity_id: vacuum.dreamevac
+    attribute: current_segment
+condition:
+  - condition: state
+    entity_id: vacuum.dreamevac
+    state: cleaning
+  - condition: template
+    value_template: >
+      {% set seg = state_attr('vacuum.dreamevac', 'current_segment') %}
+      {% set active = state_attr('vacuum.dreamevac', 'active_segments') or [] %}
+      {{ seg is not none and seg in active }}
+action:
+  - variables:
+      seg: "{{ state_attr('vacuum.dreamevac', 'current_segment') }}"
+      room_name: >
+        {% set rooms = state_attr('vacuum.dreamevac', 'rooms')[state_attr('vacuum.dreamevac', 'selected_map')] %}
+        {{ rooms | selectattr('id', 'eq', seg) | map(attribute='name') | first }}
+      target_dt: >
+        {{ state_attr('sensor.vacuum_rooms', 'rooms')
+           | selectattr('area', 'eq', room_name)
+           | map(attribute='last_cleaned') | first }}
+  - condition: template
+    value_template: "{{ target_dt is not none }}"
+  - service: input_datetime.set_datetime
+    target:
+      entity_id: "{{ target_dt }}"
+    data:
+      timestamp: "{{ now().timestamp() }}"

@@ -1,0 +1,24 @@
+# Start a frequency-aware clean: only the rooms overdue per sensor.vacuum_rooms_due.
+alias: "Vacuum: Clean Due Rooms"
+description: "Clean only the rooms that are overdue, using generic vacuum.clean_area"
+icon: mdi:robot-vacuum
+sequence:
+  - variables:
+      due: "{{ state_attr('sensor.vacuum_rooms_due', 'area_ids') }}"
+  - condition: template
+    value_template: "{{ due | count > 0 }}"
+  - service: input_text.set_value
+    target:
+      entity_id: input_text.vacuum_cleaning_areas
+    data:
+      value: "{{ due | to_json }}"
+  - service: input_datetime.set_datetime
+    target:
+      entity_id: input_datetime.vacuum_run_started
+    data:
+      timestamp: "{{ now().timestamp() }}"
+  - service: vacuum.clean_area
+    target:
+      entity_id: vacuum.dreamevac
+    data:
+      cleaning_area_id: "{{ due }}"

@@ -1,0 +1,43 @@
+# https://www.home-assistant.io/integrations/template/#sensor
+# Computes which rooms are overdue. `area_ids` drops straight into
+# vacuum.clean_area's cleaning_area_id; `areas` mirrors it for humans.
+# Order follows the row order in sensor.vacuum_rooms (== cleaning order).
+# Overdue is measured in whole CALENDAR days (frequency_days), so cleaning
+# slots don't drift with the time of day a room was last cleaned: a room
+# cleaned on day 0 with frequency 2 becomes due at the start of day 2.
+sensor:
+  - name: Vacuum Rooms Due
+    state: >
+      {% set today = strptime(states('sensor.date'), '%Y-%m-%d').date() %}
+      {% set ns = namespace(due=0) %}
+      {% for r in state_attr('sensor.vacuum_rooms', 'rooms') or [] %}
+        {% set lc = states(r.last_cleaned) %}
+        {% if lc in ['unknown', 'unavailable', ''] or
+              (today - as_datetime(lc).date()).days >= r.frequency_days %}
+          {% set ns.due = ns.due + 1 %}
+        {% endif %}
+      {% endfor %}
+      {{ ns.due }}
+    attributes:
+      area_ids: >
+        {% set today = strptime(states('sensor.date'), '%Y-%m-%d').date() %}
+        {% set ns = namespace(due=[]) %}
+        {% for r in state_attr('sensor.vacuum_rooms', 'rooms') or [] %}
+          {% set lc = states(r.last_cleaned) %}
+          {% if lc in ['unknown', 'unavailable', ''] or
+                (today - as_datetime(lc).date()).days >= r.frequency_days %}
+            {% set ns.due = ns.due + [area_id(r.area)] %}
+          {% endif %}
+        {% endfor %}
+        {{ ns.due }}
+      areas: >
+        {% set today = strptime(states('sensor.date'), '%Y-%m-%d').date() %}
+        {% set ns = namespace(due=[]) %}
+        {% for r in state_attr('sensor.vacuum_rooms', 'rooms') or [] %}
+          {% set lc = states(r.last_cleaned) %}
+          {% if lc in ['unknown', 'unavailable', ''] or
+                (today - as_datetime(lc).date()).days >= r.frequency_days %}
+            {% set ns.due = ns.due + [r.area] %}
+          {% endif %}
+        {% endfor %}
+        {{ ns.due }}

@@ -1,0 +1,16 @@
+id: vacuum_home_schedule
+alias: "Vacuum: Home Schedule"
+description: "At scheduled times, clean any rooms that are overdue"
+trigger:
+  - platform: time
+    at: "17:30:00"
+condition:
+  - condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+action:
+  - service: script.vacuum_clean_due_rooms
