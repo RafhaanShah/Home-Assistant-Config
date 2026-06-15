@@ -12,8 +12,8 @@ trigger:
 condition:
   - condition: template
     value_template: >-
-      {{ trigger.calendar_event.description is not none and
-        'odeon.co.uk' in trigger.calendar_event.description.lower() }}
+      {{ trigger.calendar_event.get('description') is not none and
+        'odeon.co.uk' in trigger.calendar_event.get('description', '').lower() }}
 action:
   - variables:
       trakt_url: >-

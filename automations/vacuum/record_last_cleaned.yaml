@@ -28,7 +28,7 @@ action:
            | selectattr('area', 'eq', room_name)
            | map(attribute='last_cleaned') | first }}
   - condition: template
-    value_template: "{{ target_dt is not none }}"
+    value_template: "{{ target_dt is not none and target_dt != '' }}"
   - service: input_datetime.set_datetime
     target:
       entity_id: "{{ target_dt }}"
