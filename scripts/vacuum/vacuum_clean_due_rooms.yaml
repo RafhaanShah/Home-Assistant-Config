@@ -2,11 +2,15 @@
 alias: "Vacuum: Clean Due Rooms"
 description: "Clean only the rooms that are overdue, using generic vacuum.clean_area"
 icon: mdi:robot-vacuum
+mode: single
+max_exceeded: silent
 sequence:
   - variables:
       due: "{{ state_attr('sensor.vacuum_rooms_due', 'area_ids') }}"
   - condition: template
     value_template: "{{ due | count > 0 }}"
+  - condition: template
+    value_template: "{{ states('vacuum.dreamevac') not in ['cleaning', 'returning', 'paused'] }}"
   - service: input_text.set_value
     target:
       entity_id: input_text.vacuum_cleaning_areas

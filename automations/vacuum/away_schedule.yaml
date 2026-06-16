@@ -2,12 +2,19 @@ id: vacuum_away_schedule
 alias: "Vacuum: Away Schedule"
 description: "When away, clean any rooms that are overdue"
 trigger:
-  platform: state
-  entity_id: input_boolean.at_home
-  from: "on"
-  to: "off"
+  - platform: state
+    entity_id: input_boolean.at_home
+    from: "on"
+    to: "off"
+  - platform: time
+    at: "12:00:00"
 condition:
+  - condition: state
+    entity_id: input_boolean.at_home
+    state: "off"
   - condition: time
+    after: "10:00:00"
+    before: "20:00:00"
     weekday:
       - mon
       - tue
