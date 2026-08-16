@@ -1,0 +1,11 @@
+alias: "Curtain: Bedroom Dawn"
+description: "Just before dawn, close the bedroom curtain"
+trigger:
+  platform: numeric_state
+  entity_id: sun.sun
+  attribute: elevation
+  above: -6
+action:
+  - service: cover.close_cover
+    data:
+      entity_id: cover.bedroom_curtain

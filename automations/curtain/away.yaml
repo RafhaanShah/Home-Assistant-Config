@@ -1,0 +1,14 @@
+alias: "Curtain: Away"
+description: "When away, close curtains"
+trigger:
+  platform: state
+  entity_id: input_boolean.at_home
+  from: "on"
+  to: "off"
+action:
+  - service: cover.close_cover
+    data:
+      entity_id:
+        - cover.bedroom_curtain
+        - cover.living_room_curtain
+        - cover.kitchen_curtain
