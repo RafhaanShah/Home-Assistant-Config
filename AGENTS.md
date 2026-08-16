@@ -15,25 +15,25 @@
 
 ## MCP Tools and Skills
 
-Use `ha_*` tool calls for the live HA MCP tools, and always `Context7` for in-depth documentation, without me having to explicitly ask.
+Use `ha_*` tool calls for the live HA MCP tools, and always `context7` for in-depth documentation, without me having to explicitly ask.
 
-- **Home Assistant Documentation:** use `Context7` for documentation and code examples, using library `/home-assistant/home-assistant.io`.
-- **ESPHome Documentation:** use `Context7` for ESPHome configuration and documentation, using library `/websites/esphome_io`.
-- **Best practices:** call `ha_get_skill_home_assistant_best_practices` then `read_resource(uri)` on the returned files for best practices and patterns for automations, dashboards, helper selections and more.
-- **System overview:** `ha_get_overview()` for system summary; `ha_search_entities(query)` to find entity IDs.
-- **Read state:** `ha_get_state(entity_id)` / `ha_get_states([...])` for current values; `ha_get_history()` for past.
+- **Home Assistant Documentation:** use `context7` for documentation and code examples, using library `/home-assistant/home-assistant.io`.
+- **ESPHome Documentation:** use `context7` for ESPHome configuration and documentation, using library `/websites/esphome_io`.
+- **Best practices:** before making a configuration change, always call `ha_get_skill_guide` tool, with no arguments first to list available skills, then call it with the specific `skill` and `file` parameters to read the relevant guides.
+- **Search tools:** use `ha_search_tools` to search for all available tools to use.
+- **System overview:** `ha_get_overview` for system summary; `ha_search_entities(query)` to find entity IDs.
+- **Read state:** `ha_get_state` / `ha_get_states` for current values; `ha_get_history` for past.
 - **Config (check):** `ha_check_config` to check the configuration for errors after making config changes.
-- **Config (read):** `ha_config_get_automation(id)`, `ha_config_get_script(id)`, `ha_config_get_dashboard()`.
-- **Config (write):** `ha_config_set_automation(config)`, `ha_config_set_script(id, config)`, `ha_config_set_dashboard(url_path, ...)`.
-- **Search configs:** `ha_deep_search(query)` searches inside automation/script/helper definitions.
+- **Search configs:** `ha_search` searches for entities, domains, areas and inside automation/script/helper definitions.
+- **Evaluate templates:** use `ha_eval_template` to evaluate Jinja2 templates using Home Assistant's template engine.
 
 ## Rules
 
 - Follow existing patterns and styles for defining new configurations (such as automations, scripts), in naming, organisation and structure.
 - Never modify anything that is not part of the core HA configuration or is third party code (such as `custom_components/`), this generally includes all files ignored by version control.
 - Edit yaml files directly to read and write configurations, but use the MCP tools to find information about HA, such as entity IDs and to validate configurations.
-- Always ask for confirmation before calling destructive or reload‑style tools or calling services or changing entity states that will immediately affect HA.
-- Prefer standard HA automation / condition / service configuration over templates where it is possible.
+- You must ask for confirmation before calling destructive or reload‑style tools, or calling any services or actions, or changing entity states that will immediately affect HA.
+- Always use and prefer standard HA automation / condition / action configuration in yaml over generic Jinja2/templates.
 
 ## Lint / Validate
 

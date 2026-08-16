@@ -1,0 +1,42 @@
+id: vacuum_started_notify
+alias: "Vacuum: Started Notify"
+description: "When a scheduled vacuum run starts, notify anyone home about the rooms due"
+mode: single
+trigger:
+  - platform: state
+    entity_id: input_datetime.vacuum_run_started
+action:
+  - variables:
+      requested_areas: "{{ states('input_text.vacuum_cleaning_areas') | from_json(default=[]) }}"
+      rooms: >
+        {% set ns = namespace(names=[]) %}
+        {% for aid in requested_areas %}
+          {% set ns.names = ns.names + [area_name(aid)] %}
+        {% endfor %}
+        {{ ns.names }}
+  - condition: template
+    value_template: "{{ rooms | count > 0 }}"
+  - if:
+      - condition: state
+        entity_id: person.raf
+        state: home
+    then:
+      - service: notify.mobile_app_rafs_phone
+        data:
+          title: "Vacuum started"
+          message: "Cleaning {{ rooms | join(', ') }}"
+          data:
+            tag: vacuum-started
+            notification_icon: mdi:robot-vacuum
+  - if:
+      - condition: state
+        entity_id: person.lynn
+        state: home
+    then:
+      - service: notify.mobile_app_lynns_phone
+        data:
+          title: "Vacuum started"
+          message: "Cleaning {{ rooms | join(', ') }}"
+          data:
+            tag: vacuum-started
+            notification_icon: mdi:robot-vacuum

@@ -25,6 +25,7 @@ action:
         Tap to search Trakt for: {{ trigger.calendar_event.summary }}
       data:
         url: "{{ trakt_url }}"
+        clickAction: "{{ trakt_url }}"
   - service: notify.mobile_app_lynns_phone
     data:
       title: "Finished a movie"
@@ -32,3 +33,4 @@ action:
         Tap to search Trakt for: {{ trigger.calendar_event.summary }}
       data:
         url: "{{ trakt_url }}"
+        clickAction: "{{ trakt_url }}"
