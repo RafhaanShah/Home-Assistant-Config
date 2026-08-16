@@ -1,0 +1,54 @@
+id: raf_pc_left_on_away
+alias: "Computer: Raf PC Left On Away"
+description: "When Raf's PC is left on while Raf is away, offer to turn it off"
+mode: single
+trigger:
+  platform: state
+  entity_id: switch.rafs_pc
+  to: "on"
+  for:
+    minutes: 30
+condition:
+  - not:
+      - condition: state
+        entity_id: person.raf
+        state: "home"
+action:
+  - variables:
+      action_turn_off: "{{ 'TURN_OFF_RAFS_PC_' ~ context.id }}"
+      notification_tag: raf-pc-left-on-away
+  - service: notify.mobile_app_rafs_phone
+    data:
+      title: "Raf's PC is still on"
+      message: "It has been on for over 30 minutes while you are away."
+      data:
+        tag: "{{ notification_tag }}"
+        notification_icon: mdi:desktop-tower-monitor
+        actions:
+          - action: "{{ action_turn_off }}"
+            title: "Turn Off"
+  - wait_for_trigger:
+      - platform: event
+        event_type: mobile_app_notification_action
+        event_data:
+          action: "{{ action_turn_off }}"
+      - platform: state
+        entity_id: switch.rafs_pc
+        to: "off"
+      - platform: state
+        entity_id: person.raf
+        to: "home"
+  - if:
+      - condition: template
+        value_template: >
+          {{ wait.trigger.platform == 'event'
+             and wait.trigger.event.data.action == action_turn_off }}
+    then:
+      - service: switch.turn_off
+        target:
+          entity_id: switch.rafs_pc
+  - service: notify.mobile_app_rafs_phone
+    data:
+      message: clear_notification
+      data:
+        tag: "{{ notification_tag }}"
