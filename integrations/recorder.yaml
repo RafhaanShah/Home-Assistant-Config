@@ -6,7 +6,9 @@ recorder:
     domains:
       - alarm_control_panel
       - automation
+      - binary_sensor
       - climate
+      - cover
       - device_tracker
       - group
       - input_boolean
@@ -19,26 +21,24 @@ recorder:
       - switch
       - vacuum
     entity_globs:
-      - binary_sensor.*_pc_power
-      - binary_sensor.*_leak
-      - binary_sensor.*_smoke
-      - sensor.*_temperature
+      - sensor.*_geocoded_location
       - sensor.*_humidity
       - sensor.*_illuminance
-      # - sensor.*_energy # uses a lot of storage
-      # - sensor.*_wifi
-      - sensor.*_geocoded_location
+      - sensor.*_temperature
   exclude:
     entity_globs:
       - automation.location*
       - automation.media*
-      - automation.tv*
       - automation.switch*
+      - automation.tv*
       - binary_sensor.*_ping
-      - sensor.*_battery_*
+      - sensor.*_battery*
+      - sensor.*_energy
       - sensor.*_illuminance_lux
-      - sensor.*_motion_sensor_temperature
-      - sensor.*_uptime
-      - sensor.*_packets_*
       - sensor.*_kib_s
+      - sensor.*_linkquality
+      - sensor.*_motion_sensor_temperature
+      - sensor.*_packets_*
       - sensor.*_rssi
+      - sensor.*_uptime
+      - sensor.*_wifi_signal
