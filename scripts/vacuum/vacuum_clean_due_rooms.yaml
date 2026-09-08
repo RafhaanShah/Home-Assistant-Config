@@ -9,8 +9,13 @@ sequence:
       due: "{{ state_attr('sensor.vacuum_rooms_due', 'area_ids') }}"
   - condition: template
     value_template: "{{ due | count > 0 }}"
+  - condition: state
+    entity_id: vacuum.dreamevac
+    state:
+      - docked
+      - idle
   - condition: template
-    value_template: "{{ states('vacuum.dreamevac') not in ['cleaning', 'returning', 'paused'] }}"
+    value_template: "{{ not state_attr('vacuum.dreamevac', 'active_segments') }}"
   - service: input_text.set_value
     target:
       entity_id: input_text.vacuum_cleaning_areas

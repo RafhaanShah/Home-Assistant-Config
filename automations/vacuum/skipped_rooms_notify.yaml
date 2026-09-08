@@ -1,17 +1,16 @@
 id: vacuum_skipped_rooms_notify
 alias: "Vacuum: Skipped Rooms Notify"
 description: >
-  On dock, flag any room that was requested this run but never stamped since the
+  When active segments clear, flag any room that was requested this run but never stamped since the
   run started (e.g. door closed so the robot never entered it).
 mode: parallel
 max: 3
 trigger:
-  - platform: state
-    entity_id: vacuum.dreamevac
-    to: docked
+  - platform: template
+    value_template: "{{ not state_attr('vacuum.dreamevac', 'active_segments') }}"
     for:
       minutes: 10
-    id: docked
+    id: segments_cleared
   - platform: state
     entity_id: person.raf
     to: home
@@ -60,7 +59,7 @@ action:
                 tag: "{{ notification_tag }}"
       - conditions:
           - condition: trigger
-            id: docked
+            id: segments_cleared
         sequence:
           - if:
               - condition: template
