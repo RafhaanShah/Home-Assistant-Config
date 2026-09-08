@@ -10,4 +10,5 @@ condition:
 action:
   - service: scene.turn_on
     data:
+      transition: 300
       entity_id: scene.office_evening

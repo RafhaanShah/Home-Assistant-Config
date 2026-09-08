@@ -27,6 +27,9 @@ condition:
           - ITVX
           - NOW
           - HBO Max
+          - Kodi
+          - Stremio
+          - Nuvio
 action:
   - service: scene.turn_on
     data:
