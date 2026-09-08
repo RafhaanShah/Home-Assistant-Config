@@ -7,11 +7,16 @@ recorder:
       - alarm_control_panel
       - automation
       - climate
-      - person
-      - vacuum
-      - light
       - device_tracker
+      - group
+      - input_boolean
+      - input_datetime
+      - input_select
+      - input_text
+      - light
       - lock
+      - person
+      - switch
       - vacuum
     entity_globs:
       - binary_sensor.*_pc_power
@@ -29,6 +34,11 @@ recorder:
       - automation.media*
       - automation.tv*
       - automation.switch*
+      - binary_sensor.*_ping
       - sensor.*_battery_*
       - sensor.*_illuminance_lux
       - sensor.*_motion_sensor_temperature
+      - sensor.*_uptime
+      - sensor.*_packets_*
+      - sensor.*_kib_s
+      - sensor.*_rssi
