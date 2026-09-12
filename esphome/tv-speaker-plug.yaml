@@ -35,6 +35,8 @@ captive_portal:
 
 # https://esphome.io/components/api/
 api:
+  encryption:
+    key: !secret tv_speaker_plug__encryption_key
 
 # https://esphome.io/components/ota/
 ota:
