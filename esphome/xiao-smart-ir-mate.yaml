@@ -142,6 +142,8 @@ api:
             transmitter_id: ir_tx
             rc_code_1: !lambda "return rc_code_1;"
             rc_code_2: !lambda "return rc_code_2;"
+  encryption:
+    key: !secret xiao_smart_ir_mate__encryption_key
 
 # https://esphome.io/components/sensor/
 sensor:
