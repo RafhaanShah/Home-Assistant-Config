@@ -59,8 +59,8 @@ select:
 # https://esphome.io/components/api/
 # https://esphome.io/components/remote_transmitter/
 api:
-  services:
-    - service: transmit_nec
+  actions:
+    - action: transmit_nec
       variables:
         address: int
         command: int
@@ -69,7 +69,7 @@ api:
             transmitter_id: ir_tx
             address: !lambda "return address;"
             command: !lambda "return command;"
-    - service: transmit_sony
+    - action: transmit_sony
       variables:
         data: int
         nbits: int
@@ -78,7 +78,7 @@ api:
             transmitter_id: ir_tx
             data: !lambda "return data;"
             nbits: !lambda "return nbits;"
-    - service: transmit_lg
+    - action: transmit_lg
       variables:
         data: int
         nbits: int
@@ -87,7 +87,7 @@ api:
             transmitter_id: ir_tx
             data: !lambda "return data;"
             nbits: !lambda "return nbits;"
-    - service: transmit_samsung
+    - action: transmit_samsung
       variables:
         data: int
         nbits: int
@@ -96,7 +96,7 @@ api:
             transmitter_id: ir_tx
             data: !lambda "return data;"
             nbits: !lambda "return nbits;"
-    - service: transmit_panasonic
+    - action: transmit_panasonic
       variables:
         address: int
         command: int
@@ -105,7 +105,7 @@ api:
             transmitter_id: ir_tx
             address: !lambda "return address;"
             command: !lambda "return command;"
-    - service: transmit_rc5
+    - action: transmit_rc5
       variables:
         address: int
         command: int
@@ -115,7 +115,7 @@ api:
             address: !lambda "return address;"
             command: !lambda "return command;"
 
-    - service: transmit_rc6
+    - action: transmit_rc6
       variables:
         address: int
         command: int
@@ -125,7 +125,7 @@ api:
             address: !lambda "return address;"
             command: !lambda "return command;"
 
-    - service: transmit_jvc
+    - action: transmit_jvc
       variables:
         data: int
       then:
@@ -133,7 +133,7 @@ api:
             transmitter_id: ir_tx
             data: !lambda "return data;"
 
-    - service: transmit_pioneer
+    - action: transmit_pioneer
       variables:
         rc_code_1: int
         rc_code_2: int
@@ -158,7 +158,7 @@ light:
     id: status_led
     internal: true
     pin: GPIO7
-    rgb_order: GRB
+    channel_colors: GRB
     num_leds: 1
     chipset: WS2812
     rmt_symbols: 48
