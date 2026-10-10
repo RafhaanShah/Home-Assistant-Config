@@ -5,7 +5,10 @@ trigger:
   platform: state
   entity_id: person.lynn
   to: home
-  from: not_home
+  not_from:
+    - home
+    - unknown
+    - unavailable
 condition:
   - condition: not
     conditions:
@@ -41,6 +44,9 @@ action:
     timeout:
       minutes: 15
     continue_on_timeout: false
+  - service: button.press
+    target:
+      entity_id: button.front_door_lock_wake
   - if:
       - condition: template
         value_template: "{{ wait.trigger.event.data.action == action_unlock_delayed }}"

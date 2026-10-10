@@ -1,28 +1,32 @@
 alias: "Zone: Raf Work"
 description: "Send a notification when at work"
 trigger:
-  - platform: state
-    entity_id: person.raf
-    to: rafs_work
-    for:
-      seconds: 60
+  - trigger: zone.entered
+    target:
+      entity_id: person.raf
+    options:
+      zone: zone.rafs_work
+      for:
+        minutes: 5
     variables:
       message_verb: "arrived at"
-  - platform: state
-    entity_id: person.raf
-    from: rafs_work
-    for:
-      seconds: 60
+  - trigger: zone.left
+    target:
+      entity_id: person.raf
+    options:
+      zone: zone.rafs_work
+      for:
+        minutes: 5
     variables:
       message_verb: "left"
 condition:
   - condition: state
     entity_id: binary_sensor.workday_sensor
     state: "on"
-  - not:
-      - condition: time
-        after: "11:00:00"
-        before: "15:00:00"
+  # - not:
+  #     - condition: time
+  #       after: "11:00:00"
+  #       before: "13:00:00"
 action:
   - service: notify.mobile_app_lynns_phone
     data:
