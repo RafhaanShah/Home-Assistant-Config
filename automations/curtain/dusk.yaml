@@ -1,0 +1,19 @@
+alias: "Curtains: Dusk"
+description: "At dusk, open the living room and kitchen curtains if at home"
+trigger:
+  platform: numeric_state
+  entity_id: sun.sun
+  attribute: elevation
+  below: -6 # Dusk: the sun is 6 degrees below the horizon.
+condition:
+  - condition: sun
+    after: sunset
+  - condition: state
+    entity_id: input_boolean.at_home
+    state: "on"
+action:
+  - service: cover.open_cover
+    target:
+      entity_id:
+        - cover.living_room_curtain
+        - cover.kitchen_curtain

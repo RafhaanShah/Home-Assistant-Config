@@ -1,0 +1,25 @@
+id: raf_pc_off_morning
+alias: "Computer: Raf PC Off at 5AM"
+description: "At 5AM, turn off Raf's PC if it is on and Raf is sleeping or away"
+mode: single
+trigger:
+  platform: time
+  at: "05:00:00"
+condition:
+  - condition: state
+    entity_id: switch.rafs_pc
+    state: "on"
+  - condition: or
+    conditions:
+      - condition: state
+        entity_id: input_boolean.sleeping
+        state: "on"
+      - condition: not
+        conditions:
+          - condition: state
+            entity_id: person.raf
+            state: "home"
+action:
+  - service: switch.turn_off
+    target:
+      entity_id: switch.rafs_pc

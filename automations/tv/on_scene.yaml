@@ -4,7 +4,9 @@ trigger:
   platform: state
   entity_id: media_player.living_room_tv
   from: "off"
-  to: "on"
+  not_to:
+    - "unknown"
+    - "unavailable"
 condition:
   - condition: state
     entity_id: light.floor_lamp
