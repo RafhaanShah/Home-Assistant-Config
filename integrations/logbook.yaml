@@ -7,5 +7,12 @@
 logbook:
   exclude:
     domains:
-      - device_tracker
       - sensor
+    entity_globs:
+      - binary_sensor.*_motion_presence
+      - sensor.dreamevac_*
+      - select.dreamevac_*
+      - switch.dreamevac_*
+      - switch.*_curtain_*
+      - switch.*_sheer_*
+      - switch.*_motion_find_*

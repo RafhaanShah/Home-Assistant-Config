@@ -25,6 +25,11 @@ action:
       - condition: state
         entity_id: media_player.living_room_tv
         state: "off"
+      - condition: state
+        entity_id: binary_sensor.living_room_motion_presence
+        state: "off"
+        for:
+          minutes: 5
     then:
       - service: light.turn_off
         target:

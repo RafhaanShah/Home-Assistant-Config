@@ -20,11 +20,13 @@ recorder:
       - person
       - switch
       - vacuum
+      - zone
     entity_globs:
       - sensor.*_geocoded_location
       - sensor.*_humidity
       - sensor.*_illuminance
       - sensor.*_temperature
+      - sensor.*_last_electricity_reading
   exclude:
     entity_globs:
       - automation.location*
