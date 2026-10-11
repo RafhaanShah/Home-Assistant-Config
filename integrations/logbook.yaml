@@ -10,6 +10,8 @@ logbook:
       - sensor
     entity_globs:
       - binary_sensor.*_motion_presence
+      - binary_sensor.*_curtain_*
+      - binary_sensor.*_sheer_*
       - sensor.dreamevac_*
       - select.dreamevac_*
       - switch.dreamevac_*
