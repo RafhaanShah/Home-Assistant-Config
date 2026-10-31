@@ -11,28 +11,56 @@ action:
       area_id: "{{ area_id('Bedroom') }}"
     data:
       transition: 10
-  - if:
-      - condition: state
-        entity_id: binary_sensor.office_motion_presence
-        state: "off"
-    then:
-      - service: light.turn_off
-        target:
-          area_id: "{{ area_id('Office') }}"
-        data:
-          transition: 1
-  - if:
-      - condition: state
-        entity_id: media_player.living_room_tv
-        state: "off"
-      - condition: state
-        entity_id: binary_sensor.living_room_motion_presence
-        state: "off"
-        for:
-          minutes: 5
-    then:
-      - service: light.turn_off
-        target:
-          area_id: "{{ area_id('Living Room') }}"
-        data:
-          transition: 1
+  - parallel:
+      - sequence:
+          - repeat:
+              while:
+                # Check once a minute, for at most three hours.
+                - "{{ repeat.index <= 180 }}"
+                - condition: not
+                  conditions:
+                    - condition: state
+                      entity_id: binary_sensor.office_motion_presence
+                      state: "off"
+                      for:
+                        minutes: 15
+              sequence:
+                - delay:
+                    minutes: 1
+          # Reaching the three-hour limit must not turn off an occupied room.
+          - condition: state
+            entity_id: binary_sensor.office_motion_presence
+            state: "off"
+            for:
+              minutes: 15
+          - service: light.turn_off
+            target:
+              area_id: "{{ area_id('Office') }}"
+            data:
+              transition: 1
+      - sequence:
+          - repeat:
+              while:
+                # Check once a minute, for at most three hours.
+                - "{{ repeat.index <= 180 }}"
+                - condition: not
+                  conditions:
+                    - condition: state
+                      entity_id: binary_sensor.living_room_motion_presence
+                      state: "off"
+                      for:
+                        minutes: 15
+              sequence:
+                - delay:
+                    minutes: 1
+          # Reaching the three-hour limit must not turn off an occupied room.
+          - condition: state
+            entity_id: binary_sensor.living_room_motion_presence
+            state: "off"
+            for:
+              minutes: 15
+          - service: light.turn_off
+            target:
+              area_id: "{{ area_id('Living Room') }}"
+            data:
+              transition: 1
