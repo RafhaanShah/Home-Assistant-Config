@@ -1,0 +1,26 @@
+id: security_door_lock_notify
+alias: "Security: Door Lock Notify"
+description: "When the front door is locked or unlocked, notify"
+mode: queued
+trigger:
+  - platform: state
+    entity_id: lock.front_door_lock
+    to:
+      - locked
+      - unlocked
+    not_from:
+      - unknown
+      - unavailable
+action:
+  - variables:
+      message: "Front door lock has been {{ trigger.to_state.state }}"
+  - service: notify.mobile_app_lynns_phone
+    continue_on_error: true
+    data:
+      title: "Front Door"
+      message: "{{ message }}"
+  - service: notify.send_message
+    target:
+      entity_id: notify.telegram_raf
+    data:
+      message: "{{ message }}"

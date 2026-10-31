@@ -1,0 +1,26 @@
+id: security_door_closed_unlocked_notify
+alias: "Security: Door Closed Unlocked Notify"
+description: "When the front door has been closed but is still unlocked, notify"
+mode: single
+trigger:
+  - platform: state
+    entity_id: binary_sensor.front_door
+    from: "on"
+    to: "off"
+    for:
+      seconds: 20
+condition:
+  - condition: state
+    entity_id: lock.front_door_lock
+    state: unlocked
+action:
+  - service: notify.mobile_app_lynns_phone
+    continue_on_error: true
+    data:
+      title: "Front Door"
+      message: "Front door has been closed but is still unlocked"
+  - service: notify.send_message
+    target:
+      entity_id: notify.telegram_raf
+    data:
+      message: "Front door has been closed but is still unlocked"
