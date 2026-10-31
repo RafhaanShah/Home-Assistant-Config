@@ -4,10 +4,22 @@ description: >
   As the robot cleans each room, stamp that room's last-cleaned input_datetime.
   Vacuum-specific: resolves the Dreame current_segment to a room name via the
   live rooms attribute, so a room the robot never enters stays un-stamped.
+# Pitfall: current_segment identifies the robot's location, not room completion.
+# If Living Room is in active_segments, returning there for water/mop washing and
+# resuming the cleaning state can stamp it even without actually cleaning it.
 trigger:
   - platform: state
     entity_id: vacuum.dreamevac
     attribute: current_segment
+  # A room change while returning/paused is rejected; retry when cleaning resumes
+  # even if the robot remains in the same room.
+  - platform: state
+    entity_id: vacuum.dreamevac
+    to: cleaning
+  # Room selection can arrive after the current room or cleaning state updates.
+  - platform: state
+    entity_id: vacuum.dreamevac
+    attribute: active_segments
 condition:
   - condition: state
     entity_id: vacuum.dreamevac
